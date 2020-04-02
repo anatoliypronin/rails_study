@@ -3,8 +3,9 @@ version: '3'
 services:
   web:
     build: .
-    image: rails_study/web
-    container_name: rails_study-web
+    image: courses/web:latest
+    container_name: courses-web
+    command: bash -c "puma"
     ports:
       - 8080:8080
     volumes:
