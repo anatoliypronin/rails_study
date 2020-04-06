@@ -1,6 +1,9 @@
 version: '3'
 
 services:
+  db:
+    image: postgres:10.6
+    container_name: courses_db
   web:
     build: .
     image: courses/web:latest
