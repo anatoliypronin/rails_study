@@ -36,7 +36,7 @@ class StudentTest < ActiveSupport::TestCase
   end
 
   test 'should not create incorrect state' do
-    admin = build :student, state: 'any state'
-    assert admin.invalid?
+    student = build :student, state: 'any state'
+    assert student.invalid?
   end
 end
