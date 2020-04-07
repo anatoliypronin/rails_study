@@ -25,4 +25,15 @@ ActiveRecord::Schema.define(version: 2020_04_06_093151) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "teachers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password_digest"
+    t.text "description"
+    t.string "state"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 end
