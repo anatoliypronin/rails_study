@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class AdminTest < ActiveSupport::TestCase
@@ -9,7 +11,7 @@ class AdminTest < ActiveSupport::TestCase
     assert created_admin
   end
 
-  test "should not create admin with empty email" do
+  test 'should not create admin with empty email' do
     admin = build :admin, email: nil
     admin.save
 

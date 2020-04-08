@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class TeacherTest < ActiveSupport::TestCase
-  test "should create teacher" do
+  test 'should create teacher' do
     teacher = build :teacher
     teacher.save
 
@@ -9,32 +11,32 @@ class TeacherTest < ActiveSupport::TestCase
     assert created_teacher
   end
 
-  test "should not create teacher with no correct email" do
-    teacher = build :teacher, email: "romaeer"
+  test 'should not create teacher with no correct email' do
+    teacher = build :teacher, email: 'romaeer'
     teacher.save
 
     created_teacher = Teacher.last
     assert_not created_teacher
   end
 
-  test "should not create teacher with empty first_name" do
+  test 'should not create teacher with empty first_name' do
     teacher = build :teacher, first_name: nil
     teacher.save
 
     created_teacher = Teacher.last
     assert_not created_teacher
   end
-  
-  test "should not create teacher with name lenght > 50" do
-    teacher = build :teacher, first_name: "Roma" * 20
+
+  test 'should not create teacher with name lenght > 50' do
+    teacher = build :teacher, first_name: 'Roma' * 20
     teacher.save
 
     created_teacher = Teacher.last
     assert_not created_teacher
   end
 
-  test "should not create teacher with not a valid state" do
-    teacher = build :teacher, state: "sleep"
+  test 'should not create teacher with not a valid state' do
+    teacher = build :teacher, state: 'sleep'
     teacher.save
 
     created_teacher = Teacher.last
