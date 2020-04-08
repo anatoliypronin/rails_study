@@ -9,7 +9,7 @@ class CourseTest < ActiveSupport::TestCase
     assert created_course
   end
 
-  test 'should not create course with title length < 50' do
+  test 'should not create course with title length > 50' do
     course = build :course, title: 'title' * 11
     course.save
 
