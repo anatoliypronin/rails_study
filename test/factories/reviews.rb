@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :review do
     body { 'MyText' }
-    student { Student.last }
-    course { Course.last }
+    student { nil }
+    course { nil }
   end
 end
