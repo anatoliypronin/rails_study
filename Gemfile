@@ -30,6 +30,7 @@ gem 'enumerize'
 gem 'rubocop', '~> 0.81.0', require: false
 gem 'rubocop-rails', require: false
 gem 'state_machines-activerecord'
+gem "haml-rails", "~> 2.0"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
