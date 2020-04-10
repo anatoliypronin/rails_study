@@ -1,4 +1,4 @@
-require: rubocop-rspec
+require: rubocop-rails
 
 Rails:
   Enabled: true
@@ -40,11 +40,5 @@ Style/NumericPredicate:
   Exclude:
     - "spec/**/*"
 
-RSpec/ExampleLength:
-  Enabled: false
-RSpec/InstanceVariable:
-  Enabled: false
-RSpec/MultipleExpectations:
-  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false

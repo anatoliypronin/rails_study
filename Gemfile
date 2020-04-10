@@ -29,7 +29,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'enumerize'
 gem 'rubocop', '~> 0.81.0', require: false
 gem 'rubocop-rails', require: false
-gem 'rubocop-rspec', require: false
 gem 'state_machines-activerecord'
 
 # Use Active Storage variant
