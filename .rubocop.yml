@@ -3,8 +3,6 @@ require: rubocop-rspec
 Rails:
   Enabled: true
 AllCops:
-  Include:
-    - rubocop-rspec
   Exclude:
     - "bin/*"
     - "bundle_cache/**/*"
