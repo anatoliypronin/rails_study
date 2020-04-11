@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :teacher do
-    first_name { 'Roma' }
-    last_name { 'Salikov' }
-    email { 'roma.salikov@yandex.ru' }
-    password_digest { '312kh312ui3g1' }
+    first_name
+    last_name
+    email
+    password_digest
     description { 'This is text format very long' }
-    state { 'active' }
+    state
   end
 end

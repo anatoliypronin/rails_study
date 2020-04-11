@@ -1,8 +1,19 @@
 class Teacher < ApplicationRecord
   validates :first_name, :last_name, :email, :password_digest,
-            :description, :state, presence: true
+            :description, presence: true
   validates :first_name, :last_name, length: { maximum: 50 }
   validates :email, email: true
-  validates :state, inclusion: { in: %w[active deleted],
-                                 message: '%{value} is not a valid state' }
+
+  state_machine initial: :active do
+    state :active
+    state :deleted
+
+    event :del do
+      transition active: :deleted
+    end
+
+    event :restore do
+      transition deleted: :active
+    end
+  end
 end
