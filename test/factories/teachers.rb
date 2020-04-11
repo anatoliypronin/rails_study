@@ -5,6 +5,5 @@ FactoryBot.define do
     email
     password_digest
     description { 'This is text format very long' }
-    state
   end
 end

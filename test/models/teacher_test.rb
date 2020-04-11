@@ -42,9 +42,8 @@ class TeacherTest < ActiveSupport::TestCase
   end
 
   test 'should del teacher' do
-    teacher = build :teacher
+    teacher = create :teacher
     teacher.del
-    teacher.reload
     assert_equal 'deleted', teacher.state
   end
 end
