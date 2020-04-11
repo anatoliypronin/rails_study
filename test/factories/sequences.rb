@@ -6,4 +6,8 @@ FactoryBot.define do
   sequence :email do |n|
     "email-#{n}@email.com"
   end
+
+  sequence :description do
+    "Text"
+  end
 end
