@@ -9,7 +9,7 @@ class StudentTest < ActiveSupport::TestCase
     assert created_student
   end
 
-  test "should not create student with empty phone_number" do
+  test 'should not create student with empty phone_number' do
     student = build :student, phone_number: nil
     student.save
 
