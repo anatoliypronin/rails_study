@@ -4,6 +4,6 @@ FactoryBot.define do
     last_name
     email
     password_digest
-    description 
+    description
   end
 end
