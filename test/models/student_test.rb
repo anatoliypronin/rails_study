@@ -47,7 +47,6 @@ class StudentTest < ActiveSupport::TestCase
 
     student = build :student, phone_number: '79271112244'
     assert student.save
-
   end
 
   test 'phone_number should be unique' do
