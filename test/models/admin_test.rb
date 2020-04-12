@@ -25,6 +25,18 @@ class AdminTest < ActiveSupport::TestCase
   end
 
   test 'email should be valid' do
+    admin = build :admin, email: 'john@doe.com'
+    assert admin.save
+
+    admin = build :admin, email: 'john@doe'
+    assert_not admin.save
+
+    admin = build :admin, email: 'John Does <john@doe.com>'
+    assert_not admin.save
+
+    admin = build :admin, email: 'admin@admin_admin'
+    assert_not admin.save
+
     admin = build :admin, email: 'admin_admin_admin'
     assert_not admin.save
   end
