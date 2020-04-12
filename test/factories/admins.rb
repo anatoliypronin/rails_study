@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :admin do
-    name { 'name' }
-    email { 'admin@gmail.com' }
-    password_digest { 'password' }
+    name
+    email
+    password_digest
     role { 'admin' }
     state { 'active' }
   end

@@ -31,11 +31,26 @@ class AdminTest < ActiveSupport::TestCase
 
   test 'should not create incorrect role' do
     admin = build :admin, role: 'any role'
-    assert admin.invalid?
+    admin.save
+    
+    created_admin = Admin.last
+    assert_not created_admin
+
   end
 
   test 'should not create incorrect state' do
     admin = build :admin, state: 'any state'
-    assert admin.invalid?
+    admin.save
+
+    created_admin = Admin.last
+    assert_not created_admin
+  end
+
+  test 'should del admin' do
+    admin = create :admin
+    admin.del
+
+    admin.reload
+    assert_equal 'deleted', admin.state
   end
 end
