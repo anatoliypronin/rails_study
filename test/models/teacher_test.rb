@@ -40,4 +40,10 @@ class TeacherTest < ActiveSupport::TestCase
     created_teacher = Teacher.last
     assert_not created_teacher
   end
+
+  test 'should del teacher' do
+    teacher = create :teacher
+    teacher.del
+    assert_equal 'deleted', teacher.state
+  end
 end
