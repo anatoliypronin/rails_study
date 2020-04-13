@@ -6,4 +6,7 @@ class Student < ApplicationRecord
   validates :email, email: true
   validates :state, inclusion: { in: %w[active deleted],
                                  message: `%{value} must be active or deleted` }
+
+  has_many :student_courses, dependent: :destroy
+  has_many :courses, through: :student_courses
 end
