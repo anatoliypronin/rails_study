@@ -5,7 +5,7 @@ class Admin < ApplicationRecord
   validates :email, uniqueness: true, email: true
   validates :password_digest, length: { in: 4..12 }
 
-  enumerize :role, in: [:admin, :editor], default: :admin
+  enumerize :role, in: %i[admin editor], default: :admin
 
   state_machine initial: :active do
     state :active
