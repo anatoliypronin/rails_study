@@ -10,7 +10,7 @@ class StudentCourseTest < ActiveSupport::TestCase
     created_student_course = StudentCourse.last
     assert created_student_course
 
-    assert_equal student.id, created_student_course.student_id
-    assert_equal course.id, created_student_course.course_id
+    assert_equal student, created_student_course.student
+    assert_equal course, created_student_course.course
   end
 end
