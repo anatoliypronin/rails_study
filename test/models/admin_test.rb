@@ -25,17 +25,43 @@ class AdminTest < ActiveSupport::TestCase
   end
 
   test 'email should be valid' do
+    admin = build :admin, email: 'john@doe.com'
+    assert admin.save
+
+    admin = build :admin, email: 'john@doe'
+    assert_not admin.save
+
+    admin = build :admin, email: 'John Does <john@doe.com>'
+    assert_not admin.save
+
+    admin = build :admin, email: 'admin@admin_admin'
+    assert_not admin.save
+
     admin = build :admin, email: 'admin_admin_admin'
     assert_not admin.save
   end
 
   test 'should not create incorrect role' do
     admin = build :admin, role: 'any role'
-    assert admin.invalid?
+    admin.save
+    
+    created_admin = Admin.last
+    assert_not created_admin
+
   end
 
   test 'should not create incorrect state' do
     admin = build :admin, state: 'any state'
-    assert admin.invalid?
+    admin.save
+
+    created_admin = Admin.last
+    assert_not created_admin
+  end
+
+  test 'should del admin' do
+    admin = create :admin
+    admin.del
+
+    assert_equal 'deleted', admin.state
   end
 end
