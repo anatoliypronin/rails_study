@@ -7,7 +7,7 @@ FactoryBot.define do
     "email-#{n}@email.com"
   end
 
-  sequence :phone_number do |n|
-    "7927111222#{n}"
+  sequence :phone_number do
+    "7927#{rand(10**6..10**7)}" 
   end
 end
