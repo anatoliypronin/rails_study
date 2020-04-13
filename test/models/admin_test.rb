@@ -62,7 +62,6 @@ class AdminTest < ActiveSupport::TestCase
     admin = create :admin
     admin.del
 
-    admin.reload
     assert_equal 'deleted', admin.state
   end
 end
