@@ -5,6 +5,9 @@ class Student < ApplicationRecord
   validates :phone_number, uniqueness: true, phone: true
   validates :email, email: true
 
+  has_many :student_courses, dependent: :destroy
+  has_many :courses, through: :student_courses
+
   state_machine initial: :active do
     state :active
     state :deleted
