@@ -1,4 +1,8 @@
 class Profession < ApplicationRecord
+
+  has_many :course_profession, dependent: :nullify
+  has_many :course, through: :course_profession
+  
   validates :title, :description, :state, presence: true
   validates :title, length: { maximum: 50 }, uniqueness: true
   

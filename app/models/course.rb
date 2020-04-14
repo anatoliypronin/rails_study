@@ -1,12 +1,12 @@
 class Course < ApplicationRecord
-
-  belongs_to :teacher, optional: true
-
   validates :title, :description, :state, presence: true
   validates :title, length: { maximum: 50 }
 
   has_many :student_courses, dependent: :destroy
   has_many :students, through: :student_courses
+  belongs_to :teacher, optional: true
+  has_many :course_profession, dependent: :nullify
+  has_many :professions, through: :course_profession
 
   state_machine initial: :active do
     state :active
