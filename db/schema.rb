@@ -10,18 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_173404) do
+ActiveRecord::Schema.define(version: 2020_04_14_105735) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "email"
-    t.string "password_digest"
+    t.string "password_digest", null: false
     t.string "role"
     t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
   create_table "courses", force: :cascade do |t|
@@ -41,26 +43,15 @@ ActiveRecord::Schema.define(version: 2020_04_13_173404) do
     t.index ["title"], name: "index_professions_on_title", unique: true
   end
 
-  create_table "student_courses", force: :cascade do |t|
+  create_table "reviews", force: :cascade do |t|
+    t.text "body", null: false
     t.bigint "student_id", null: false
     t.bigint "course_id", null: false
-    t.boolean "completed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["course_id"], name: "index_student_courses_on_course_id"
-    t.index ["student_id", "course_id"], name: "index_student_courses_on_student_id_and_course_id", unique: true
-    t.index ["student_id"], name: "index_student_courses_on_student_id"
-  end
-
-  create_table "student_courses", force: :cascade do |t|
-    t.bigint "student_id", null: false
-    t.bigint "course_id", null: false
-    t.boolean "completed"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["course_id"], name: "index_student_courses_on_course_id"
-    t.index ["student_id", "course_id"], name: "index_student_courses_on_student_id_and_course_id", unique: true
-    t.index ["student_id"], name: "index_student_courses_on_student_id"
+    t.index ["course_id"], name: "index_reviews_on_course_id"
+    t.index ["student_id", "course_id"], name: "index_reviews_on_student_id_and_course_id", unique: true
+    t.index ["student_id"], name: "index_reviews_on_student_id"
   end
 
   create_table "student_courses", force: :cascade do |t|
@@ -75,14 +66,15 @@ ActiveRecord::Schema.define(version: 2020_04_13_173404) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "email"
     t.string "phone_number"
     t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_students_on_email", unique: true
+    t.index ["phone_number"], name: "index_students_on_phone_number", unique: true
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -96,6 +88,8 @@ ActiveRecord::Schema.define(version: 2020_04_13_173404) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "reviews", "courses"
+  add_foreign_key "reviews", "students"
   add_foreign_key "student_courses", "courses"
   add_foreign_key "student_courses", "students"
 end
