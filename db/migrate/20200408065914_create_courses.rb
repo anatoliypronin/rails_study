@@ -7,5 +7,7 @@ class CreateCourses < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    change_column_null(:courses, :description, false)
+    change_column_null(:courses, :title, false)
   end
 end
