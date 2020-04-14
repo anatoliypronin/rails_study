@@ -6,4 +6,6 @@ class Course < ApplicationRecord
 
   has_many :student_courses, dependent: :destroy
   has_many :students, through: :student_courses
+  has_many :reviews, dependent: :destroy
+  has_many :students, through: :reviews
 end

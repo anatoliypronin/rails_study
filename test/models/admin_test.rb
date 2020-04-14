@@ -44,10 +44,9 @@ class AdminTest < ActiveSupport::TestCase
   test 'should not create incorrect role' do
     admin = build :admin, role: 'any role'
     admin.save
-    
+
     created_admin = Admin.last
     assert_not created_admin
-
   end
 
   test 'should not create incorrect state' do
