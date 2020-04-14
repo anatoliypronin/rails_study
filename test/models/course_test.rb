@@ -9,6 +9,14 @@ class CourseTest < ActiveSupport::TestCase
     assert created_course
   end
 
+  test 'should create course without teacher' do
+    course = build :course, teacher: nil
+    course.save
+
+    created_course = Course.last
+    assert created_course
+  end
+
   test 'should not create course with title length > 50' do
     course = build :course, title: 'title' * 11
     course.save
