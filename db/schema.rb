@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_093605) do
+
+ActiveRecord::Schema.define(version: 2020_04_14_105735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "email"
-    t.string "password_digest"
+    t.string "password_digest", null: false
     t.string "role"
     t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
   create_table "courses", force: :cascade do |t|
@@ -65,14 +67,15 @@ ActiveRecord::Schema.define(version: 2020_04_14_093605) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "email"
     t.string "phone_number"
     t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_students_on_email", unique: true
+    t.index ["phone_number"], name: "index_students_on_phone_number", unique: true
   end
 
   create_table "teachers", force: :cascade do |t|

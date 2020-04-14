@@ -7,5 +7,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    change_column_null(:reviews, :body, false)
+    add_index :reviews, [:student_id, :course_id], unique: true
   end
 end
