@@ -5,8 +5,8 @@ class Course < ApplicationRecord
   has_many :student_courses, dependent: :destroy
   has_many :students, through: :student_courses
   belongs_to :teacher, optional: true
-  has_many :course_profession, dependent: :nullify
-  has_many :professions, through: :course_profession
+  has_many :course_professions, dependent: :nullify
+  has_many :professions, through: :course_professions
 
   state_machine initial: :active do
     state :active
