@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 2020_04_15_113452) do
     t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
+  create_table "course_professions", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "profession_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id", "profession_id"], name: "index_course_professions_on_course_id_and_profession_id", unique: true
+    t.index ["course_id"], name: "index_course_professions_on_course_id"
+    t.index ["profession_id"], name: "index_course_professions_on_profession_id"
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
@@ -43,6 +53,17 @@ ActiveRecord::Schema.define(version: 2020_04_15_113452) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["title"], name: "index_professions_on_title", unique: true
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "body", null: false
+    t.bigint "student_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_reviews_on_course_id"
+    t.index ["student_id", "course_id"], name: "index_reviews_on_student_id_and_course_id", unique: true
+    t.index ["student_id"], name: "index_reviews_on_student_id"
   end
 
   create_table "student_courses", force: :cascade do |t|
@@ -79,6 +100,11 @@ ActiveRecord::Schema.define(version: 2020_04_15_113452) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "course_professions", "courses"
+  add_foreign_key "course_professions", "professions"
+  add_foreign_key "courses", "teachers"
+  add_foreign_key "reviews", "courses"
+  add_foreign_key "reviews", "students"
   add_foreign_key "student_courses", "courses"
   add_foreign_key "student_courses", "students"
 end
