@@ -4,7 +4,11 @@ class Course < ApplicationRecord
 
   has_many :student_courses, dependent: :destroy
   has_many :students, through: :student_courses
+  has_many :reviews, dependent: :destroy
+  has_many :students, through: :reviews
+
   belongs_to :teacher, optional: true
+  
   has_many :course_professions, dependent: :nullify
   has_many :professions, through: :course_professions
 

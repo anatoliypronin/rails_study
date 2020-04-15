@@ -39,8 +39,8 @@ class StudentTest < ActiveSupport::TestCase
     student = build :student, phone_number: '+79271112244'
     assert student.save
 
-    #student = build :student, phone_number: '+14044904571'
-    #assert student.save
+    # student = build :student, phone_number: '+14044904571'
+    # assert student.save
 
     student = build :student, phone_number: '79271112244'
     assert student.save
