@@ -4,6 +4,14 @@ class CourseTest < ActiveSupport::TestCase
   test 'should create course' do
     course = build :course
     course.save
+    
+    created_course = Course.last
+    assert created_course
+  end
+
+  test 'should create course without teacher' do
+    course = build :course, teacher: nil
+    course.save
 
     created_course = Course.last
     assert created_course

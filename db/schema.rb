@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_04_14_105735) do
+ActiveRecord::Schema.define(version: 2020_04_15_113452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,11 +27,13 @@ ActiveRecord::Schema.define(version: 2020_04_14_105735) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
+    t.string "title", null: false
+    t.text "description", null: false
     t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "teacher_id"
+    t.index ["teacher_id"], name: "index_courses_on_teacher_id"
   end
 
   create_table "professions", force: :cascade do |t|
@@ -44,21 +45,10 @@ ActiveRecord::Schema.define(version: 2020_04_14_105735) do
     t.index ["title"], name: "index_professions_on_title", unique: true
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.text "body", null: false
-    t.bigint "student_id", null: false
-    t.bigint "course_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["course_id"], name: "index_reviews_on_course_id"
-    t.index ["student_id", "course_id"], name: "index_reviews_on_student_id_and_course_id", unique: true
-    t.index ["student_id"], name: "index_reviews_on_student_id"
-  end
-
   create_table "student_courses", force: :cascade do |t|
     t.bigint "student_id", null: false
     t.bigint "course_id", null: false
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["course_id"], name: "index_student_courses_on_course_id"
@@ -89,8 +79,6 @@ ActiveRecord::Schema.define(version: 2020_04_14_105735) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "reviews", "courses"
-  add_foreign_key "reviews", "students"
   add_foreign_key "student_courses", "courses"
   add_foreign_key "student_courses", "students"
 end
