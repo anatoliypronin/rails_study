@@ -27,11 +27,13 @@ ActiveRecord::Schema.define(version: 2020_04_14_105735) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
+    t.string "title", null: false
+    t.text "description", null: false
     t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "teacher_id"
+    t.index ["teacher_id"], name: "index_courses_on_teacher_id"
   end
 
   create_table "professions", force: :cascade do |t|
