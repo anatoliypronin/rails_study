@@ -3,10 +3,12 @@
     %td Идентификатор
     %td Название професии
     %td Описание
+    %td Состояние
     %td Управление
   - @professions.each do |profession|
     %tr
       %td= link_to profession.id, admin_profession_path(profession.id), target: :_blank
       %td= profession.title
       %td= profession.description
+      %td= profession.state
       %td= link_to 'Edit', edit_admin_profession_path(profession.id)
