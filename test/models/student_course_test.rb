@@ -5,7 +5,7 @@ class StudentCourseTest < ActiveSupport::TestCase
     student = create :student
     course = create :course
 
-    student.courses << course
+    student.in_progress << course
 
     created_student_course = StudentCourse.last
     assert created_student_course
