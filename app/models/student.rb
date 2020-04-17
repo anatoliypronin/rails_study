@@ -6,9 +6,10 @@ class Student < ApplicationRecord
   validates :email, email: true
 
   has_many :student_courses, dependent: :destroy
-  has_many :courses, through: :student_courses
+  has_many :in_progress, through: :student_courses, source: :course
+  
   has_many :reviews, dependent: :nullify
-  has_many :courses, through: :reviews
+  has_many :reviews_courses, through: :reviews, source: :course
 
   state_machine initial: :active do
     state :active
