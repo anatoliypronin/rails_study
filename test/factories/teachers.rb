@@ -3,7 +3,7 @@ FactoryBot.define do
     first_name
     last_name
     email
-    password_digest
+    password { '123456' }
     description
   end
 end
