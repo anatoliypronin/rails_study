@@ -1,0 +1,21 @@
+%table
+  %tr
+    %td id
+    %td Имя
+    %td Фамилия
+    %td E-mail
+    %td Описание
+    %td Состояние
+    %td Управление
+  - @teachers.each do |teacher|
+    %tr
+      %td= teacher.id
+      %td= link_to teacher.first_name, admin_teacher_path(teacher.id), targer: :_blank
+      %td= teacher.last_name
+      %td= teacher.email
+      %td= teacher.description
+      %td= teacher.state
+      %td= link_to 'Edit', edit_admin_teacher_path(teacher.id)
+      %td= link_to 'Destroy', admin_teacher_path(teacher.id), method: :delete, data: { confirm: 'Are you sure?' }
+    %tr 
+    %td= link_to 'Add', new_admin_teacher_path

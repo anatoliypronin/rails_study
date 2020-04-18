@@ -1,0 +1,8 @@
+= simple_form_for @teacher, url: admin_teachers_path do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :email
+  = f.input :password_digest
+  = f.input :description
+  = f.button :submit
+  = link_to 'Cancel', admin_teachers_path
