@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :teachers
+    resources :professions
   end
 end
