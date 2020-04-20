@@ -1,10 +1,10 @@
-%table
+%table.table.table-hover
   %tr
-    %td Идентификатор
-    %td Название професии
-    %td Описание
-    %td Состояние
-    %td Управление
+    %th Идентификатор
+    %th Название професии
+    %th Описание
+    %th Состояние
+    %th Управление
   - @professions.each do |profession|
     %tr
       %td= link_to profession.id, admin_profession_path(profession.id), target: :_blank

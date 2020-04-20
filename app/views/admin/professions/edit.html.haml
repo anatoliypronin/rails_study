@@ -1,5 +1,5 @@
 = simple_form_for @profession, url: admin_profession_path(@profession.id) do |f|
   = f.input :title
   = f.input :description
-  = f.button :submit
+  = f.button :submit, class: 'btn btn-outline-secondary'
   = link_to 'Отмена', admin_professions_path
