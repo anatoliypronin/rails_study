@@ -32,6 +32,7 @@ gem 'rubocop', '~> 0.81.0', require: false
 gem 'rubocop-rails', require: false
 gem 'simple_form'
 gem 'state_machines-activerecord'
+gem 'bootstrap', '~> 4.4.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
