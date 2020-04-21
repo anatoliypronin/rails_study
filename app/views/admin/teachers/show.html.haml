@@ -1,0 +1,8 @@
+%h1= @teacher.first_name + " " + @teacher.last_name
+%b
+%b= @teacher.email
+%b
+%b= @teacher.description
+%b
+%b= @teacher.state
+%td= link_to t('.back'), admin_teachers_path
