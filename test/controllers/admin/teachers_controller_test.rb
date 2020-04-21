@@ -3,6 +3,8 @@ require 'test_helper'
 class Admin::TeachersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @teacher = create :teacher
+    @admin = create :admin
+    sign_in_as_admin(@admin)
   end
   test 'should get index teachers page' do
     get admin_teachers_path

@@ -1,42 +1,72 @@
 ru:
-
+        
   attributes:
     id: Идентификатор
-
+        
   header:
+    teachers: Учителя
+    professions: Профессии
     home: Домашняя страница
     exit: Выйти
-
+        
   admin:
     professions:
       index:
         control: Управление
         edit: Редактировать
-
       new:
         cancel: Отмена
       edit:
         cancel: Отмена
-
+    teachers:
+      index:
+        destroy: Удалить 
+        add: Добавить
+        control: Управление
+        edit: Редактировать   
+      new:
+        cancel: Отмена
+      edit:
+        cancel: Отмена
+      show:
+        back: Назад
+        
   activerecord:
     state_machines:
       profession:
         state:
-            states:
-              active: Активный
-              deleted: Удаленный
-            events:
-              del: Удалить
-              restore: Восстановить
-              
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      teacher:
+        state:  
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+                      
     models:
+      teacher:
+        one: Учитель
+        other: Учителя
+        
       profession:
         one: Профессия
         other: Профессии
     attributes:
+      teacher:
+        first_name: Имя
+        last_name: Фамилия
+        email: E-mail
+        description: Описание
+        password: Пароль
+        state: Состояние 
       profession:
         title: Название профессии
         description: Описание профессии
         state: Состояние
-        
-
