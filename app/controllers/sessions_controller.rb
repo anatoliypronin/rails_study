@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
     admin = Admin.find_by(email: params[:admin][:email])
     if admin&.authenticate(params[:admin][:password])
       admin_sign_in(admin)
-      session[:admin_id] = admin.id
       redirect_to admin_root_path
     else
       render action: :new
