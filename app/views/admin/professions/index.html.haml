@@ -1,14 +1,14 @@
-%table
+%table.table.table-hover
   %tr
-    %td Идентификатор
-    %td Название професии
-    %td Описание
-    %td Состояние
-    %td Управление
+    %th= Profession.human_attribute_name(:id)
+    %th= Profession.human_attribute_name(:title)
+    %th= Profession.human_attribute_name(:description)
+    %th= Profession.human_attribute_name(:state)
+    %th= t('.control')
   - @professions.each do |profession|
     %tr
       %td= link_to profession.id, admin_profession_path(profession.id), target: :_blank
       %td= profession.title
       %td= profession.description
-      %td= profession.state
-      %td= link_to 'Edit', edit_admin_profession_path(profession.id)
+      %td= profession.human_state_name
+      %td= link_to t('.edit'), edit_admin_profession_path(profession.id)

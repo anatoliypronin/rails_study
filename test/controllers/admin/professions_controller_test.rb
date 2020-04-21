@@ -3,6 +3,8 @@ require 'test_helper'
 class Admin::ProfessionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @profession = create :profession
+    @admin = create :admin
+    sign_in_as_admin(@admin)
   end
 
   test 'should get index profession page' do
