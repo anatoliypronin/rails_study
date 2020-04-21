@@ -4,7 +4,9 @@
     %title App
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'admin_application', media: 'all'
     = javascript_pack_tag 'application'
   %body
-    = yield
+    .container
+      = render "layouts/admin/header"
+      = yield
