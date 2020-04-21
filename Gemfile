@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'state_machines-activerecord'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'russian', '~> 0.6.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

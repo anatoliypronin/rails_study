@@ -1,0 +1,37 @@
+ru:
+  id: Идентификатор
+
+  header:
+    home: Домашняя страница
+    exit: Выйти
+
+  admin:
+    professions:
+      index:
+        control: Управление
+        edit: Редактировать
+      new:
+        cancel: Отмена
+      edit:
+        cancel: Отмена
+
+  activerecord:
+    state_machines:
+      profession:
+        state:
+            states:
+              active: Активный
+              deleted: Удаленный
+            events:
+              del: Удалить
+              restore: Восстановить
+    models:
+      profession:
+        one: Профессия
+        other: Профессии
+    attributes:
+      profession:
+        title: Название профессии
+        description: Описание профессии
+        state: Состояние
+        
