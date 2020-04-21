@@ -2,6 +2,6 @@ FactoryBot.define do
   factory :admin do
     name
     email
-    password_digest
+    password {'123456'}
   end
 end
