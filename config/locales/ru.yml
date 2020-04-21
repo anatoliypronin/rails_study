@@ -12,6 +12,7 @@ ru:
       index:
         control: Управление
         edit: Редактировать
+
       new:
         cancel: Отмена
       edit:
@@ -27,6 +28,7 @@ ru:
             events:
               del: Удалить
               restore: Восстановить
+              
     models:
       profession:
         one: Профессия
@@ -37,3 +39,4 @@ ru:
         description: Описание профессии
         state: Состояние
         
+

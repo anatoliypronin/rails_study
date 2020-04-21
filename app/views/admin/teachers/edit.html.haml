@@ -1,0 +1,7 @@
+= simple_form_for @teacher, url: admin_teacher_path(@teacher.id) do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :email
+  = f.input :description
+  = f.button :submit, class: 'btn btn-outline-secondary'
+  = link_to t('.cancel'), admin_teachers_path 
