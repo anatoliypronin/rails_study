@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'professions#index'
     resources :professions
+    resources :teachers
   end
 end
