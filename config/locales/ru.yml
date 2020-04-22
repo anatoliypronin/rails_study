@@ -1,11 +1,14 @@
 ru:
-        
+  students: Студенты
+  teachers: Учителя
   attributes:
     id: Идентификатор
+  
         
   header:
     admins: Админы
     teachers: Учителя
+    students: Студенты
     professions: Профессии
     home: Домашняя страница
     exit: Выйти
@@ -31,12 +34,26 @@ ru:
         cancel: Отмена
       show:
         back: Назад
+
     admins:
       index:
         destroy: Удалить 
         add: Добавить
         control: Управление
-        edit: Редактировать         
+        edit: Редактировать           
+      new:
+        cancel: Отмена
+      edit:
+        cancel: Отмена
+      show:
+        back: Назад
+    
+    students:
+      index:
+        destroy: Удалить 
+        add: Добавить
+        control: Управление
+        edit: Редактировать          
       new:
         cancel: Отмена
       edit:
@@ -70,6 +87,14 @@ ru:
           events:
             del: Удалить
             restore: Восстановить
+      student:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
                       
     models:
       teacher:
@@ -90,7 +115,14 @@ ru:
         email: E-mail
         description: Описание
         password: Пароль
-        state: Состояние 
+        state: Состояние
+      student:
+        first_name: Имя
+        last_name: Фамилия
+        email: E-mail
+        phone_number: Телефонный номер
+        password: Пароль
+        state: Состояние  
       profession:
         title: Название профессии
         description: Описание профессии
