@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     root to: 'professions#index'
     resources :professions
     resources :teachers
+    resources :students
   end
 end

@@ -1,0 +1,23 @@
+%a.pull-right
+  %h1= t('students')
+%table.table.table-striped.table-hover
+  %tr
+    %th= Student.human_attribute_name(:id)
+    %th= Student.human_attribute_name(:last_name)
+    %th= Student.human_attribute_name(:first_name)
+    %th= Student.human_attribute_name(:email)
+    %th= Student.human_attribute_name(:phone_number)
+    %th= Student.human_attribute_name(:state)
+    %th{:colspan => "2"}= t('.control')
+  - @students.each do |student|
+    %tr
+      %td=student.id
+      %td= link_to student.last_name, admin_student_path(student.id), targer: :_blank
+      %td= student.first_name
+      %td= student.email
+      %td= student.phone_number
+      %td= student.human_state_name
+      %td= link_to t('.edit'), edit_admin_student_path(student.id)
+      %td= link_to t('.destroy'), admin_student_path(student.id), method: :delete, data: { confirm: 'Are you sure?' }
+    %tr 
+%td= link_to t('.add'), new_admin_student_path
