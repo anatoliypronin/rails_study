@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :admin do
-    root to: 'professions#index'
+    root to: 'admins#index'
+    resources :admins
     resources :professions
     resources :teachers
     resources :students

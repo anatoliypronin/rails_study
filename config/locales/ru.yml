@@ -6,6 +6,7 @@ ru:
   
         
   header:
+    admins: Админы
     teachers: Учителя
     students: Студенты
     professions: Профессии
@@ -33,28 +34,67 @@ ru:
         cancel: Отмена
       show:
         back: Назад
-    students:
+
+    admins:
       index:
         destroy: Удалить 
         add: Добавить
         control: Управление
-        edit: Редактировать   
+        edit: Редактировать           
       new:
         cancel: Отмена
       edit:
         cancel: Отмена
       show:
         back: Назад
-        
+    
+    students:
+      index:
+        destroy: Удалить 
+        add: Добавить
+        control: Управление
+        edit: Редактировать          
+      new:
+        cancel: Отмена
+      edit:
+        cancel: Отмена
+      show:
+        back: Назад
+
   activerecord:
     state_machines:
-      state:  
-        states:
-          active: Активный
-          deleted: Удаленный
-        events:
-          del: Удалить
-          restore: Восстановить
+      profession:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      teacher:
+        state:  
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      admin:
+        state:  
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      student:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
                       
     models:
       teacher:
@@ -64,6 +104,10 @@ ru:
       profession:
         one: Профессия
         other: Профессии
+      admins:
+        one: Админ
+        other: Админы
+
     attributes:
       teacher:
         first_name: Имя
@@ -83,3 +127,9 @@ ru:
         title: Название профессии
         description: Описание профессии
         state: Состояние
+      admin:
+        name: Имя
+        email: E-mail
+        state: Состояние
+        password: Пароль
+        role: Роль

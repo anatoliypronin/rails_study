@@ -1,0 +1,16 @@
+%table.table.table-hover
+  %tr
+    %th= Admin.human_attribute_name(:id)
+    %th= Admin.human_attribute_name(:name)
+    %th= Admin.human_attribute_name(:email)
+    %th= Admin.human_attribute_name(:state)
+    %th= t('.control')
+  - @admins.each do |admin|
+    %tr
+      %td= link_to admin.id, admin_admin_path(admin.id), target: :_blank
+      %td= admin.name
+      %td= admin.email
+      %td= admin.human_state_name
+      %td= link_to t('.edit'), edit_admin_admin_path(admin.id)
+      %td= link_to t('.destroy'), admin_admin_path(admin.id), method: :delete, data: { confirm: 'Are you sure?' }
+%td= link_to t('.add'), new_admin_admin_path
