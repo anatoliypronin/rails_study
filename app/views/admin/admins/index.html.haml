@@ -3,14 +3,17 @@
     %th= Admin.human_attribute_name(:id)
     %th= Admin.human_attribute_name(:name)
     %th= Admin.human_attribute_name(:email)
+    %th= Admin.human_attribute_name(:role)
     %th= Admin.human_attribute_name(:state)
     %th= t('.control')
   - @admins.each do |admin|
     %tr
-      %td= link_to admin.id, admin_admin_path(admin.id), target: :_blank
-      %td= admin.name
+      %td= admin.id
+      %td= link_to admin.name, admin_admin_path(admin.id), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
       %td= admin.email
+      %td= admin.role_text
       %td= admin.human_state_name
-      %td= link_to t('.edit'), edit_admin_admin_path(admin.id)
-      %td= link_to t('.destroy'), admin_admin_path(admin.id), method: :delete, data: { confirm: 'Are you sure?' }
-%td= link_to t('.add'), new_admin_admin_path
+      %td= link_to t('.edit'), edit_admin_admin_path(admin.id), class: 'btn btn-outline-secondary btn-sm'
+      %td= link_to t('.del'), admin_admin_del_path(admin.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-secondary btn-sm'
+      %td= link_to t('.restore'), admin_admin_restore_path(admin.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-secondary btn-sm'
+%td= link_to t('.add'), new_admin_admin_path, class: 'btn btn-outline-secondary'

@@ -2,5 +2,7 @@
 %b
 %b= @admin.email
 %b
+%b= @admin.role
+%b
 %b= @admin.state
-%td= link_to t('.back'), admin_admins_path
+%td= link_to t('.back'), admin_admins_path, class: 'btn btn-outline-secondary'
