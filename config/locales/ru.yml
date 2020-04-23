@@ -1,11 +1,7 @@
 ru:
   students: Студенты
   teachers: Учителя
-  attributes:
-    id: Идентификатор
-    email: E-mail
-    state: Состояние
-        
+       
   header:
     admins: Админы
     teachers: Учителя
@@ -39,7 +35,8 @@ ru:
 
     admins:
       index:
-        destroy: Удалить 
+        del: Удалить
+        restore: Восстановить
         add: Добавить
         control: Управление
         edit: Редактировать           

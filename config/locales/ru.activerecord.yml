@@ -1,4 +1,9 @@
 ru:
+  attributes:
+    id: Идентификатор
+    email: E-mail
+    state: Состояние
+ 
   activerecord:
     state_machines:
       profession:
