@@ -3,6 +3,5 @@ FactoryBot.define do
     title
     description
     homework
-    state
   end
 end
