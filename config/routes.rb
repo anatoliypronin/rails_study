@@ -12,5 +12,9 @@ Rails.application.routes.draw do
     resources :professions
     resources :teachers
     resources :students
+    resources :courses do
+      put 'restore'
+      put 'del'
+    end
   end
 end

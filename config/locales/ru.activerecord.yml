@@ -3,6 +3,7 @@ ru:
     id: Идентификатор
     email: E-mail
     state: Состояние
+    description: Описание
  
   activerecord:
     state_machines:
@@ -38,6 +39,14 @@ ru:
           events:
             del: Удалить
             restore: Восстановить
+      course:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
                           
     models:
       teacher:
@@ -47,15 +56,21 @@ ru:
       profession:
         one: Профессия
         other: Профессии
+
       admins:
         one: Админ
         other: Админы
+
+      courses:
+        one: Курс
+        other: Курсы
     
     attributes:
+      course:
+        title: Название курса
       teacher:
         first_name: Имя
         last_name: Фамилия
-        description: Описание
         password: Пароль
       student:
         first_name: Имя
@@ -63,9 +78,11 @@ ru:
         phone_number: Телефонный номер
         password: Пароль
         profession:
+      profession:
         title: Название профессии
-        description: Описание профессии
       admin:
         name: Имя
         password: Пароль
-        role: Роль 
+        role: Роль
+
+ 
