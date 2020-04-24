@@ -7,6 +7,7 @@ ru:
     teachers: Учителя
     students: Студенты
     professions: Профессии
+    courses: Курсы
     home: Домашняя страница
     exit: Выйти
         
@@ -50,6 +51,20 @@ ru:
     students:
       index:
         destroy: Удалить 
+        add: Добавить
+        control: Управление
+        edit: Редактировать          
+      new:
+        cancel: Отмена
+      edit:
+        cancel: Отмена
+      show:
+        back: Назад
+
+    courses:
+      index:
+        restore: Восстановить
+        del: Удалить 
         add: Добавить
         control: Управление
         edit: Редактировать          
