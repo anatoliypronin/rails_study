@@ -42,7 +42,7 @@ class Admin::AdminsController < Admin::ApplicationController
       admin.del!
       redirect_to action: :index
     else
-      redirect_to action: :index
+      render action: :index
     end
   end
 
@@ -53,7 +53,7 @@ class Admin::AdminsController < Admin::ApplicationController
       admin.restore!
       redirect_to action: :index
     else
-      redirect_to action: :index
+      render action: :index
     end
   end
 
