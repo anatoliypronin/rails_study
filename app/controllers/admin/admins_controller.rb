@@ -37,14 +37,24 @@ class Admin::AdminsController < Admin::ApplicationController
 
   def del
     admin = Admin.find(params[:admin_id])
-    admin.del!
-    redirect_to action: :index
+
+    if admin.state = 'active'
+      admin.del!
+      redirect_to action: :index
+    else
+      redirect_to action: :index
+    end
   end
 
   def restore
     admin = Admin.find(params[:admin_id])
-    admin.restore!
-    redirect_to action: :index
+
+    if admin.state = 'deleted'
+      admin.restore!
+      redirect_to action: :index
+    else
+      redirect_to action: :index
+    end
   end
 
   private
