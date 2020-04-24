@@ -47,7 +47,7 @@ class Admin::CoursesController < Admin::ApplicationController
     redirect_to action: :index
   end
 
-    private
+  private
 
   def course_attrs
     params.require(:course).permit(:title, :description)

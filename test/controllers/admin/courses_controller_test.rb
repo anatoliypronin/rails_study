@@ -24,7 +24,7 @@ class Admin::CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
 
     course = Course.last
-    assert_equal course_attrs[:description], course.description
+    assert_equal course_attrs[:title], course.title
   end
 
   test 'should not post create course' do
