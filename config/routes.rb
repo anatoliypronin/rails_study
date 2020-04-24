@@ -10,4 +10,8 @@ Rails.application.routes.draw do
     resources :teachers
     resources :students
   end
+
+  namespace :teacher do
+    root to: 'welcome#index'
+  end
 end

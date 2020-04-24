@@ -1,6 +1,10 @@
 ru:
   students: Студенты
   teachers: Учителя
+  courses: Курсы
+  homework: Домашние работы
+  articles: Статьи
+
   attributes:
     id: Идентификатор
   
