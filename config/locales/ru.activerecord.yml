@@ -1,0 +1,71 @@
+ru:
+  attributes:
+    id: Идентификатор
+    email: E-mail
+    state: Состояние
+ 
+  activerecord:
+    state_machines:
+      profession:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      teacher:
+        state:  
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      admin:
+        state:  
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      student:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+                          
+    models:
+      teacher:
+        one: Учитель
+        other: Учителя
+            
+      profession:
+        one: Профессия
+        other: Профессии
+      admins:
+        one: Админ
+        other: Админы
+    
+    attributes:
+      teacher:
+        first_name: Имя
+        last_name: Фамилия
+        description: Описание
+        password: Пароль
+      student:
+        first_name: Имя
+        last_name: Фамилия
+        phone_number: Телефонный номер
+        password: Пароль
+        profession:
+        title: Название профессии
+        description: Описание профессии
+      admin:
+        name: Имя
+        password: Пароль
+        role: Роль 

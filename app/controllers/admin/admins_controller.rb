@@ -35,15 +35,21 @@ class Admin::AdminsController < Admin::ApplicationController
     end
   end
 
-  def destroy
-    admin = Admin.find(params[:id])
-    admin.destroy
+  def del
+    admin = Admin.find(params[:admin_id])
+    admin.del!
+    redirect_to action: :index
+  end
+
+  def restore
+    admin = Admin.find(params[:admin_id])
+    admin.restore!
     redirect_to action: :index
   end
 
   private
 
   def admin_attrs
-    params.require(:admin).permit(:name, :email, :password)
+    params.require(:admin).permit(:name, :email, :password, :role)
   end
 end
