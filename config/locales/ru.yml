@@ -1,8 +1,4 @@
 ru:
-  admin_mailer:
-    welcome_email:
-      subject: "Добро пожаловать, %{name}!"
-
   students: Студенты
   teachers: Учителя
        
