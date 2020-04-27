@@ -23,7 +23,8 @@ ru:
         
     teachers:
       index:
-        destroy: Удалить 
+        del: Удалить
+        restore: Восстановить
         add: Добавить
         control: Управление
         edit: Редактировать   

@@ -35,9 +35,16 @@ class Admin::TeachersController < Admin::ApplicationController
     end
   end
 
-  def destroy
-    teacher = Teacher.find(params[:id])
-    teacher.destroy
+  def del
+    teacher = Teacher.find(params[:teacher_id])
+    teacher.del!
+
+    redirect_to action: :index
+  end
+
+  def restore
+    teacher = Teacher.find(params[:teacher_id])
+    teacher.restore!
 
     redirect_to action: :index
   end
