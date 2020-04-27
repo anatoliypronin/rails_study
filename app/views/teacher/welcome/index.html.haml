@@ -5,12 +5,10 @@
     %th= Course.human_attribute_name(:title)
     %th= Course.human_attribute_name(:description)
     %th= Course.human_attribute_name(:updated_at)
-    %th= Course.human_attribute_name(:created_at)
   - @courses.each do |course|
     %tr
       %td= course.title
       %td= course.description
       %td= course.updated_at
-      %td= course.created_at
 %h1=t('homework')
 %h1=t('articles')

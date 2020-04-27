@@ -4,6 +4,8 @@ ru:
     email: E-mail
     state: Состояние
     description: Описание
+    created_at: Дата создания
+    updated_at: Дата обновления
  
   activerecord:
     state_machines:
