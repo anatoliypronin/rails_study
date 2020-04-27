@@ -50,7 +50,7 @@ ru:
     
     students:
       index:
-        destroy: Удалить 
+        del: Удалить 
         add: Добавить
         control: Управление
         edit: Редактировать          
