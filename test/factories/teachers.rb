@@ -6,4 +6,12 @@ FactoryBot.define do
     password { '123456' }
     description
   end
+
+  trait :del do
+    state { 'deleted' }
+  end
+
+  trait :restored do
+    state { 'active' }
+  end
 end
