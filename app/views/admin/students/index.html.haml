@@ -12,12 +12,15 @@
   - @students.each do |student|
     %tr
       %td=student.id
-      %td= link_to student.last_name, admin_student_path(student.id), targer: :_blank
+      %td= link_to student.last_name, admin_student_path(student.id), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
       %td= student.first_name
       %td= student.email
       %td= student.phone_number
       %td= student.human_state_name
-      %td= link_to t('.edit'), edit_admin_student_path(student.id)
-      %td= link_to t('.destroy'), admin_student_path(student.id), method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to t('.edit'), edit_admin_student_path(student.id), class: 'btn btn-info btn-sm'
+      -if student.state == 'active'
+        %td= link_to t('.del'), admin_student_del_path(student.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+      -else
+        %td= link_to t('.restore'), admin_student_restore_path(student.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
     %tr 
-%td= link_to t('.add'), new_admin_student_path
+%td= link_to t('.add'), new_admin_student_path, class: 'btn btn-outline-secondary'

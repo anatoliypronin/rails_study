@@ -5,17 +5,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'admins#index'
-    resources :admins do
+    resources :admins, :students, :courses do
       put 'restore'
       put 'del'
     end
     resources :professions
     resources :teachers
-    resources :students
-    resources :courses do
-      put 'restore'
-      put 'del'
-    end
   end
 
   namespace :teacher do

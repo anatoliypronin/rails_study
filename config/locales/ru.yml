@@ -56,7 +56,8 @@ ru:
     
     students:
       index:
-        destroy: Удалить 
+        del: Удалить 
+        restore: Восстановить
         add: Добавить
         control: Управление
         edit: Редактировать          
