@@ -6,7 +6,8 @@
       = link_to t('header.students'), admin_students_path, class: 'nav-item nav-link'
       = link_to t('header.teachers'), admin_teachers_path, class: 'nav-item nav-link'
       = link_to t('header.professions'), admin_professions_path, class: 'nav-item nav-link'
+      = link_to t('header.courses'), admin_courses_path, class: 'nav-item nav-link'
       %ul.navbar-num
   %div
     %div{style: 'color: white'}= current_admin.email
-    %div= link_to t('header.exit'), session_path, method: :delete
+    %div= link_to t('header.exit'), session_path, method: :delete, class: 'btn btn-outline-secondary btn-sm'

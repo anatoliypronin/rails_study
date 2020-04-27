@@ -10,7 +10,7 @@ class Student < ApplicationRecord
 
   has_many :reviews, dependent: :nullify
   has_many :reviews_courses, through: :reviews, source: :course
-  
+
   state_machine initial: :active do
     state :active
     state :deleted

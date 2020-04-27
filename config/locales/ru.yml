@@ -7,13 +7,13 @@ ru:
 
   attributes:
     id: Идентификатор
-  
-        
+
   header:
     admins: Админы
     teachers: Учителя
     students: Студенты
     professions: Профессии
+    courses: Курсы
     home: Домашняя страница
     exit: Выйти
         
@@ -26,6 +26,7 @@ ru:
         cancel: Отмена
       edit:
         cancel: Отмена
+        
     teachers:
       index:
         destroy: Удалить 
@@ -41,7 +42,8 @@ ru:
 
     admins:
       index:
-        destroy: Удалить 
+        del: Удалить
+        restore: Восстановить
         add: Добавить
         control: Управление
         edit: Редактировать           
@@ -65,75 +67,16 @@ ru:
       show:
         back: Назад
 
-  activerecord:
-    state_machines:
-      profession:
-        state:
-          states:
-            active: Активный
-            deleted: Удаленный
-          events:
-            del: Удалить
-            restore: Восстановить
-      teacher:
-        state:  
-          states:
-            active: Активный
-            deleted: Удаленный
-          events:
-            del: Удалить
-            restore: Восстановить
-      admin:
-        state:  
-          states:
-            active: Активный
-            deleted: Удаленный
-          events:
-            del: Удалить
-            restore: Восстановить
-      student:
-        state:
-          states:
-            active: Активный
-            deleted: Удаленный
-          events:
-            del: Удалить
-            restore: Восстановить
-                      
-    models:
-      teacher:
-        one: Учитель
-        other: Учителя
-        
-      profession:
-        one: Профессия
-        other: Профессии
-      admins:
-        one: Админ
-        other: Админы
-
-    attributes:
-      teacher:
-        first_name: Имя
-        last_name: Фамилия
-        email: E-mail
-        description: Описание
-        password: Пароль
-        state: Состояние
-      student:
-        first_name: Имя
-        last_name: Фамилия
-        email: E-mail
-        phone_number: Телефонный номер
-        password: Пароль
-        state: Состояние  
-      profession:
-        title: Название профессии
-        description: Описание профессии
-        state: Состояние
-      admin:
-        name: Имя
-        email: E-mail
-        state: Состояние
-        password: Пароль
-        role: Роль
+    courses:
+      index:
+        restore: Восстановить
+        del: Удалить 
+        add: Добавить
+        control: Управление
+        edit: Редактировать          
+      new:
+        cancel: Отмена
+      edit:
+        cancel: Отмена
+      show:
+        back: Назад
