@@ -1,6 +1,4 @@
 class AdminDecorator < ApplicationDecorator
-  delegate_all
-
   def name_and_email
     object.name + ' ' + object.email
   end

@@ -10,6 +10,6 @@ class AdminMailerTest < ActionMailer::TestCase
     end
     assert_equal [admin.email], email.to
     assert_equal ['from@example.com'], email.from
-    assert_equal "Добро пожаловать, #{admin.name}!", email.subject
+    assert_equal I18n.t('admin_mailer.welcome_email.subject', deep_interpolation: true, name: admin.name.to_s), email.subject
   end
 end
