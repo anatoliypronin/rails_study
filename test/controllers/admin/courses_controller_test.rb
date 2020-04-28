@@ -66,12 +66,13 @@ class Admin::CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'deleted', @course.state
   end
 
-  test 'should state active course' do
-    @course = create :course, :del
-    put admin_course_restore_path(@course.id)
-    assert_response :redirect
+  test 'should put update course with teacher' do
+    byebug
+    course_attrs = attributes_for :course
+    course_attrs[:teacher_id] = @course.teacher_id
+    post admin_courses_path, params: { course: course_attrs }
+    assert_response :success
 
-    @course.reload
-    assert_equal 'active', @course.state
+    assert_equal attrs[:teacher_id], @course.teacher_id
   end
 end

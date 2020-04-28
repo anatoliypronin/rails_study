@@ -3,15 +3,17 @@
     %th= Course.human_attribute_name(:id)
     %th= Course.human_attribute_name(:title)
     %th= Course.human_attribute_name(:description)
+    %th= Course.human_attribute_name(:teacher)
+    %th= Course.human_attribute_name(:profession)
     %th= Course.human_attribute_name(:state)
     %th= t('.control')
   - @courses.each do |course|
     %tr
       %td= course.id
-      %td= link_to course.title, admin_course_path(course.id), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
+      %td= course.title
       %td= course.description
+      %td= course.teacher_id
+      %td= course.professions.map(&:title).join(', ')
       %td= course.human_state_name
-      %td= link_to t('.edit'), edit_admin_course_path(course.id), class: 'btn btn-info btn-sm'
-      %td= link_to t('.del'), admin_course_del_path(course.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
-      %td= link_to t('.restore'), admin_course_restore_path(course.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
+      %td= link_to t('.view profile'), admin_course_path(course), class: 'btn btn-success btn'
 %td= link_to t('.add'), new_admin_course_path, class: 'btn btn-outline-secondary'

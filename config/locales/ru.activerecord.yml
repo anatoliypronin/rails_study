@@ -67,7 +67,10 @@ ru:
     
     attributes:
       course:
+        teacher: Учитель курса
+        profession: Профессии курса    
         title: Название курса
+        professions: 'Профессии в которые включен курс:'
       teacher:
         first_name: Имя
         last_name: Фамилия

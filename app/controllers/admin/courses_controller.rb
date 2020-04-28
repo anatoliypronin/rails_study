@@ -29,7 +29,7 @@ class Admin::CoursesController < Admin::ApplicationController
     @course = Course.find(params[:id])
 
     if @course.update(course_attrs)
-      redirect_to action: :index
+      redirect_to action: :show
     else
       render action: :edit
     end
@@ -50,6 +50,6 @@ class Admin::CoursesController < Admin::ApplicationController
   private
 
   def course_attrs
-    params.require(:course).permit(:title, :description)
+    params.require(:course).permit(:title, :description, :teacher_id, profession_ids: [])
   end
 end
