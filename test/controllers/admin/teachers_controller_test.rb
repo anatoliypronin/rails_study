@@ -66,7 +66,7 @@ class Admin::TeachersControllerTest < ActionDispatch::IntegrationTest
     @teacher = create :teacher, :del
     put admin_teacher_restore_path(@teacher.id)
     assert_response :redirect
-    
+
     @teacher.reload
     assert_equal 'active', @teacher.state
   end
