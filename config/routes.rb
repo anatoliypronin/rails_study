@@ -9,6 +9,13 @@ Rails.application.routes.draw do
       put 'restore'
       put 'del'
     end
-    resources :professions
+    
+    resources :professions, :teachers
+
+    resources :students
+    resources :courses do
+      put 'restore'
+      put 'del'
+    end
   end
 end

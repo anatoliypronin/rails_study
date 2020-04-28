@@ -1,6 +1,6 @@
 class Admin::AdminsController < Admin::ApplicationController
   def index
-    @admins = Admin.all
+    @admins = Admin.all.decorate
   end
 
   def new
