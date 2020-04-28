@@ -67,12 +67,26 @@ class Admin::CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should put update course with teacher' do
-    byebug
     course_attrs = attributes_for :course
     course_attrs[:teacher_id] = @course.teacher_id
     post admin_courses_path, params: { course: course_attrs }
-    assert_response :success
+    assert_response :redirect
 
-    assert_equal attrs[:teacher_id], @course.teacher_id
+    @course.reload
+    assert_equal course_attrs[:teacher_id], @course.teacher_id
+  end
+
+  test 'should put update course with teacher and professions' do
+    course_professions = create :course_profession
+    course_attrs = attributes_for :course
+    course_attrs[:teacher_id] = @course.teacher_id
+    course_attrs[:profession_ids] = @course.profession_ids
+    @course.profession_ids[0] = course_professions.profession_id
+
+    post admin_courses_path, params: { course: course_attrs }
+    assert_response :redirect
+
+    @course.reload
+    assert_equal course_attrs[:profession_ids][0], course_professions.profession_id
   end
 end

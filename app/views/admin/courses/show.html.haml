@@ -12,7 +12,7 @@
       %td= @course.id
       %td= @course.title
       %td= @course.description
-      %td= @course.teacher.last_name
+      %td= @course.teacher.first_name
       %td= @course.professions.map(&:title).join(', ')
       %td= @course.human_state_name
 = link_to t('.edit'), edit_admin_course_path(@course.id), class: 'btn btn-info btn-sm'

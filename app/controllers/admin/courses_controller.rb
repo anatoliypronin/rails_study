@@ -1,6 +1,6 @@
 class Admin::CoursesController < Admin::ApplicationController
   def index
-    @courses = Course.all
+    @courses = Course.all.decorate
   end
 
   def new
@@ -37,13 +37,13 @@ class Admin::CoursesController < Admin::ApplicationController
 
   def del
     course = Course.find(params[:course_id])
-    course.del!
+    course.del
     redirect_to action: :index
   end
 
   def restore
     course = Course.find(params[:course_id])
-    course.restore!
+    course.restore
     redirect_to action: :index
   end
 
