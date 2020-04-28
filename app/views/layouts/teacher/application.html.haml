@@ -4,10 +4,11 @@
     %title App
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all'
-    -# = javascript_include_tag 'teacher_application'
+    = stylesheet_link_tag 'teacher_application', media: 'all'
+    = javascript_include_tag 'teacher_application'
   %body
     .container
-      = render 'layouts/teacher/header'
+      - if teacher_signed_in?
+        = render 'layouts/teacher/header'
       = yield
 
