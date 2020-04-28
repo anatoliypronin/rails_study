@@ -4,6 +4,7 @@ ru:
     email: E-mail
     state: Состояние
     description: Описание
+    created_at: Дата создания
  
   activerecord:
     state_machines:
@@ -87,5 +88,7 @@ ru:
         name: Имя
         password: Пароль
         role: Роль
+        name_and_email: Имя и E-mail
+        
 
  
