@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
-
-  resource :session, only: [:new, :create, :destroy]
-
+  
   namespace :admin do
     root to: 'admins#index'
-    resources :admins, :students, :courses do
+    resource :session, only: [:new, :create, :destroy]
+    resources :admins, :students, :courses, :teachers do
       put 'restore'
       put 'del'
     end
-    resources :professions
-    resources :teachers
+    
+    resources :professions, :teachers
+
+    resources :students
+    resources :courses do
+      put 'restore'
+      put 'del'
+    end
   end
 
   namespace :teacher do

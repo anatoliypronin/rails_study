@@ -1,4 +1,4 @@
-class CourseDecorator < ApplicationDecorater
+class CourseDecorator < ApplicationDecorator
   delegate_all
 
   def updated_at
