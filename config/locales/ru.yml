@@ -4,6 +4,8 @@ ru:
   courses: Курсы
   homework: Домашние работы
   articles: Статьи
+  admins: Админы
+  professions: Профессии
 
   attributes:
     id: Идентификатор
