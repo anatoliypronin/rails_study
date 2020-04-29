@@ -18,9 +18,8 @@
       %td= student.phone_number
       %td= student.human_state_name
       %td= link_to t('.edit'), edit_admin_student_path(student.id), class: 'btn btn-info btn-sm'
-      -if student.state == 'active'
+      -if student.can_del?
         %td= link_to t('.del'), admin_student_del_path(student.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
-      -else
+      -if student.can_restore?
         %td= link_to t('.restore'), admin_student_restore_path(student.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
-    %tr 
 %td= link_to t('.add'), new_admin_student_path, class: 'btn btn-outline-secondary'
