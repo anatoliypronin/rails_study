@@ -78,7 +78,7 @@ class Admin::CoursesControllerTest < ActionDispatch::IntegrationTest
   test 'should put update course with teacher' do
     course_attrs = attributes_for :course
     course_attrs[:teacher_id] = @course.teacher_id
-    post admin_courses_path, params: { course: course_attrs }
+    put admin_course_path(@course), params: { course: course_attrs }
     assert_response :redirect
 
     @course.reload
@@ -86,16 +86,15 @@ class Admin::CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should put update course with teacher and professions' do
-    course_professions = create :course_profession
+    profession = create :profession
     course_attrs = attributes_for :course
     course_attrs[:teacher_id] = @course.teacher_id
-    course_attrs[:profession_ids] = @course.profession_ids
-    @course.profession_ids[0] = course_professions.profession_id
+    course_attrs[:profession_ids] = [profession.id]
 
-    post admin_courses_path, params: { course: course_attrs }
+    put admin_course_path(@course), params: { course: course_attrs }
     assert_response :redirect
 
     @course.reload
-    assert_equal course_attrs[:profession_ids][0], course_professions.profession_id
+    assert @course.professions.include?(profession)
   end
 end
