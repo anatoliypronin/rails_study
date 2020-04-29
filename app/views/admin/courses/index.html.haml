@@ -14,8 +14,8 @@
       %td= course.description
       %td= course.human_state_name
       %td= link_to t('.edit'), edit_admin_course_path(course.id), class: 'btn btn-info btn-sm'
-      -if course.state == 'active'
+      -if course.can_del?
         %td= link_to t('.del'), admin_course_del_path(course.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
-      -else
+      -if course.can_restore?
         %td= link_to t('.restore'), admin_course_restore_path(course.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
 %td= link_to t('.add'), new_admin_course_path, class: 'btn btn-outline-secondary'

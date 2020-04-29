@@ -14,9 +14,8 @@
       %td= profession.description
       %td= profession.human_state_name
       %td= link_to t('.edit'), edit_admin_profession_path(profession.id)
-      -if profession.state == 'active'
+      -if profession.can_del?
         %td= link_to t('.del'), admin_profession_del_path(profession.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
-      -else
+      -if profession.can_restore?
         %td= link_to t('.restore'), admin_profession_restore_path(profession.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
-    %tr 
 %td= link_to t('.add'), new_admin_profession_path, class: 'btn btn-outline-secondary' 
