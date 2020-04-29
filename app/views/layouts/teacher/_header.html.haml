@@ -1,0 +1,8 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .collapse.navbar-collapse
+    .navbar-nav
+      = link_to t('header.home'), teacher_root_path, class: 'navbar-brand'
+      %ul.navbar-num
+  %div
+    %div{style: 'color: white'}= current_teacher.email
+    %div= link_to t('header.exit'), teacher_session_path, method: :delete, class: 'btn btn-outline-secondary btn-sm'
