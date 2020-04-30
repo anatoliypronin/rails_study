@@ -67,7 +67,7 @@ class Admin::StudentsControllerTest < ActionDispatch::IntegrationTest
     @student.del!
     put admin_student_restore_path(@student.id)
     assert_response :redirect
-    
+
     @student.reload
     assert_equal 'active', @student.state
   end

@@ -74,4 +74,27 @@ class Admin::CoursesControllerTest < ActionDispatch::IntegrationTest
     @course.reload
     assert_equal 'active', @course.state
   end
+
+  test 'should put update course with teacher' do
+    course_attrs = attributes_for :course
+    course_attrs[:teacher_id] = @course.teacher_id
+    put admin_course_path(@course), params: { course: course_attrs }
+    assert_response :redirect
+
+    @course.reload
+    assert_equal course_attrs[:teacher_id], @course.teacher_id
+  end
+
+  test 'should put update course with teacher and professions' do
+    profession = create :profession
+    course_attrs = attributes_for :course
+    course_attrs[:teacher_id] = @course.teacher_id
+    course_attrs[:profession_ids] = [profession.id]
+
+    put admin_course_path(@course), params: { course: course_attrs }
+    assert_response :redirect
+
+    @course.reload
+    assert @course.professions.include?(profession)
+  end
 end

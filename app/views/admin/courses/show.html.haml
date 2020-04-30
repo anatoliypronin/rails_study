@@ -1,7 +1,21 @@
-%h1= @course.title
-%b
-%b= @course.description
-%b
-%b= @course.state
-%b
-%td= link_to t('.back'), admin_courses_path, class: 'btn btn-outline-secondary'
+%table.table.table-hover
+  %thead
+    %tr
+      %th= Course.human_attribute_name(:id)
+      %th= Course.human_attribute_name(:title)
+      %th= Course.human_attribute_name(:description)
+      %th= Course.human_attribute_name(:teacher)
+      %th= Course.human_attribute_name(:profession)
+      %th= Course.human_attribute_name(:state)
+  %tbody
+    %tr
+      %td= @course.id
+      %td= @course.title
+      %td= @course.description
+      %td= @course.teacher.first_name
+      %td= @course.professions.map(&:title).join(', ')
+      %td= @course.human_state_name
+= link_to t('.edit'), edit_admin_course_path(@course.id), class: 'btn btn-info btn-sm'
+= link_to t('.del'), admin_course_del_path(@course.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+= link_to t('.restore'), admin_course_restore_path(@course.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
+= link_to t('.back'), admin_courses_path, class: 'btn btn-outline-secondary'
