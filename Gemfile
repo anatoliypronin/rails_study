@@ -37,6 +37,7 @@ gem 'rubocop-rails', require: false
 gem 'russian', '~> 0.6.0'
 gem 'simple_form'
 gem 'state_machines-activerecord'
+gem 'draper'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

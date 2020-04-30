@@ -1,11 +1,13 @@
-%table.table.table-hover
+%a.pull-right
+  %h1= t('courses')
+%table.table.table-striped.table-hover
   %tr
     %th= Course.human_attribute_name(:id)
     %th= Course.human_attribute_name(:title)
     %th= Course.human_attribute_name(:description)
     %th= Course.human_attribute_name(:created_at)
     %th= Course.human_attribute_name(:state)
-    %th= t('.control')
+    %th{:colspan => "2"}= t('.control')
   - @courses.each do |course|
     %tr
       %td= course.id
