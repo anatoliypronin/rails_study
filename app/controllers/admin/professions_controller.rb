@@ -1,6 +1,6 @@
 class Admin::ProfessionsController < Admin::ApplicationController
   def index
-    @professions = Profession.all
+    @professions = Profession.all.decorate
   end
 
   def new
@@ -29,15 +29,21 @@ class Admin::ProfessionsController < Admin::ApplicationController
     @profession = Profession.find(params[:id])
 
     if @profession.update(profession_attrs)
-      redirect_to action: :index
+      redirect_to action: :show
     else
       render action: :edit
     end
   end
 
-  def destroy
-    profession = Profession.find(params[:id])
-    profession.destroy
+  def del
+    profession = Profession.find(params[:profession_id])
+    profession.del!
+    redirect_to action: :index
+  end
+
+  def restore
+    profession = Profession.find(params[:profession_id])
+    profession.restore!
     redirect_to action: :index
   end
 

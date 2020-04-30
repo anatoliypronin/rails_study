@@ -58,10 +58,20 @@ class Admin::ProfessionsControllerTest < ActionDispatch::IntegrationTest
     assert_equal attrs[:title], @profession.title
   end
 
-  test 'should delete destroy profession' do
-    delete admin_profession_path(@profession.id)
+  test 'should state del profession' do
+    put admin_profession_del_path(@profession)
     assert_response :redirect
 
-    assert_not Profession.exists?(@profession.id)
+    @profession.reload
+    assert_equal 'deleted', @profession.state
+  end
+
+  test 'should state active profession' do
+    @profession = create :profession, :del
+    put admin_profession_restore_path(@profession.id)
+    assert_response :redirect
+
+    @profession.reload
+    assert_equal 'active', @profession.state
   end
 end
