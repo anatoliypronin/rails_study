@@ -73,14 +73,15 @@ ru:
 
     courses:
       index:
-        restore: Восстановить
-        del: Удалить 
-        add: Добавить
         control: Управление
-        edit: Редактировать          
+        view profile: Подробнее     
       new:
         cancel: Отмена
       edit:
         cancel: Отмена
       show:
         back: Назад
+        restore: Восстановить
+        del: Удалить 
+        add: Добавить
+        edit: Редактировать  
