@@ -50,6 +50,6 @@ class Admin::ProfessionsController < Admin::ApplicationController
   private
 
   def profession_attrs
-    params.require(:profession).permit(:title, :description)
+    params.require(:profession).permit(:title, :description, course_ids: [])
   end
 end

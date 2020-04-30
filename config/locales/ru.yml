@@ -23,7 +23,7 @@ ru:
     professions:
       index:
         control: Управление
-        edit: Редактировать
+        view profile: Подробнее
       new:
         cancel: Отмена
       edit:
