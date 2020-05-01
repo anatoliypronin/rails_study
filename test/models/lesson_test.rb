@@ -10,7 +10,7 @@ class LessonTest < ActiveSupport::TestCase
     assert created_lesson
   end
 
-  test 'should not create lesson with title lenght > 50' do
+  test 'should not create lesson with title length > 50' do
     lesson = build :lesson, title: 'Title' * 20
     lesson.save
 
@@ -25,14 +25,4 @@ class LessonTest < ActiveSupport::TestCase
     created_lesson = Lesson.last
     assert_not created_lesson
   end
-
-  test 'should not create lesson with title length > 50' do
-    lesson = build :lesson, title: 'title' * 11
-    lesson.save
-
-    created_lesson = Lesson.last
-    assert_not created_lesson
-  end
-
-
 end
