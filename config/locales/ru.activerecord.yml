@@ -6,6 +6,7 @@ ru:
     description: Описание
     created_at: Дата создания
     updated_at: Дата обновления
+    name_and_email: Имя и E-mail
  
   activerecord:
     state_machines:
@@ -91,7 +92,7 @@ ru:
         name: Имя
         password: Пароль
         role: Роль
-        name_and_email: Имя и E-mail
+
         
 
  
