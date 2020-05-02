@@ -1,4 +1,4 @@
-class Admin::ProfessionsController < Admin::ApplicationController
+class Web::Admin::ProfessionsController < Web::Admin::ApplicationController
   def index
     @professions = Profession.all.decorate
   end

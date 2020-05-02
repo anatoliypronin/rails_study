@@ -1,4 +1,4 @@
-class Admin::TeachersController < Admin::ApplicationController
+class Web::Admin::TeachersController < Web::Admin::ApplicationController
   def index
     @teachers = Teacher.all
   end
