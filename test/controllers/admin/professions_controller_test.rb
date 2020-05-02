@@ -76,14 +76,13 @@ class Admin::ProfessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should put update profession with courses' do
-    byebug
     course = create :course
     professions_attrs = attributes_for :profession
     professions_attrs[:course_ids] = [course.id]
-    
+
     put admin_profession_path(@profession.id), params: { profession: professions_attrs }
     assert_response :redirect
-    
+
     @profession.reload
     assert @profession.courses.include?(course)
   end
