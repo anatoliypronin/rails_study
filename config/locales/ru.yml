@@ -28,6 +28,13 @@ ru:
         cancel: Отмена
       edit:
         cancel: Отмена
+      show:
+        back: Назад
+        edit: Редактировать
+        del: Удалить
+        restore: Восстановить
+        control: Управление
+        course: Курсы
         
     teachers:
       index:

@@ -84,7 +84,9 @@ ru:
         password: Пароль
         profession:
       profession:
+        course: Курсы профессии
         title: Название профессии
+        courses: 'Курсы, которые включают в себя профессию:'
       admin:
         name: Имя
         password: Пароль
