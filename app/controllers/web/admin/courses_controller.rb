@@ -1,4 +1,4 @@
-class Admin::CoursesController < Admin::ApplicationController
+class Web::Admin::CoursesController < Web::Admin::ApplicationController
   def index
     @courses = Course.all.decorate
   end
