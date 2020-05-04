@@ -18,6 +18,6 @@ module App
     config.time_zone = 'Moscow'
     config.i18n.default_locale = :ru
 
-    config.active_record.observers = :admin_observer
+    config.active_record.observers = [:admin_observer, :teacher_observer]
   end
 end
