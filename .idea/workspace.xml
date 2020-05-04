@@ -34,11 +34,6 @@
     <list default="true" id="201030b8-ede1-4870-8330-39cc5a857fa3" name="Default Changelist" comment="Fix">
       <changelist_data name="Ekaterina Kulakova" email="sharpeika334@gmail.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/lesson.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/lesson.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200422000230_create_lessons.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20200422000230_create_lessons.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200501152627_change_title_null_on_lesson.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200501154527_change_description_null_on_lesson.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200501154542_change_homework_null_on_lesson.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/models/lesson_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/lesson_test.rb" afterDir="false" />
     </list>
     <list id="633f3c9a-a943-44cd-9ef2-8f6b7c833c46" name="Add model lesson" comment="" />
@@ -224,7 +219,7 @@
       <workItem from="1588347609921" duration="20000" />
       <workItem from="1588347805364" duration="192000" />
       <workItem from="1588348114882" duration="5430000" />
-      <workItem from="1588436505736" duration="2745000" />
+      <workItem from="1588436505736" duration="3488000" />
     </task>
     <servers />
   </component>
