@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
     namespace :teacher do
       root to: 'welcome#index'
+      resource :teachers, only: %i[new create show edit update]
       resource :session, only: %i[new create destroy]
     end
   end

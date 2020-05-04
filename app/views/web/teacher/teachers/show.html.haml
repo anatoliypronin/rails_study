@@ -1,0 +1,14 @@
+%a.pull-right
+  %h1= t('personal_account')
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th= Teacher.human_attribute_name(:full_name)
+      %th= Teacher.human_attribute_name(:email)
+      %th= Teacher.human_attribute_name(:description)
+  %tbody
+    %tr
+      %td= @teacher.full_name
+      %td= @teacher.email
+      %td= @teacher.description
+= link_to t('.edit'), edit_teacher_teachers_path, class: 'btn btn-outline-secondary' 

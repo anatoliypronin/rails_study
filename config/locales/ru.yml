@@ -6,6 +6,7 @@ ru:
   articles: Статьи
   admins: Админы
   professions: Профессии
+  personal_account: Личный кабинет
 
   attributes:
     id: Идентификатор
@@ -18,6 +19,8 @@ ru:
     courses: Курсы
     home: Домашняя страница
     exit: Выйти
+    personal_account: Личный кабинет
+
   
   web:  
     admin:
@@ -93,3 +96,12 @@ ru:
           del: Удалить 
           add: Добавить
           edit: Редактировать  
+    
+    teacher:
+      teachers:
+        new:
+          cancel: Отмена
+        show:
+          edit: Редактировать
+        edit:
+          cancel: Отмена
