@@ -8,5 +8,6 @@ class CreateLessons < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    change_column_null(:lessons, :title, :description, :homework, false)
   end
 end

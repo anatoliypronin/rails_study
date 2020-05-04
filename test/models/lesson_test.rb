@@ -3,9 +3,8 @@ require 'test_helper'
 class LessonTest < ActiveSupport::TestCase
 
   test 'should create course' do
-    lesson = build :lesson, state: "any state"
+    lesson = build :lesson
     lesson.save
-    p lesson
     created_lesson = Lesson.last
     assert created_lesson
   end

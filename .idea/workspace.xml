@@ -33,13 +33,15 @@
   <component name="ChangeListManager">
     <list default="true" id="201030b8-ede1-4870-8330-39cc5a857fa3" name="Default Changelist" comment="Fix">
       <changelist_data name="Ekaterina Kulakova" email="sharpeika334@gmail.com" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/factories/sequences.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/factories/sequences.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/lesson.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/lesson.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20200422000230_create_lessons.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20200422000230_create_lessons.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20200501152627_change_title_null_on_lesson.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20200501154527_change_description_null_on_lesson.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20200501154542_change_homework_null_on_lesson.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/models/lesson_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/lesson_test.rb" afterDir="false" />
     </list>
-    <list id="633f3c9a-a943-44cd-9ef2-8f6b7c833c46" name="Add model lesson" comment="">
-      <change beforePath="$PROJECT_DIR$/test/factories/lessons.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/factories/lessons.rb" afterDir="false" />
-    </list>
+    <list id="633f3c9a-a943-44cd-9ef2-8f6b7c833c46" name="Add model lesson" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +87,7 @@
   <component name="RunManager" selected="Rails.Development: rails_study">
     <configuration default="true" type="RackRunConfigurationType" factoryName="Rack">
       <RACK_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RACK_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RACK_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RACK_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RACK_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RACK_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -107,7 +109,7 @@
       <module name="rails_study" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -131,7 +133,7 @@
       <module name="rails_study" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -154,7 +156,7 @@
     <configuration name="spec: rails_study" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="rails_study" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -177,7 +179,7 @@
     <configuration name="test: rails_study" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="rails_study" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -221,7 +223,8 @@
       <workItem from="1588346321328" duration="850000" />
       <workItem from="1588347609921" duration="20000" />
       <workItem from="1588347805364" duration="192000" />
-      <workItem from="1588348114882" duration="4827000" />
+      <workItem from="1588348114882" duration="5430000" />
+      <workItem from="1588436505736" duration="2745000" />
     </task>
     <servers />
   </component>
