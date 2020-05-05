@@ -4,7 +4,6 @@ FactoryBot.define do
     title
     body
     published { false }
-    state { 'active' }
 
     trait :author_admin do
       association :author, factory: :admin
