@@ -1,4 +1,4 @@
-class Teacher::SessionsController < Teacher::ApplicationController
+class Web::Teacher::SessionsController < Web::Teacher::ApplicationController
   skip_before_action :authenticate_teacher!, only: %i[new create]
   def new; end
 
