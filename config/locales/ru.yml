@@ -16,6 +16,7 @@ ru:
     students: Студенты
     professions: Профессии
     courses: Курсы
+    articles: Статьи
     home: Домашняя страница
     exit: Выйти
   
@@ -93,3 +94,17 @@ ru:
           del: Удалить 
           add: Добавить
           edit: Редактировать  
+
+      articles:
+        index:
+          publish: Опубликовать
+          unpublish: Снять с публикации
+          edit: Редактировать
+          add: Добавить
+          control: Управление
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
