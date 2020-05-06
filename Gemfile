@@ -37,9 +37,9 @@ gem 'rails-observers'
 gem 'rubocop', '~> 0.81.0', require: false
 gem 'rubocop-rails', require: false
 gem 'russian', '~> 0.6.0'
+gem 'select2-rails'
 gem 'simple_form'
 gem 'state_machines-activerecord'
-gem "select2-rails"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -6,6 +6,7 @@ class Admin < ApplicationRecord
   validates :password, presence: true, length: { minimum: 2, maximum: 8 }, on: :create
 
   has_secure_password validations: false
+  has_many :articles, dependent: :nullify
 
   enumerize :role, in: %i[admin editor], default: :admin
 
