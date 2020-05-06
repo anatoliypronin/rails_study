@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'admins#index'
     resource :session, only: %i[new create destroy]
-    resources :admins, :students, :courses, :teachers, :courses, :professions do
+    resources :admins, :students, :courses, :teachers, :courses, :professions, :lessons do
       put 'restore'
       put 'del'
     end
