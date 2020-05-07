@@ -1,0 +1,13 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .collapse.navbar-collapse
+    .navbar-nav
+      = link_to t('header.home'), admin_root_path, class: 'navbar-brand'
+      = link_to t('header.admins'), admin_admins_path, class: 'nav-item nav-link'
+      = link_to t('header.students'), admin_students_path, class: 'nav-item nav-link'
+      = link_to t('header.teachers'), admin_teachers_path, class: 'nav-item nav-link'
+      = link_to t('header.professions'), admin_professions_path, class: 'nav-item nav-link'
+      = link_to t('header.courses'), admin_courses_path, class: 'nav-item nav-link'
+      %ul.navbar-num
+  %div
+    %div{style: 'color: white'}= current_admin.email
+    %div= link_to t('header.exit'), admin_session_path, method: :delete, class: 'btn btn-outline-secondary btn-sm'
