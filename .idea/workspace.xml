@@ -33,8 +33,9 @@
   <component name="ChangeListManager">
     <list default="true" id="201030b8-ede1-4870-8330-39cc5a857fa3" name="Default Changelist" comment="Fix">
       <changelist_data name="Ekaterina Kulakova" email="sharpeika334@gmail.com" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/lesson_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/lesson_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20200422000230_create_lessons.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20200422000230_create_lessons.rb" afterDir="false" />
     </list>
     <list id="633f3c9a-a943-44cd-9ef2-8f6b7c833c46" name="Add model lesson" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,26 +82,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Rails.Development: rails_study">
-    <configuration default="true" type="RackRunConfigurationType" factoryName="Rack">
-      <RACK_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RACK_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RACK_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RACK_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RACK_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RACK_CONFIG_SETTINGS_ID NAME="PORT" VALUE="9292" />
-      <RACK_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
-      <RACK_CONFIG_SETTINGS_ID NAME="CONFIG_FILE" VALUE="config.ru" />
-      <RACK_CONFIG_SETTINGS_ID NAME="RACK_SERVER_TYPE" VALUE="Default" />
-      <RACK_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
-      <method v="2" />
-    </configuration>
     <configuration name="Development: rails_study" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="rails_study" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -219,7 +201,9 @@
       <workItem from="1588347609921" duration="20000" />
       <workItem from="1588347805364" duration="192000" />
       <workItem from="1588348114882" duration="5430000" />
-      <workItem from="1588436505736" duration="3488000" />
+      <workItem from="1588436505736" duration="4186000" />
+      <workItem from="1588768010909" duration="770000" />
+      <workItem from="1588847746101" duration="1855000" />
     </task>
     <servers />
   </component>
@@ -297,6 +281,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="167" y="125" width="1099" height="543" key="DiffContextDialog/67.27.1299.741@67.27.1299.741" timestamp="1587603472471" />
+    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1588768186769">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1588768186769" />
     <state x="560" y="312" width="303" height="169" key="VCS.ChangelistChooser" timestamp="1587607797052">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
