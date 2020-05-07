@@ -98,10 +98,6 @@ ru:
           edit: Редактировать  
     
     teacher:
-      teachers:
-        new:
-          cancel: Отмена
-        show:
-          edit: Редактировать
+      profiles:
         edit:
           cancel: Отмена
