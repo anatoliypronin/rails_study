@@ -93,3 +93,8 @@ ru:
           del: Удалить 
           add: Добавить
           edit: Редактировать  
+    
+    welcome:
+      index:
+        input teacher: Войти как учитель
+        input student: Войти как студент
