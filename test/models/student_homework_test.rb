@@ -41,17 +41,17 @@ class StudentHomeworkTest < ActiveSupport::TestCase
   end
 
   test 'Should not create student_homework without raiting' do
-     student_homework = build :student_homework, raiting: nil
-     assert_not student_homework.save
+    student_homework = build :student_homework, raiting: nil
+    assert_not student_homework.save
   end
 
   test 'Should not create student_homework with invalid raiting format' do
-     student_homework = build :student_homework, raiting: '123'
-     assert_not student_homework.save
+    student_homework = build :student_homework, raiting: '123'
+    assert_not student_homework.save
   end
 
   test 'Should not create student_homework with mark not from range' do
-     student_homework = build :student_homework, raiting: 7
-     assert_not student_homework.save
+    student_homework = build :student_homework, raiting: 7
+    assert_not student_homework.save
   end
 end
