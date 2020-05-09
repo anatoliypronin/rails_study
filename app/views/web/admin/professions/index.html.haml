@@ -1,0 +1,19 @@
+%a.pull-right
+  %h1= t('professions')
+%table.table.table-striped.table-hover
+  %tr
+    %th= Profession.human_attribute_name(:id)
+    %th= Profession.human_attribute_name(:title)
+    %th= Profession.human_attribute_name(:description)
+    %th= Profession.human_attribute_name(:created_at)
+    %th= Profession.human_attribute_name(:state)
+    %th{:colspan => "2"}= t('.control')
+  - @professions.each do |profession|
+    %tr
+      %td= profession.id
+      %td= profession.title
+      %td= profession.description
+      %td= profession.created_at
+      %td= profession.human_state_name
+      %td= link_to t('.view profile'), admin_profession_path(profession), class: 'btn btn-success btn'
+%td= link_to t('.add'), new_admin_profession_path, class: 'btn btn-outline-secondary' 

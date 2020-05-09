@@ -25,19 +25,22 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.4.1'
 gem 'draper'
 gem 'enumerize'
 gem 'haml-rails', '~> 2.0'
 gem 'jquery-rails'
+gem 'pundit'
 gem 'rails-observers'
 gem 'rubocop', '~> 0.81.0', require: false
 gem 'rubocop-rails', require: false
 gem 'russian', '~> 0.6.0'
+gem 'select2-rails'
 gem 'simple_form'
 gem 'state_machines-activerecord'
-gem 'draper'
+gem 'coveralls', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
