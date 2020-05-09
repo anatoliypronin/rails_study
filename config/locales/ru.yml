@@ -6,6 +6,7 @@ ru:
   articles: Статьи
   admins: Админы
   professions: Профессии
+  are you sure?: Вы согласны?
 
   attributes:
     id: Идентификатор
