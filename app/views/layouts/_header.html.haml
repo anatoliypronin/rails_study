@@ -8,6 +8,12 @@
       = link_to t('header.professions'), admin_professions_path, class: 'nav-item nav-link'
       = link_to t('header.courses'), admin_courses_path, class: 'nav-item nav-link'
       %ul.navbar-num
-  %div
-    %div{style: 'color: white'}= current_admin.email
-    %div= link_to t('header.exit'), admin_session_path, method: :delete, class: 'btn btn-outline-secondary btn-sm'
+      .dropdown.mr-1
+      %button#dropdownMenuOffset.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-offset" => "10,20", "data-toggle" => "dropdown", :type => "button"}
+        Offset
+      .dropdown-menu{"aria-labelledby" => "dropdownMenuOffset"}
+        %a.dropdown-item{:href => "#"} Action
+        %a.dropdown-item{:href => "#"} Another action
+        %a.dropdown-item{:href => "#"} Something else here
+    
+    
