@@ -1,5 +1,6 @@
 class Teacher < ApplicationRecord
   has_many :courses, dependent: :nullify
+  has_many :articles, dependent: :nullify
 
   validates :first_name, :last_name, :email,
             presence: true

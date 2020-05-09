@@ -18,69 +18,78 @@ ru:
     courses: Курсы
     home: Домашняя страница
     exit: Выйти
+  
+  web:  
+    admin:
+      professions:
+        index:
+          control: Управление
+          view profile: Подробнее
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+          edit: Редактировать
+          del: Удалить
+          restore: Восстановить
+          control: Управление
+          course: Курсы
         
-  admin:
-    professions:
-      index:
-        control: Управление
-        edit: Редактировать
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-        
-    teachers:
-      index:
-        del: Удалить
-        restore: Восстановить
-        add: Добавить
-        control: Управление
-        edit: Редактировать   
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-      show:
-        back: Назад
+      teachers:
+        index:
+          del: Удалить
+          restore: Восстановить
+          add: Добавить
+          control: Управление
+          edit: Редактировать   
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
 
-    admins:
-      index:
-        del: Удалить
-        restore: Восстановить
-        add: Добавить
-        control: Управление
-        edit: Редактировать         
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-      show:
-        back: Назад
+      admins:
+        index:
+          del: Удалить
+          restore: Восстановить
+          add: Добавить
+          control: Управление
+          edit: Редактировать         
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
     
-    students:
-      index:
-        del: Удалить 
-        restore: Восстановить
-        add: Добавить
-        control: Управление
-        edit: Редактировать          
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-      show:
-        back: Назад
+      students:
+        index:
+          del: Удалить 
+          restore: Восстановить
+          add: Добавить
+          control: Управление
+          edit: Редактировать          
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
 
-    courses:
-      index:
-        restore: Восстановить
-        del: Удалить 
-        add: Добавить
-        control: Управление
-        edit: Редактировать          
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-      show:
-        back: Назад
+      courses:
+        index:
+          control: Управление
+          view profile: Подробнее     
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+          restore: Восстановить
+          del: Удалить 
+          add: Добавить
+          edit: Редактировать  

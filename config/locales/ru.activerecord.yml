@@ -6,6 +6,7 @@ ru:
     description: Описание
     created_at: Дата создания
     updated_at: Дата обновления
+    name_and_email: Имя и E-mail
  
   activerecord:
     state_machines:
@@ -69,7 +70,10 @@ ru:
     
     attributes:
       course:
+        teacher: Учитель курса
+        profession: Профессии курса    
         title: Название курса
+        professions: 'Профессии в которые включен курс:'
       teacher:
         first_name: Имя
         last_name: Фамилия
@@ -81,12 +85,14 @@ ru:
         password: Пароль
         profession:
       profession:
+        course: Курсы профессии
         title: Название профессии
+        courses: 'Курсы, которые включают в себя профессию:'
       admin:
         name: Имя
         password: Пароль
         role: Роль
-        name_and_email: Имя и E-mail
+
         
 
  

@@ -1,0 +1,6 @@
+= simple_form_for @profession, url: admin_professions_path do |profession|
+  = profession.input :title
+  = profession.input :description
+  = profession.association :courses, as: :check_boxes
+  = profession.button :submit, class: 'btn btn-outline-secondary'
+  = link_to t('.cancel'), admin_professions_path, class: 'btn btn-outline-secondary'
