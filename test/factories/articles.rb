@@ -12,11 +12,11 @@ FactoryBot.define do
       association :author, factory: :teacher
     end
 
-    trait :unpublish do
+    trait :unpublished do
       state { 'unpublished' }
     end
 
-    trait :publish do
+    trait :published do
       state { 'published' }
     end
   end

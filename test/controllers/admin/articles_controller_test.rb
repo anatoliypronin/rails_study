@@ -57,6 +57,7 @@ class Admin::ArticlesControllerTest < ActionDispatch::IntegrationTest
 
     @article.reload
     assert_equal attrs[:title], @article.title
+    assert_equal attrs[:body], @article.body
   end
 
   test 'should state unpublish article' do
@@ -68,7 +69,7 @@ class Admin::ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should state publish article' do
-    @article = create :article, :unpublish
+    @article = create :article, :unpublished
     put admin_article_publish_path(@article.id)
     assert_response :redirect
 
