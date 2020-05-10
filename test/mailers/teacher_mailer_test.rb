@@ -10,6 +10,7 @@ class TeacherMailerTest < ActionMailer::TestCase
     end
     assert_equal [teacher.email], email.to
     assert_equal ['from@example.com'], email.from
-    assert_equal I18n.t('teacher_mailer.welcome_email.subject', deep_interpolation: true, name: teacher.first_name.to_s), email.subject
+    assert_equal I18n.t('teacher_mailer.welcome_email.subject', deep_interpolation: true, name:
+      teacher.first_name.to_s), email.subject
   end
 end
