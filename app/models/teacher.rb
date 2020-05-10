@@ -5,7 +5,7 @@ class Teacher < ApplicationRecord
   validates :first_name, :last_name, :email,
             presence: true
   validates :first_name, :last_name, length: { maximum: 50 }
-  validates :email, email: true, uniqueness: true
+  validates :email, uniqueness: true, email: true
 
   has_secure_password
 
