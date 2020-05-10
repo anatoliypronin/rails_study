@@ -2,7 +2,6 @@ require 'test_helper'
 
 class StudentCourseTest < ActiveSupport::TestCase
   test 'should create StudentCourse and check whether the student and course are the same' do
-    byebug
     student = create :student
     course = create :course
 

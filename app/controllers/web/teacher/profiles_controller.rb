@@ -1,10 +1,10 @@
 class Web::Teacher::ProfilesController < Web::Teacher::ApplicationController
   def edit
-    @teacher = Teacher.find(current_teacher.id)
+    @teacher = current_teacher
   end
 
   def update
-    @teacher = Teacher.find(current_teacher.id)
+    @teacher = current_teacher
 
     if @teacher.update(teacher_attrs)
       redirect_to '/teacher'
