@@ -24,4 +24,4 @@
 /node_modules
 /yarn-error.log
 yarn-debug.log*
-coverage/
+coverage
