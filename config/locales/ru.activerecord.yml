@@ -51,6 +51,14 @@ ru:
           events:
             del: Удалить
             restore: Восстановить
+      article:
+        state:
+          states:
+            published: Опубликовано
+            unpublished: Снято с публикации
+          events:
+            publish: Опубликовать
+            unpublish: Снять с публикации
                           
     models:
       teacher:
@@ -68,6 +76,10 @@ ru:
       courses:
         one: Курс
         other: Курсы
+
+      articles:
+        one: Статья
+        other: Статьи
     
     attributes:
       course:
@@ -93,7 +105,7 @@ ru:
         name: Имя
         password: Пароль
         role: Роль
-
-        
-
- 
+      article:
+        title: Заголовок
+        body: Текст статьи
+        author: Автор
