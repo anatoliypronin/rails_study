@@ -1,4 +1,7 @@
 class Lesson < ApplicationRecord
+  belongs_to :course:student_homeworks
+  has_many :course
+  
   validates :title, :description, :homework, :state, presence: true
   validates :title, length: { maximum: 50 }
 
