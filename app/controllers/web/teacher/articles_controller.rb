@@ -23,7 +23,7 @@ class Web::Teacher::ArticlesController < Web::Teacher::ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id]).decorate
+    @article = Article.find(params[:id])
   end
 
   def update

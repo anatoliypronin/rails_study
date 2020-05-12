@@ -7,6 +7,8 @@ ru:
   admins: Админы
   professions: Профессии
   are you sure?: Вы согласны?
+  edit: Редактировать
+  add: Добавить
 
   attributes:
     id: Идентификатор
@@ -18,6 +20,7 @@ ru:
     professions: Профессии
     courses: Курсы
     articles: Статьи
+    home works: Домашние работы
     home: Домашняя страница
     exit: Выйти
   
