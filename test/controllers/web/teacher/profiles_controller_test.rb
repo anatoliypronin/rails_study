@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Teacher::ProfilesControllerTest < ActionDispatch::IntegrationTest
+class Web::Teacher::ProfilesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @teacher = create :teacher
     sign_in_as_teacher(@teacher)

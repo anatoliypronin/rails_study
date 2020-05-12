@@ -7,7 +7,7 @@ class Web::Teacher::ProfilesController < Web::Teacher::ApplicationController
     @teacher = current_teacher
 
     if @teacher.update(teacher_attrs)
-      redirect_to '/teacher'
+      redirect_to teacher_root_path
     else
       render action: :edit
     end

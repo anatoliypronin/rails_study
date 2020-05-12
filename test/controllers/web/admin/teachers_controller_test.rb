@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Admin::TeachersControllerTest < ActionDispatch::IntegrationTest
+class Web::Admin::TeachersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @teacher = create :teacher
     @admin = create :admin
