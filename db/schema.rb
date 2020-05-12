@@ -31,8 +31,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_102501) do
     t.bigint "author_id"
     t.string "title", null: false
     t.text "body", null: false
-    t.boolean "published"
-    t.datetime "published_at"
     t.string "state", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -3,7 +3,6 @@ FactoryBot.define do
     author_admin
     title
     body
-    published { false }
 
     trait :author_admin do
       association :author, factory: :admin
@@ -11,6 +10,14 @@ FactoryBot.define do
 
     trait :author_teacher do
       association :author, factory: :teacher
+    end
+
+    trait :unpublished do
+      state { 'unpublished' }
+    end
+
+    trait :published do
+      state { 'published' }
     end
   end
 end
