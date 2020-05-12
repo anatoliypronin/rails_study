@@ -17,11 +17,11 @@ class Course < ApplicationRecord
     state :deleted
 
     event :del do
-      transition active: :deleted
+      transition from: :active, to: :deleted, if: :active?
     end
 
     event :restore do
-      transition deleted: :active
+      transition from: :deleted, to: :active, if: :deleted?
     end
   end
 end

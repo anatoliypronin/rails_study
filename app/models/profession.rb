@@ -1,4 +1,6 @@
 class Profession < ApplicationRecord
+  include ProfessionRepository
+
   has_many :course_professions, dependent: :nullify
   has_many :courses, through: :course_professions
 
