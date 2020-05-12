@@ -7,7 +7,9 @@ class Course < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :students, through: :reviews
 
+
   belongs_to :teacher, optional: true
+  belongs_to :lesson, dependent: :nullify
 
   has_many :course_professions, dependent: :nullify
   has_many :professions, through: :course_professions
@@ -17,11 +19,11 @@ class Course < ApplicationRecord
     state :deleted
 
     event :del do
-      transition active: :deleted
+      transition from: :active, to: :deleted, if: :active?
     end
 
     event :restore do
-      transition deleted: :active
+      transition from: :deleted, to: :active, if: :deleted?
     end
   end
 end

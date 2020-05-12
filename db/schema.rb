@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_181945) do
+ActiveRecord::Schema.define(version: 2020_05_12_214935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 2020_05_01_181945) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "teacher_id"
+    t.bigint "lesson_id"
+    t.index ["lesson_id"], name: "index_courses_on_lesson_id"
     t.index ["teacher_id"], name: "index_courses_on_teacher_id"
   end
 
@@ -63,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_181945) do
     t.string "title", null: false
     t.text "description", null: false
     t.text "homework", null: false
-    t.string "state"
+    t.string "state", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -99,6 +101,20 @@ ActiveRecord::Schema.define(version: 2020_05_01_181945) do
     t.index ["student_id"], name: "index_student_courses_on_student_id"
   end
 
+  create_table "student_homeworks", force: :cascade do |t|
+    t.string "state", null: false
+    t.integer "raiting", null: false
+    t.text "student_comment"
+    t.text "teacher_comment"
+    t.datetime "date_begin", null: false
+    t.datetime "date_end", null: false
+    t.string "link_homework", null: false
+    t.bigint "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_student_homeworks_on_student_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -120,13 +136,16 @@ ActiveRecord::Schema.define(version: 2020_05_01_181945) do
     t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_teachers_on_email", unique: true
   end
 
   add_foreign_key "course_professions", "courses"
   add_foreign_key "course_professions", "professions"
+  add_foreign_key "courses", "lessons"
   add_foreign_key "courses", "teachers"
   add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "students"
   add_foreign_key "student_courses", "courses"
   add_foreign_key "student_courses", "students"
+  add_foreign_key "student_homeworks", "students"
 end
