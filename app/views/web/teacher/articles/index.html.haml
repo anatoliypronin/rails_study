@@ -12,7 +12,7 @@
     %tr
       %td= article.id
       %td= link_to article.title, teacher_article_path(article.id), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
-      %td= article.author
+      %td= article.author.decorate.name
       %td= article.human_state_name
       %td= article.updated_at
       - if article.author == current_teacher
