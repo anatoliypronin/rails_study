@@ -1,0 +1,22 @@
+%a.pull-right
+  %h1= t('articles')
+%table.table.table-striped.table-hover
+  %tr
+    %th= Article.human_attribute_name(:id)
+    %th= Article.human_attribute_name(:title)
+    %th= Article.human_attribute_name(:author)
+    %th= Article.human_attribute_name(:state)
+    %th= Article.human_attribute_name(:updated_at)
+    %th{:colspan => "2"}= t('.control')
+  - @articles.each do |article|
+    %tr
+      %td= article.id
+      %td= link_to article.title, teacher_article_path(article.id), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
+      %td= article.author
+      %td= article.human_state_name
+      %td= article.updated_at
+      - if article.author == current_teacher
+        %td= link_to t('.edit'), edit_teacher_article_path(article.id), class: 'btn btn-info btn-sm'
+        - article.state_events.each do |event|
+          %td= link_to human_state_event_name(:article, 'state', event), {:action => event.to_sym, :article_id => article.id}, method: :put, data: { confirm: t('are you sure?')}, class: 'btn btn-success btn-sm'
+%td= link_to t('.add'), new_teacher_article_path, class: 'btn btn-outline-secondary'

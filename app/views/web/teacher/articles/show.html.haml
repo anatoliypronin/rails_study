@@ -1,0 +1,11 @@
+%h1= @article.title
+%b
+%b= @article.body
+%br
+%br
+%b= @article.author.full_name
+%br
+%br
+%b= @article.human_state_name
+%br
+%td= link_to t('.back'), teacher_articles_path, class: 'btn btn-outline-secondary'
