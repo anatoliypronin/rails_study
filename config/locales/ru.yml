@@ -96,5 +96,5 @@ ru:
     
     welcome:
       index:
-        input teacher: Войти как учитель
-        input student: Войти как студент
+        enter teacher: Войти как учитель
+        enter student: Войти как студент
