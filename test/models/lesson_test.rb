@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class LessonTest < ActiveSupport::TestCase
-
   test 'should create course' do
     lesson = build :lesson
     lesson.save
