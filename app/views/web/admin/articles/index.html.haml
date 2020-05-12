@@ -17,5 +17,5 @@
       %td= article.updated_at
       %td= link_to t('.edit'), edit_admin_article_path(article.id), class: 'btn btn-info btn-sm'
       - article.state_events.each do |event|
-        %td= link_to human_state_event_name(:article, 'state', event), "articles/#{article.id}/#{event.to_sym}", method: :put, data: { confirm: t('are you sure?')}, class: 'btn btn-success btn-sm'
+        %td= link_to human_state_event_name(:article, 'state', event), {:action => event.to_sym, :article_id => article.id}, method: :put, data: { confirm: t('are you sure?')}, class: 'btn btn-success btn-sm'
 %td= link_to t('.add'), new_admin_article_path, class: 'btn btn-outline-secondary'

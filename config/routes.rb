@@ -23,6 +23,10 @@ Rails.application.routes.draw do
     namespace :teacher do
       root to: "welcome#index"
       resource :session, only: %i[new create destroy]
+      resources :articles do
+        put "publish"
+        put "unpublish"
+      end
     end
   end
 end
