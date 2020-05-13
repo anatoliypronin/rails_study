@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_102501) do
+ActiveRecord::Schema.define(version: 2020_05_12_214935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_102501) do
     t.bigint "author_id"
     t.string "title", null: false
     t.text "body", null: false
-    t.boolean "published"
-    t.datetime "published_at"
     t.string "state", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -57,6 +55,17 @@ ActiveRecord::Schema.define(version: 2020_05_10_102501) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "teacher_id"
     t.index ["teacher_id"], name: "index_courses_on_teacher_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.text "homework", null: false
+    t.string "state", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "course_id", null: false
+    t.index ["course_id"], name: "index_lessons_on_course_id"
   end
 
   create_table "professions", force: :cascade do |t|
@@ -131,6 +140,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_102501) do
   add_foreign_key "course_professions", "courses"
   add_foreign_key "course_professions", "professions"
   add_foreign_key "courses", "teachers"
+  add_foreign_key "lessons", "courses"
   add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "students"
   add_foreign_key "student_courses", "courses"
