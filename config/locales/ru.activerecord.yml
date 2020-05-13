@@ -1,0 +1,110 @@
+ru:
+  attributes:
+    id: Идентификатор
+    email: E-mail
+    state: Состояние
+    description: Описание
+    created_at: Дата создания
+    updated_at: Дата обновления
+    name_and_email: Имя и E-mail
+ 
+  activerecord:
+    state_machines:
+      profession:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      teacher:
+        state:  
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      admin:
+        state:  
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      student:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      course:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+      article:
+        state:
+          states:
+            published: Опубликовано
+            unpublished: Снято с публикации
+          events:
+            publish: Опубликовать
+            unpublish: Снять с публикации
+                          
+    models:
+      teacher:
+        one: Учитель
+        other: Учителя
+            
+      profession:
+        one: Профессия
+        other: Профессии
+
+      admins:
+        one: Админ
+        other: Админы
+
+      courses:
+        one: Курс
+        other: Курсы
+
+      articles:
+        one: Статья
+        other: Статьи
+    
+    attributes:
+      course:
+        teacher: Учитель курса
+        profession: Профессии курса    
+        title: Название курса
+        professions: 'Профессии в которые включен курс:'
+      teacher:
+        first_name: Имя
+        last_name: Фамилия
+        password: Пароль
+      student:
+        first_name: Имя
+        last_name: Фамилия
+        phone_number: Телефонный номер
+        password: Пароль
+        profession:
+      profession:
+        course: Курсы профессии
+        title: Название профессии
+        courses: 'Курсы, которые включают в себя профессию:'
+      admin:
+        name: Имя
+        password: Пароль
+        role: Роль
+      article:
+        title: Заголовок
+        body: Текст статьи
+        author: Автор

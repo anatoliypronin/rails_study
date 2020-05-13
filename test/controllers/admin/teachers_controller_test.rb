@@ -55,10 +55,19 @@ class Admin::TeachersControllerTest < ActionDispatch::IntegrationTest
     assert_equal attrs[:first_name], @teacher.first_name
   end
 
-  test 'should delete destroy teacher' do
-    delete admin_teacher_path(@teacher.id)
+  test 'should state del teacher' do
+    put admin_teacher_del_path(@teacher.id)
+    assert_response :redirect
+    @teacher.reload
+    assert_equal 'deleted', @teacher.state
+  end
+
+  test 'should state active teacher' do
+    @teacher = create :teacher, :del
+    put admin_teacher_restore_path(@teacher.id)
     assert_response :redirect
 
-    assert_not Teacher.exists?(@teacher.id)
+    @teacher.reload
+    assert_equal 'active', @teacher.state
   end
 end

@@ -1,72 +1,111 @@
 ru:
-        
+  students: Студенты
+  teachers: Учителя
+  courses: Курсы
+  homework: Домашние работы
+  articles: Статьи
+  admins: Админы
+  professions: Профессии
+  are you sure?: Вы согласны?
+
   attributes:
     id: Идентификатор
-        
+
   header:
+    admins: Админы
     teachers: Учителя
+    students: Студенты
     professions: Профессии
+    courses: Курсы
+    articles: Статьи
     home: Домашняя страница
     exit: Выйти
+  
+  web:  
+    admin:
+      professions:
+        index:
+          control: Управление
+          view profile: Подробнее
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+          edit: Редактировать
+          del: Удалить
+          restore: Восстановить
+          control: Управление
+          course: Курсы
         
-  admin:
-    professions:
-      index:
-        control: Управление
-        edit: Редактировать
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-    teachers:
-      index:
-        destroy: Удалить 
-        add: Добавить
-        control: Управление
-        edit: Редактировать   
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-      show:
-        back: Назад
-        
-  activerecord:
-    state_machines:
-      profession:
-        state:
-          states:
-            active: Активный
-            deleted: Удаленный
-          events:
-            del: Удалить
-            restore: Восстановить
-      teacher:
-        state:  
-          states:
-            active: Активный
-            deleted: Удаленный
-          events:
-            del: Удалить
-            restore: Восстановить
-                      
-    models:
-      teacher:
-        one: Учитель
-        other: Учителя
-        
-      profession:
-        one: Профессия
-        other: Профессии
-    attributes:
-      teacher:
-        first_name: Имя
-        last_name: Фамилия
-        email: E-mail
-        description: Описание
-        password: Пароль
-        state: Состояние 
-      profession:
-        title: Название профессии
-        description: Описание профессии
-        state: Состояние
+      teachers:
+        index:
+          del: Удалить
+          restore: Восстановить
+          add: Добавить
+          control: Управление
+          edit: Редактировать   
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+
+      admins:
+        index:
+          del: Удалить
+          restore: Восстановить
+          add: Добавить
+          control: Управление
+          edit: Редактировать         
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+    
+      students:
+        index:
+          del: Удалить 
+          restore: Восстановить
+          add: Добавить
+          control: Управление
+          edit: Редактировать          
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+
+      courses:
+        index:
+          control: Управление
+          view profile: Подробнее     
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+          restore: Восстановить
+          del: Удалить 
+          add: Добавить
+          edit: Редактировать  
+
+      articles:
+        index:
+          publish: Опубликовать
+          unpublish: Снять с публикации
+          edit: Редактировать
+          add: Добавить
+          control: Управление
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад

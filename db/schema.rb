@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_05_12_214935) do
+=======
+ActiveRecord::Schema.define(version: 2020_05_10_102501) do
+>>>>>>> 70d18a87d062aa866f1f78116781e9e0e5099531
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +35,11 @@ ActiveRecord::Schema.define(version: 2020_05_12_214935) do
     t.bigint "author_id"
     t.string "title", null: false
     t.text "body", null: false
+<<<<<<< HEAD
     t.boolean "published"
     t.datetime "published_at"
+=======
+>>>>>>> 70d18a87d062aa866f1f78116781e9e0e5099531
     t.string "state", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

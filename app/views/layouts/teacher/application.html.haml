@@ -1,0 +1,14 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title App
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'teacher_application', media: 'all'
+    = javascript_include_tag 'teacher_application'
+  %body
+    .container
+      - if teacher_signed_in?
+        = render 'layouts/teacher/header'
+      = yield
+

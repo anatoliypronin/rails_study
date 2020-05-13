@@ -5,10 +5,10 @@
     %title App
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'admin_application', media: 'all'
     = javascript_include_tag 'admin_application'
   %body
     .container
-      = render 'layouts/admin/header'
+      - if admin_signed_in?
+        = render 'layouts/admin/header'
       = yield
-
