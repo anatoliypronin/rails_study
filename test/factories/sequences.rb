@@ -1,6 +1,10 @@
 FactoryBot.define do
-  sequence :string, aliases: %i[first_name last_name password_digest description name title body] do |n|
+  sequence :string, aliases: %i[first_name last_name name title body] do |n|
     "String#{n}"
+  end
+
+  sequence :text, aliases: %i[description homework] do |n|
+    "Text#{n}"
   end
 
   sequence :email do |n|
