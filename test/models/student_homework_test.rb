@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class StudentHomeworkTest < ActiveSupport::TestCase
+  test 'should be create student_homework with student and homework' do
+    student_homework = create :student_homework
+    assert student_homework.persisted?
+  end
+
   test 'Should not create student_homework without link_homework' do
     student_homework = build :student_homework, link_homework: nil
     assert_not student_homework.save
