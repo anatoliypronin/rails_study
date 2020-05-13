@@ -9,6 +9,22 @@ class LessonTest < ActiveSupport::TestCase
     assert created_lesson
   end
 
+  test 'should not create lesson without homework' do
+    lesson = build :lesson, homework: nil
+    lesson.save
+
+    created_lesson = Lesson.last
+    assert_not created_lesson
+  end
+
+  test 'should not create lesson without discription' do
+    lesson = build :lesson, description: nil
+    lesson.save
+
+    created_lesson = Lesson.last
+    assert_not created_lesson
+  end
+
   test 'should not create lesson with title length > 50' do
     lesson = build :lesson, title: 'Title' * 20
     lesson.save
