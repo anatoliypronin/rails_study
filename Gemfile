@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.4.1'
+gem 'configatron'
 gem 'coveralls', require: false
 gem 'draper'
 gem 'enumerize'
