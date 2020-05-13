@@ -8,8 +8,8 @@ class Course < ApplicationRecord
   has_many :students, through: :reviews
 
   belongs_to :teacher, optional: true
-  belongs_to :lesson, optional: true
 
+  has_many :lessons, dependent: :destroy
   has_many :course_professions, dependent: :nullify
   has_many :professions, through: :course_professions
 

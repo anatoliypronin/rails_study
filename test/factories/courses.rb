@@ -3,6 +3,5 @@ FactoryBot.define do
     title
     description
     teacher
-    lesson
   end
 end

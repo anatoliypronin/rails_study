@@ -3,6 +3,7 @@ FactoryBot.define do
     title
     description
     homework
+    course
 
     trait :del do
       state { 'deleted' }

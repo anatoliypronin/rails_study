@@ -1,5 +1,5 @@
 class Lesson < ApplicationRecord
-  has_many :courses, dependent: :nullify
+  belongs_to :course
 
   validates :title, :description, :homework, :state, presence: true
   validates :title, length: { maximum: 50 }

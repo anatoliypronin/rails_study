@@ -54,8 +54,6 @@ ActiveRecord::Schema.define(version: 2020_05_12_214935) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "teacher_id"
-    t.bigint "lesson_id"
-    t.index ["lesson_id"], name: "index_courses_on_lesson_id"
     t.index ["teacher_id"], name: "index_courses_on_teacher_id"
   end
 
@@ -66,6 +64,8 @@ ActiveRecord::Schema.define(version: 2020_05_12_214935) do
     t.string "state", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "course_id", null: false
+    t.index ["course_id"], name: "index_lessons_on_course_id"
   end
 
   create_table "professions", force: :cascade do |t|
@@ -139,8 +139,8 @@ ActiveRecord::Schema.define(version: 2020_05_12_214935) do
 
   add_foreign_key "course_professions", "courses"
   add_foreign_key "course_professions", "professions"
-  add_foreign_key "courses", "lessons"
   add_foreign_key "courses", "teachers"
+  add_foreign_key "lessons", "courses"
   add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "students"
   add_foreign_key "student_courses", "courses"
