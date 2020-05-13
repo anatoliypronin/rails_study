@@ -1,0 +1,21 @@
+%a.pull-right
+  %h1= t('lessons')
+%table.table.table-striped.table-hover
+  %tr
+    %th= Lesson.human_attribute_name(:id)
+    %th= Lesson.human_attribute_name(:title)
+    %th= Lesson.human_attribute_name(:description)
+    %th= Lesson.human_attribute_name(:homework)
+    %th= Lesson.human_attribute_name(:created_at)
+    %th= Lesson.human_attribute_name(:state)
+    %th{:colspan => "2"}= t('.control')
+  - @lessons.each do |lesson|
+    %tr
+      %td= lesson.id
+      %td= lesson.title
+      %td= lesson.description
+      %td= lesson.homework
+      %td= lesson.created_at
+      %td= lesson.human_state_name
+      %td= link_to t('.view profile'), teacher_lesson_path(lesson), class: 'btn btn-success btn'
+%td= link_to t('.add'), new_teacher_lesson_path, class: 'btn btn-outline-secondary' 

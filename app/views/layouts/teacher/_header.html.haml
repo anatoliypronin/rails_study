@@ -2,6 +2,7 @@
   .collapse.navbar-collapse
     .navbar-nav
       = link_to t('header.home'), teacher_root_path, class: 'navbar-brand'
+      = link_to t('header.lessons'), teacher_lessons_path, class: 'nav-item nav-link'
       = link_to t('header.personal_account'), edit_teacher_profile_path, class: 'nav-item nav-link'
       %ul.navbar-num
   %div

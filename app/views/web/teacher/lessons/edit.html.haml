@@ -1,0 +1,7 @@
+= simple_form_for @lesson, url: teacher_lesson_path(@lesson.id) do |lesson|
+  = lesson.input :title
+  = lesson.input :description
+  = lesson.input :homework
+  = lesson.association :course, label_method: :title, include_blank: false
+  = lesson.button :submit, class: 'btn btn-outline-secondary'
+  = link_to t('.cancel'), teacher_lessons_path, class: 'btn btn-outline-secondary' 

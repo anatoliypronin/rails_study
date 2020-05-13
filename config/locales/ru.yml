@@ -8,7 +8,8 @@ ru:
   professions: Профессии
   personal_account: Личный кабинет
   are you sure?: Вы согласны?
-
+  lessons: Уроки
+  
   attributes:
     id: Идентификатор
 
@@ -22,8 +23,8 @@ ru:
     home: Домашняя страница
     exit: Выйти
     personal_account: Личный кабинет
+    lessons: Уроки
 
-  
   web:  
     admin:
       professions:
@@ -97,7 +98,9 @@ ru:
           restore: Восстановить
           del: Удалить 
           add: Добавить
-          edit: Редактировать  
+          edit: Редактировать 
+          
+          
     teacher:
       profiles:
         edit:
@@ -115,4 +118,21 @@ ru:
         edit:
           cancel: Отмена
         show:
+          back: Назад
+      
+      lessons:
+        index:
+          add: Добавить
+          control: Управление
+          view profile: Подробнее 
+        edit:
+          cancel: Отмена
+        new:
+          cancel: Отмена
+        show:
+          сourse: Курс
+          control: Управление
+          restore: Восстановить
+          del: Удалить
+          edit: Редактировать 
           back: Назад

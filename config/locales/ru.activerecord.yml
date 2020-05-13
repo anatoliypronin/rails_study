@@ -59,6 +59,12 @@ ru:
           events:
             publish: Опубликовать
             unpublish: Снять с публикации
+      lesson:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+
                           
     models:
       teacher:
@@ -80,6 +86,10 @@ ru:
       articles:
         one: Статья
         other: Статьи
+      
+      lessons:
+        one: Урок
+        other: Уроки
     
     attributes:
       course:
@@ -109,3 +119,8 @@ ru:
         title: Заголовок
         body: Текст статьи
         author: Автор
+      lesson:
+        сourse: Курс
+        title: Заголовок
+        homework: Домашняя работа
+        сourse: Курс
