@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_214935) do
+ActiveRecord::Schema.define(version: 2020_05_13_112916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,9 @@ ActiveRecord::Schema.define(version: 2020_05_12_214935) do
     t.bigint "student_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "lesson_id", null: false
+    t.index ["lesson_id"], name: "index_student_homeworks_on_lesson_id"
+    t.index ["student_id", "lesson_id"], name: "index_student_homeworks_on_student_id_and_lesson_id", unique: true
     t.index ["student_id"], name: "index_student_homeworks_on_student_id"
   end
 
@@ -145,5 +148,6 @@ ActiveRecord::Schema.define(version: 2020_05_12_214935) do
   add_foreign_key "reviews", "students"
   add_foreign_key "student_courses", "courses"
   add_foreign_key "student_courses", "students"
+  add_foreign_key "student_homeworks", "lessons"
   add_foreign_key "student_homeworks", "students"
 end

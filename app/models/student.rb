@@ -12,6 +12,7 @@ class Student < ApplicationRecord
   has_many :reviews_courses, through: :reviews, source: :course
 
   has_many :student_homeworks, dependent: :destroy
+  has_many :in_progress, through: :student_homeworks, source: :lesson
 
   state_machine initial: :active do
     state :active
