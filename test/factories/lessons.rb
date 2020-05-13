@@ -3,12 +3,12 @@ FactoryBot.define do
     title
     description
     homework
-    
+
     trait :del do
       state { 'deleted' }
     end
 
-    trait :restored do
+    trait :restore do
       state { 'active' }
     end
   end

@@ -28,16 +28,12 @@ class LessonTest < ActiveSupport::TestCase
   test 'should del lesson' do
     lesson = create :lesson
     lesson.del
-
-    lesson.reload
-    assert_equal "deleted", lesson.state
+    assert_equal 'deleted', lesson.state
   end
 
   test 'should restore lesson' do
     lesson = create :lesson
     lesson.restore
-
-    lesson.reload
-    assert_equal "active", lesson.state
+    assert_equal 'active', lesson.state
   end
 end
