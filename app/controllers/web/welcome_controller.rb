@@ -1,4 +1,3 @@
 class Web::WelcomeController < Web::ApplicationController
-  def index
-  end
+  def index; end
 end

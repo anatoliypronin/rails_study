@@ -2,9 +2,9 @@
   .collapse.navbar-collapse
     .navbar-nav
       = link_to t('header.home'), root_path, class: 'navbar-brand'
-      = link_to t('header.professions'), professions_path, class: 'nav-item nav-link'
-      = link_to t('header.articles'), articles_path, class: 'nav-item nav-link'
-      = link_to t('header.reviews'), reviews_path, class: 'nav-item nav-link'
+      = link_to t('header.professions'), '#', class: 'nav-item nav-link'
+      = link_to t('header.articles'), '#', class: 'nav-item nav-link'
+      = link_to t('header.reviews'), '#', class: 'nav-item nav-link'
   %div
     =link_to t('header.login teacher'), new_teacher_session_path, class: 'btn btn-outline-secondary btn-sm'
     =link_to t('header.login student'), '#', class: 'btn btn-outline-secondary btn-sm'
