@@ -8,6 +8,8 @@ ru:
   professions: Профессии
   personal_account: Личный кабинет
   are you sure?: Вы согласны?
+  edit: Редактировать
+  add: Добавить
 
   attributes:
     id: Идентификатор
@@ -19,6 +21,7 @@ ru:
     professions: Профессии
     courses: Курсы
     articles: Статьи
+    home works: Домашние работы
     home: Домашняя страница
     exit: Выйти
     personal_account: Личный кабинет
