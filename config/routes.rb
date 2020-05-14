@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   scope module: :web do
     root to: "welcome#index"
+
+    resources :articles, :professions, :reviews, only: %i[index show]
+
     namespace :admin do
       root to: "admins#index"
       resource :session, only: %i[new create destroy]
