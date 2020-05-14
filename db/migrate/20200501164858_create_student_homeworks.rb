@@ -9,9 +9,10 @@ class CreateStudentHomeworks < ActiveRecord::Migration[6.0]
       t.datetime :date_end, null: false
       t.string :link_homework, null: false
       t.references :student, null: false, foreign_key: true
-
+      t.references :lesson, null: false, foreign_key: true
       t.timestamps
     end
+    add_index :student_homeworks, [:student_id, :lesson_id], unique: true
   end
 end
 
