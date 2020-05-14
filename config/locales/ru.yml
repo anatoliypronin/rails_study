@@ -6,6 +6,7 @@ ru:
   articles: Статьи
   admins: Админы
   professions: Профессии
+  personal_account: Личный кабинет
   are you sure?: Вы согласны?
   edit: Редактировать
   add: Добавить
@@ -23,6 +24,8 @@ ru:
     home works: Домашние работы
     home: Домашняя страница
     exit: Выйти
+    personal_account: Личный кабинет
+
   
   web:  
     admin:
@@ -98,6 +101,10 @@ ru:
           del: Удалить 
           add: Добавить
           edit: Редактировать  
+    teacher:
+      profiles:
+        edit:
+          cancel: Отмена
 
       articles:
         index:
