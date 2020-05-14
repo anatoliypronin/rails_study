@@ -17,10 +17,10 @@ class ArticleTest < ActiveSupport::TestCase
     assert_not created_article
   end
 
-  test 'should del article' do
+  test 'should unpublish article' do
     article = create :article
-    article.del
+    article.unpublish
 
-    assert_equal 'deleted', article.state
+    assert_equal 'unpublished', article.state
   end
 end

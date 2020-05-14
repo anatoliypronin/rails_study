@@ -4,16 +4,16 @@ class Article < ApplicationRecord
 
   belongs_to :author, polymorphic: true
 
-  state_machine initial: :active do
-    state :active
-    state :deleted
+  state_machine initial: :published do
+    state :published
+    state :unpublished
 
-    event :del do
-      transition active: :deleted
+    event :unpublish do
+      transition published: :unpublished
     end
 
-    event :restore do
-      transition deleted: :active
+    event :publish do
+      transition unpublished: :published
     end
   end
 end

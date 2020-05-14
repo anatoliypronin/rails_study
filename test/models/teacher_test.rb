@@ -41,6 +41,14 @@ class TeacherTest < ActiveSupport::TestCase
     assert_not created_teacher
   end
 
+  test 'email should be unique' do
+    first_teacher = build :teacher, email: 'first_teacher@study.com'
+    first_teacher.save
+
+    second_teacher = build :teacher, email: 'first_teacher@study.com'
+    assert_not second_teacher.save
+  end
+
   test 'should del teacher' do
     teacher = create :teacher
     teacher.del
