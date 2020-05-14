@@ -9,6 +9,7 @@ class Course < ApplicationRecord
 
   belongs_to :teacher, optional: true
 
+  has_many :lessons, dependent: :destroy
   has_many :course_professions, dependent: :nullify
   has_many :professions, through: :course_professions
 

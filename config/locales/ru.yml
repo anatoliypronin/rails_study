@@ -6,6 +6,10 @@ ru:
   articles: Статьи
   admins: Админы
   professions: Профессии
+  personal_account: Личный кабинет
+  are you sure?: Вы согласны?
+  edit: Редактировать
+  add: Добавить
 
   attributes:
     id: Идентификатор
@@ -16,8 +20,12 @@ ru:
     students: Студенты
     professions: Профессии
     courses: Курсы
+    articles: Статьи
+    home works: Домашние работы
     home: Домашняя страница
     exit: Выйти
+    personal_account: Личный кабинет
+
   
   web:  
     admin:
@@ -93,3 +101,21 @@ ru:
           del: Удалить 
           add: Добавить
           edit: Редактировать  
+    teacher:
+      profiles:
+        edit:
+          cancel: Отмена
+
+      articles:
+        index:
+          publish: Опубликовать
+          unpublish: Снять с публикации
+          edit: Редактировать
+          add: Добавить
+          control: Управление
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад

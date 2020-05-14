@@ -2,3 +2,6 @@ ru:
   admin_mailer:
     welcome_email:
       subject: "Добро пожаловать, %{name}!"
+  teacher_mailer:
+    welcome_email:
+      subject: "Добро пожаловать, %{name}!"
