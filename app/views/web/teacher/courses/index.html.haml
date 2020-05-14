@@ -7,15 +7,15 @@
     %th= Course.human_attribute_name(:title)
     %th= Course.human_attribute_name(:description)
     %th= Course.human_attribute_name(:created_at)
-    %th{:colspan => "2"}= t('.Управление')
+    %th{:colspan => "2"}= t('.control')
   - @courses.each do |course|
     %tr
       %td= course.id
       %td
         - course.professions.each do |profession|
           %br= profession.title
-      %td= course.title
+      %td= link_to course.title, teacher_course_path(course.id)
       %td= course.description
       %td= course.created_at
-      %td= link_to 'Редактировать', edit_teacher_course_path(course), class: 'btn btn-success btn'
+      %td= link_to t('.edit'), edit_teacher_course_path(course), class: 'btn btn-success btn'
 %td= link_to t('.add'), new_teacher_course_path, class: 'btn btn-outline-secondary'
