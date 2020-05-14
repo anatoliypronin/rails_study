@@ -1,0 +1,5 @@
+= simple_form_for @article, url: teacher_articles_path do |article|
+  = article.input :title
+  = article.input :body
+  = article.button :submit, class: 'btn btn-outline-secondary'
+  = link_to t('.cancel'), teacher_articles_path, class: 'btn btn-outline-secondary'

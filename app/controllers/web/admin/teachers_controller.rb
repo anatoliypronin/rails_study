@@ -18,7 +18,7 @@ class Web::Admin::TeachersController < Web::Admin::ApplicationController
   end
 
   def show
-    @teacher = Teacher.find(params[:id])
+    @teacher = Teacher.find(params[:id]).decorate
   end
 
   def edit
