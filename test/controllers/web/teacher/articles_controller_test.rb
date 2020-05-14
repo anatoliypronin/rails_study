@@ -1,26 +1,26 @@
 require 'test_helper'
 
-class Admin::ArticlesControllerTest < ActionDispatch::IntegrationTest
+class Web::Teacher::ArticlesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @article = create :article
-    admin = create :admin
-    sign_in_as_admin(admin)
+    teacher = create :teacher
+    sign_in_as_teacher(teacher)
   end
 
   test 'should get index articles page' do
-    get admin_articles_path
+    get teacher_articles_path
     assert_response :success
   end
 
   test 'should get new article page' do
-    get new_admin_article_path
+    get new_teacher_article_path
     assert_response :success
   end
 
   test 'should post create article' do
     article_attrs = attributes_for :article
 
-    post admin_articles_path, params: { article: article_attrs }
+    post teacher_articles_path, params: { article: article_attrs }
     assert_response :redirect
 
     article = Article.last
@@ -30,7 +30,7 @@ class Admin::ArticlesControllerTest < ActionDispatch::IntegrationTest
   test 'should not post create article' do
     article_attrs = attributes_for :article, body: nil
 
-    post admin_articles_path, params: { article: article_attrs }
+    post teacher_articles_path, params: { article: article_attrs }
     assert_response :success
 
     article = Article.find_by(body: article_attrs[:body])
@@ -38,12 +38,12 @@ class Admin::ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get show article page' do
-    get admin_article_path(@article.id)
+    get teacher_article_path(@article.id)
     assert_response :success
   end
 
   test 'should get edit article page' do
-    get edit_admin_article_path(@article.id)
+    get edit_teacher_article_path(@article.id)
     assert_response :success
   end
 
@@ -52,7 +52,7 @@ class Admin::ArticlesControllerTest < ActionDispatch::IntegrationTest
     attrs[:title] = generate :title
     attrs[:body] = '123456'
 
-    put admin_article_path(@article.id), params: { article: attrs }
+    put teacher_article_path(@article.id), params: { article: attrs }
     assert_response :redirect
 
     @article.reload
@@ -61,7 +61,7 @@ class Admin::ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should state unpublish article' do
-    put admin_article_unpublish_path(@article)
+    put teacher_article_unpublish_path(@article)
     assert_response :redirect
 
     @article.reload
@@ -70,7 +70,7 @@ class Admin::ArticlesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should state publish article' do
     @article = create :article, :unpublished
-    put admin_article_publish_path(@article.id)
+    put teacher_article_publish_path(@article.id)
     assert_response :redirect
 
     @article.reload
