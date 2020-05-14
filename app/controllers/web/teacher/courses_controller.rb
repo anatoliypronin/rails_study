@@ -1,7 +1,6 @@
 class Web::Teacher::CoursesController < Web::Teacher::ApplicationController
     def index
-      @courses = Course.decorate
-      @courses = Course.where(teacher_id: current_teacher.id) 
+      @courses = Course.where(teacher_id: current_teacher.id).decorate 
     end
   
     def new
