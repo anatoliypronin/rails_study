@@ -25,9 +25,10 @@ ru:
     home: Домашняя страница
     exit: Выйти
     personal_account: Личный кабинет
+    login teacher: Войти как учитель
+    login student: Войти как студент
 
-  
-  web:  
+  web:
     admin:
       professions:
         index:
@@ -44,14 +45,14 @@ ru:
           restore: Восстановить
           control: Управление
           course: Курсы
-        
+
       teachers:
         index:
           del: Удалить
           restore: Восстановить
           add: Добавить
           control: Управление
-          edit: Редактировать   
+          edit: Редактировать
         new:
           cancel: Отмена
         edit:
@@ -65,21 +66,21 @@ ru:
           restore: Восстановить
           add: Добавить
           control: Управление
-          edit: Редактировать         
+          edit: Редактировать
         new:
           cancel: Отмена
         edit:
           cancel: Отмена
         show:
           back: Назад
-    
+
       students:
         index:
-          del: Удалить 
+          del: Удалить
           restore: Восстановить
           add: Добавить
           control: Управление
-          edit: Редактировать          
+          edit: Редактировать
         new:
           cancel: Отмена
         edit:
@@ -90,7 +91,7 @@ ru:
       courses:
         index:
           control: Управление
-          view profile: Подробнее     
+          view profile: Подробнее
         new:
           cancel: Отмена
         edit:
@@ -98,14 +99,9 @@ ru:
         show:
           back: Назад
           restore: Восстановить
-          del: Удалить 
+          del: Удалить
           add: Добавить
-          edit: Редактировать  
-    
-    welcome:
-      index:
-        login teacher: Войти как учитель
-        login student: Войти как студент
+          edit: Редактировать
 
     teacher:
       profiles:
