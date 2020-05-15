@@ -1,3 +1,3 @@
 class ReviewIndexSerializer < ActiveModel::Serializer
-  attributes :course, :student
+  attributes :course, :student, :body
 end

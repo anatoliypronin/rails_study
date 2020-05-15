@@ -24,11 +24,13 @@ class Reviews extends React.Component {
           <tr>
             <th>Курс</th>
             <th>Студент</th>
+            <th>Текст</th>
           </tr>
           {this.state.reviews.map(review =>
             <tr>
               <td>{review.course.title}</td>
               <td>{review.student.first_name} + {review.student.last_name}</td>
+              <td>{review.body}</td>
             </tr>
           )}
         </table>

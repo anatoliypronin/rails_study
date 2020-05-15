@@ -23,11 +23,13 @@ class Articles extends React.Component {
         <table className="table table-hover">
           <tr>
             <th>Заголовок</th>
+            <th>Текст</th>
             <th>Дата обновления</th>
           </tr>
           {this.state.articles.map(article =>
             <tr>
               <td>{article.title}</td>
+              <td>{article.body}</td>
               <td>{article.updated_at}</td>
             </tr>
           )}

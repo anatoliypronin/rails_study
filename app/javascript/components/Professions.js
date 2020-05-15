@@ -22,11 +22,13 @@ class Professions extends React.Component {
         <h1>Профессии</h1>
         <table className="table table-hover">
           <tr>
-            <th>Заголовок</th>
+            <th>Название</th>
+            <th>Описание</th>
           </tr>
           {this.state.professions.map(profession =>
             <tr>
               <td>{profession.title}</td>
+              <td>{profession.discription}</td>
             </tr>
           )}
         </table>

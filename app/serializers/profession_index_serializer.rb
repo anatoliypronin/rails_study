@@ -1,3 +1,3 @@
 class ProfessionIndexSerializer < ActiveModel::Serializer
-  attributes :title
+  attributes :title, :description
 end
