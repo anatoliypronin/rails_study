@@ -1,0 +1,6 @@
+= simple_form_for @course, url: teacher_course_path(@course.id) do |course|
+  = course.input :title
+  = course.input :description
+  = course.association :professions, as: :check_boxes
+  = course.button :submit, class: 'btn btn-outline-secondary'
+  = link_to t('.cancel'), teacher_courses_path, class: 'btn btn-outline-secondary'
