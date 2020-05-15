@@ -1,6 +1,6 @@
 class Web::Teacher::LessonsController < Web::Teacher::ApplicationController
   def index
-    @lessons = Lesson.decorate
+    @lessons = Lesson.where(teacher: lesson.course.teacher).decorate
   end
 
   def new

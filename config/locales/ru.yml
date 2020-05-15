@@ -8,14 +8,12 @@ ru:
   professions: Профессии
   personal_account: Личный кабинет
   are you sure?: Вы согласны?
-<<<<<<< HEAD
   lessons: Уроки
   
-=======
+
   edit: Редактировать
   add: Добавить
 
->>>>>>> develop
   attributes:
     id: Идентификатор
 
