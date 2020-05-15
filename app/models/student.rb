@@ -11,6 +11,8 @@ class Student < ApplicationRecord
   has_many :reviews, dependent: :nullify
   has_many :reviews_courses, through: :reviews, source: :course
 
+  has_many :student_homeworks, dependent: :destroy
+
   state_machine initial: :active do
     state :active
     state :deleted
