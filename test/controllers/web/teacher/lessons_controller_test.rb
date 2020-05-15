@@ -12,6 +12,14 @@ class Web::Teacher::LessonsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should not get index lessons page' do
+    @new_teacher = create :teacher
+    sign_in_as_teacher(@new_teacher)
+
+    get teacher_lessons_path
+    assert_response :success
+  end
+
   test 'should get new lesson page' do
     get new_teacher_lesson_path
     assert_response :success
