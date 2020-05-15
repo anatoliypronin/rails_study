@@ -1,10 +1,35 @@
 import React from "react"
 import PropTypes from "prop-types"
 class Professions extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { professions: [] }
+  };
+
+  fetchProfessions() {
+    fetch("/api/v1/professions")
+      .then(response => response.json())
+      .then(result => this.setState({ professions: result }))
+  };
+
+  componentDidMount() {
+    this.fetchProfessions()
+  };
+
   render() {
     return (
       <React.Fragment>
-        <h1>Профессии))</h1>
+        <h1>Профессии</h1>
+        <table className="table table-hover">
+          <tr>
+            <th>Заголовок</th>
+          </tr>
+          {this.state.professions.map(profession =>
+            <tr>
+              <td>{profession.title}</td>
+            </tr>
+          )}
+        </table>
       </React.Fragment>
     );
   }
