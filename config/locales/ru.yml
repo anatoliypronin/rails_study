@@ -140,4 +140,17 @@ ru:
           restore: Восстановить
           del: Удалить
           edit: Редактировать 
+
+      courses:
+        index:
+          edit: Редактировать
+          add: Добавить
+          control: Управление
+        new:
+          cancel: Отмена
+          edit: Редактировать
+        edit:
+          cancel: Отмена
+        show:
+          edit: Редактировать
           back: Назад

@@ -29,6 +29,9 @@ Rails.application.routes.draw do
         put 'restore'
         put 'del'
       end
+
+      resources :courses, only: %i[index new create show edit update]
+
       resources :articles do
         put "publish"
         put "unpublish"
