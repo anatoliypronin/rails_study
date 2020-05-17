@@ -2,9 +2,8 @@ require 'test_helper'
 
 class Web::Teacher::LessonsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @teacher = create :teacher
-    sign_in_as_teacher(@teacher)
     @lesson = create :lesson
+    sign_in_as_teacher(@lesson.course.teacher)
   end
 
   test 'should get index lessons page' do
@@ -48,12 +47,12 @@ class Web::Teacher::LessonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get show lesson page' do
-    get teacher_lesson_path(@lesson.id)
+    get teacher_lesson_path(@lesson)
     assert_response :success
   end
 
   test 'should get edit lesson page' do
-    get edit_teacher_lesson_path(@lesson.id)
+    get edit_teacher_lesson_path(@lesson)
     assert_response :success
   end
 
@@ -78,7 +77,7 @@ class Web::Teacher::LessonsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should state active lesson' do
     @lesson = create :lesson, :del
-    put teacher_lesson_restore_path(@lesson.id)
+    put teacher_lesson_restore_path(@lesson)
     assert_response :redirect
 
     @lesson.reload

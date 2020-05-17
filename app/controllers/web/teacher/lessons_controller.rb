@@ -1,6 +1,6 @@
 class Web::Teacher::LessonsController < Web::Teacher::ApplicationController
   def index
-    @lessons = Lesson.where(course_id: current_teacher.id).decorate
+    @lessons = current_teacher.lessons
   end
 
   def new
@@ -18,15 +18,15 @@ class Web::Teacher::LessonsController < Web::Teacher::ApplicationController
   end
 
   def show
-    @lesson = Lesson.find(params[:id])
+    @lesson = current_teacher.lessons.find(params[:id])
   end
 
   def edit
-    @lesson = Lesson.find(params[:id])
+    @lesson = current_teacher.lessons.find(params[:id])
   end
 
   def update
-    @lesson = Lesson.find(params[:id])
+    @lesson = current_teacher.lessons.find(params[:id])
 
     if @lesson.update(lesson_attrs)
       redirect_to action: :index
@@ -36,7 +36,7 @@ class Web::Teacher::LessonsController < Web::Teacher::ApplicationController
   end
 
   def del
-    lesson = Lesson.find(params[:lesson_id])
+    lesson = current_teacher.lessons.find(params[:lesson_id])
     lesson.del!
     redirect_to action: :index
   end

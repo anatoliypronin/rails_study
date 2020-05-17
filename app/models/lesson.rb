@@ -5,7 +5,7 @@ class Lesson < ApplicationRecord
   has_many :students, through: :student_homeworks
 
   validates :title, :description, :homework, :state, presence: true
-  validates :title, length: { maximum: 50 }
+  validates :title, length: { maximum: 50 }, uniqueness: true
 
   state_machine initial: :active do
     state :active

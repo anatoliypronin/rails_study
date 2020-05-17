@@ -16,6 +16,6 @@ class Web::Teacher::ProfilesController < Web::Teacher::ApplicationController
   private
 
   def teacher_attrs
-    params.require(:teacher).permit(:first_name, :last_name, :email, :password, :description)
+    params.require(:teacher).permit(:first_name, :last_name, :email, :password, :description, course_ids: [], lesson_ids: [])
   end
 end
