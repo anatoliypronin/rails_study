@@ -5,8 +5,6 @@
     %th= Lesson.human_attribute_name(:id)
     %th= Lesson.human_attribute_name(:title)
     %th= Lesson.human_attribute_name(:description)
-    %th= Lesson.human_attribute_name(:homework)
-    %th= Lesson.human_attribute_name(:course)
     %th= Lesson.human_attribute_name(:created_at)
     %th= Lesson.human_attribute_name(:state)
     %th{:colspan => "2"}= t('.control')
@@ -15,8 +13,6 @@
       %td= lesson.id
       %td= lesson.title
       %td= lesson.description
-      %td= lesson.homework
-      %td= lesson.course.title
       %td= lesson.created_at
       %td= lesson.human_state_name
       %td= link_to t('.view profile'), teacher_lesson_path(lesson), class: 'btn btn-success btn'

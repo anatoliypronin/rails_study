@@ -1,6 +1,6 @@
 class Web::Teacher::LessonsController < Web::Teacher::ApplicationController
   def index
-    @lessons = current_teacher.lessons
+    @lessons = current_teacher.lessons.decorate
   end
 
   def new

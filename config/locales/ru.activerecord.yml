@@ -97,6 +97,7 @@ ru:
         profession: Профессии курса    
         title: Название курса
         professions: 'Профессии в которые включен курс:'
+        lessons: 'Уроки которые включены в курс:'
       teacher:
         first_name: Имя
         last_name: Фамилия
@@ -121,6 +122,5 @@ ru:
         author: Автор
       lesson:
         сourse: Курс
-        title: Заголовок
+        title: Название
         homework: Домашняя работа
-        сourse: Курс

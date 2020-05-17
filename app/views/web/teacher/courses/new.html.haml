@@ -1,10 +1,9 @@
 = simple_form_for @course, url: teacher_courses_path do |course|
   = course.input :title
   = course.input :description
-  = course.association :teacher, label_method: :last_name, selected: current_teacher.id, disabled: true
   = course.input :teacher_id, as: :hidden, input_html: {value: current_teacher.id}
   = link_to t('.add_new_lesson'), new_teacher_lesson_path, class: 'btn btn-outline-secondary'
-  = course.association :lessons, as: :check_boxes
+  = course.association :lessons, collection: current_teacher.lessons, as: :check_boxes
   = course.association :professions, as: :check_boxes
   = course.button :submit, class: 'btn btn-outline-secondary'
   = link_to t('.cancel'), teacher_courses_path, class: 'btn btn-outline-secondary'

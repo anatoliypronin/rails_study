@@ -6,7 +6,6 @@ ru:
   articles: Статьи
   admins: Админы
   professions: Профессии
-  personal_account: Личный кабинет
   are you sure?: Вы согласны?
   lessons: Уроки
   
@@ -27,7 +26,7 @@ ru:
     home works: Домашние работы
     home: Личный кабинет
     exit: Выйти
-    personal_account: Личный кабинет
+    personal_account: Изменить профиль
     lessons: Уроки
 
   web:  
@@ -139,7 +138,8 @@ ru:
           control: Управление
           restore: Восстановить
           del: Удалить
-          edit: Редактировать 
+          edit: Редактировать
+          back: Назад 
 
       courses:
         index:
