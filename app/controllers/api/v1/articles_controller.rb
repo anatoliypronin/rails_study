@@ -5,7 +5,7 @@ class Api::V1::ArticlesController < Api::V1::ApplicationController
   end
 
   def show
-    article = Article.find(params[:id]).decorate
+    article = Article.active.find(params[:id])
     render json: article, serializer: ArticleShowSerializer
   end
 end
