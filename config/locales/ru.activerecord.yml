@@ -64,8 +64,7 @@ ru:
           states:
             active: Активный
             deleted: Удаленный
-
-                          
+                      
     models:
       teacher:
         one: Учитель
@@ -89,7 +88,7 @@ ru:
       
       lessons:
         one: Урок
-        other: Уроки
+        others: Уроки
     
     attributes:
       course:
@@ -121,6 +120,6 @@ ru:
         body: Текст статьи
         author: Автор
       lesson:
-        сourse: Курс
+        course: Курс
         title: Название
         homework: Домашняя работа
