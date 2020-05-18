@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     root to: "welcome#index"
     namespace :admin do
       root to: "admins#index"
+      resource :profile, only: %i[edit update]
       resource :session, only: %i[new create destroy]
       resources :admins, :students, :courses, :teachers, :professions do
         put "restore"

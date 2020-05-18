@@ -5,8 +5,8 @@ ru:
   homework: Домашние работы
   articles: Статьи
   admins: Админы
+  personal_account: Мой профиль
   professions: Профессии
-  personal_account: Личный кабинет
   are you sure?: Вы согласны?
   edit: Редактировать
   add: Добавить
@@ -22,9 +22,9 @@ ru:
     courses: Курсы
     articles: Статьи
     home works: Домашние работы
-    home: Домашняя страница
+    home: Личный кабинет
     exit: Выйти
-    personal_account: Личный кабинет
+    personal_account: Мой профиль
 
   
   web:  
@@ -72,6 +72,9 @@ ru:
           cancel: Отмена
         show:
           back: Назад
+      profiles:
+        edit:
+          cancel: Отмена
     
       students:
         index:
