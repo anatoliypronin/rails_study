@@ -1,14 +1,11 @@
-%a.pull-right
-  %h1= t('professions')
-%table.table.table-striped.table-hover
-  %tr
-    %th= Profession.human_attribute_name(:id)
-    %th= Profession.human_attribute_name(:title)
-    %th= Profession.human_attribute_name(:description)
-    %th= Profession.human_attribute_name(:created_at)
+.container
+  %a.pull-right
+    %h1= t('professions')
   - @professions.each do |profession|
-    %tr
-      %td= profession.id
-      %td= link_to profession.title, profession_path(profession), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
-      %td= profession.description
-      %td= profession.created_at
+    .col-md-15
+      .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+        .col.p-4.d-flex.flex-column.position-static
+          %h3.mb-0= profession.title
+          .mb-1.text-muted= profession.created_at
+          %p.card-text.mb-auto= profession.description
+          %a.stretched-link{:href => profession_path(profession.id)}= t('more')

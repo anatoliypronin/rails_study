@@ -4,12 +4,15 @@ ru:
   courses: Курсы
   homework: Домашние работы
   articles: Статьи
+  reviews: Отзывы
   admins: Админы
   professions: Профессии
   personal_account: Личный кабинет
   are you sure?: Вы согласны?
   edit: Редактировать
   add: Добавить
+  more: Больше
+  back: Назад
 
   attributes:
     id: Идентификатор
@@ -28,6 +31,7 @@ ru:
     personal_account: Личный кабинет
     login teacher: Войти как учитель
     login student: Войти как студент
+    login admin: Войти как админ
 
   web:
     admin:

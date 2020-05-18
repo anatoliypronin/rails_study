@@ -1,14 +1,11 @@
-%a.pull-right
-  %h1= t('articles')
-%table.table.table-striped.table-hover
-  %tr
-    %th= Article.human_attribute_name(:id)
-    %th= Article.human_attribute_name(:title)
-    %th= Article.human_attribute_name(:author)
-    %th= Article.human_attribute_name(:updated_at)
+.container
+  %a.pull-right
+    %h1= t('articles')
   - @articles.each do |article|
-    %tr
-      %td= article.id
-      %td= link_to article.title, article_path(article.id), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
-      %td= article.author.decorate.name
-      %td= article.updated_at
+    .col-md-15
+      .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+        .col.p-4.d-flex.flex-column.position-static
+          %h3.mb-0= article.title
+          .mb-1.text-muted= article.updated_at
+          %p.card-text.mb-auto= article.author.decorate.name
+          %a.stretched-link{:href => article_path(article.id)}= t('more')

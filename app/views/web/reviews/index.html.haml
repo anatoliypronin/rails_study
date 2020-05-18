@@ -1,16 +1,12 @@
-%a.pull-right
-  %h1= t('.reviews')
-%table.table.table-striped.table-hover
-  %tr
-    %th= Review.human_attribute_name(:id)
-    %th= Review.human_attribute_name(:body)
-    %th= Review.human_attribute_name(:student)
-    %th= Review.human_attribute_name(:course)
-    %th= Review.human_attribute_name(:created_at)
+.container
+  %a.pull-right
+    %h1= t('.reviews')
   - @reviews.each do |review|
-    %tr
-      %td= link_to review.id, review_path(review.id), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
-      %td= review.body
-      %td= review.student.decorate.name
-      %td= review.course.title
-      %td= review.created_at
+    .row.mb-2
+      .col-md-10
+        .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+          .col.p-4.d-flex.flex-column.position-static
+            %strong.d-inline-block.mb-2.text-primary= review.course.title
+            %h3.mb-0= review.student.decorate.name 
+            .mb-1.text-muted= review.created_at
+            %p.card-text.mb-auto= review.body

@@ -1,15 +1,16 @@
-%h1= @profession.title
-%b
-%b= Profession.human_attribute_name(:description) + ':'
-%b= @profession.description
-%br
-%br
-%b= Profession.human_attribute_name(:course) + ':'
-%b= @profession.courses.map(&:title).join(', ')
-%br
-%br
-%b= Profession.human_attribute_name(:created_at) + ':'
-%b= @profession.created_at
-%br
-%br
-%td= link_to t('back'),professions_path, class: 'btn btn-outline-secondary'
+.container
+  %h1= @profession.title
+  %b
+  %b= Profession.human_attribute_name(:description) + ':'
+  %h4= @profession.description
+  %br
+  %br
+  %b= Profession.human_attribute_name(:course) + ':'
+  %h4= @profession.courses.map(&:title).join(', ')
+  %br
+  %br
+  %b= Profession.human_attribute_name(:created_at) + ':'
+  %h4= @profession.created_at
+  %br
+  %br
+  %td= link_to t('back'),professions_path, class: 'btn btn-outline-secondary'
