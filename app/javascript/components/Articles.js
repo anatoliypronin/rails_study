@@ -4,7 +4,7 @@ class Articles extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Статьи))</h1>
+        <h1>Статьи</h1>
       </React.Fragment>
     );
   }

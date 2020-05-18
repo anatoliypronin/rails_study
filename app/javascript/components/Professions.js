@@ -4,7 +4,7 @@ class Professions extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Профессии))</h1>
+        <h1>Профессии</h1>
       </React.Fragment>
     );
   }
