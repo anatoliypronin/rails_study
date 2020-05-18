@@ -77,6 +77,7 @@ class Web::Teacher::LessonsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should state active lesson' do
     @lesson = create :lesson, :del
+    sign_in_as_teacher(@lesson.course.teacher)
     put teacher_lesson_restore_path(@lesson)
     assert_response :redirect
 

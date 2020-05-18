@@ -42,7 +42,7 @@ class Web::Teacher::LessonsController < Web::Teacher::ApplicationController
   end
 
   def restore
-    lesson = Lesson.find(params[:lesson_id])
+    lesson = current_teacher.lessons.find(params[:lesson_id])
     lesson.restore!
     redirect_to action: :index
   end
