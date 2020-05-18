@@ -1,3 +1,3 @@
 class ArticleIndexSerializer < ActiveModel::Serializer
-  attributes :title, :body, :updated_at
+  attributes :title, :updated_at
 end
