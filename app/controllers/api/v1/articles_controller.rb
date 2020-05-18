@@ -1,6 +1,6 @@
 class Api::V1::ArticlesController < Api::V1::ApplicationController
   def index
-    articles = Article.order(title: :asc).decorate
+    articles = Article.active.order(title: :asc)
     render json: articles, each_serializer: ArticleIndexSerializer
   end
 

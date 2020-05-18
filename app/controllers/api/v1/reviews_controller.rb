@@ -1,6 +1,6 @@
 class Api::V1::ReviewsController < Api::V1::ApplicationController
   def index
-    reviews = Review.order(body: :asc)
+    reviews = Review.active.order(title: :asc)
     render json: reviews, each_serializer: ReviewIndexSerializer
   end
 
