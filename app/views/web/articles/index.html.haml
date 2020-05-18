@@ -1,0 +1,14 @@
+%a.pull-right
+  %h1= t('articles')
+%table.table.table-striped.table-hover
+  %tr
+    %th= Article.human_attribute_name(:id)
+    %th= Article.human_attribute_name(:title)
+    %th= Article.human_attribute_name(:author)
+    %th= Article.human_attribute_name(:updated_at)
+  - @articles.each do |article|
+    %tr
+      %td= article.id
+      %td= link_to article.title, article_path(article.id), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
+      %td= article.author.decorate.name
+      %td= article.updated_at

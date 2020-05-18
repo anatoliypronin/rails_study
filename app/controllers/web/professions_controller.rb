@@ -4,6 +4,6 @@ class Web::ProfessionsController < Web::ApplicationController
   end
 
   def show
-    @profession = Profession.find(params[:id])
+    @profession = Profession.find(params[:id]).decorate
   end
 end

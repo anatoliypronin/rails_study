@@ -1,0 +1,19 @@
+%h1= t('review')
+%b
+%b= Review.human_attribute_name(:body) + ':'
+%b= @review.body
+%br
+%br
+%b= Review.human_attribute_name(:student) + ':'
+%b= @review.student.decorate.name
+%br
+%br
+%b= Review.human_attribute_name(:course) + ':'
+%b= @review.course.title
+%br
+%br
+%b= Review.human_attribute_name(:created_at) + ':'
+%b= @review.created_at
+%br
+%br
+%td= link_to t('back'),professions_path, class: 'btn btn-outline-secondary'

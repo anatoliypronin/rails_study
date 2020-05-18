@@ -1,0 +1,14 @@
+%a.pull-right
+  %h1= t('professions')
+%table.table.table-striped.table-hover
+  %tr
+    %th= Profession.human_attribute_name(:id)
+    %th= Profession.human_attribute_name(:title)
+    %th= Profession.human_attribute_name(:description)
+    %th= Profession.human_attribute_name(:created_at)
+  - @professions.each do |profession|
+    %tr
+      %td= profession.id
+      %td= link_to profession.title, profession_path(profession), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
+      %td= profession.description
+      %td= profession.created_at

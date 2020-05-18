@@ -4,6 +4,6 @@ class Web::ReviewsController < Web::ApplicationController
   end
 
   def show
-    @reviews = Review.find(params[:id])
+    @review = Review.find(params[:id]).decorate
   end
 end

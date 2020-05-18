@@ -1,0 +1,16 @@
+%a.pull-right
+  %h1= t('.reviews')
+%table.table.table-striped.table-hover
+  %tr
+    %th= Review.human_attribute_name(:id)
+    %th= Review.human_attribute_name(:body)
+    %th= Review.human_attribute_name(:student)
+    %th= Review.human_attribute_name(:course)
+    %th= Review.human_attribute_name(:created_at)
+  - @reviews.each do |review|
+    %tr
+      %td= link_to review.id, review_path(review.id), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
+      %td= review.body
+      %td= review.student.decorate.name
+      %td= review.course.title
+      %td= review.created_at
