@@ -36,6 +36,7 @@ gem 'haml-rails', '~> 2.0'
 gem 'jquery-rails'
 gem 'pundit'
 gem 'rails-observers'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'rubocop', '~> 0.81.0', require: false
 gem 'rubocop-rails', require: false
 gem 'russian', '~> 0.6.0'

@@ -6,17 +6,17 @@ Rails.application.routes.draw do
   end
 
   scope module: :web do
-    root to: "welcome#index"
+    root to: 'welcome#index'
     namespace :admin do
-      root to: "admins#index"
+      root to: 'admins#index'
       resource :session, only: %i[new create destroy]
       resources :admins, :students, :courses, :teachers, :professions do
-        put "restore"
-        put "del"
+        put 'restore'
+        put 'del'
       end
       resources :articles do
-        put "publish"
-        put "unpublish"
+        put 'publish'
+        put 'unpublish'
       end
     end
 
@@ -28,6 +28,11 @@ Rails.application.routes.draw do
         scope module: :courses do
           resources :lessons, only: %i[new create]
         end
+      end
+
+      resources :lessons do
+        put 'restore'
+        put 'del'
       end
 
       resources :articles do

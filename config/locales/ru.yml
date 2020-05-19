@@ -6,8 +6,10 @@ ru:
   articles: Статьи
   admins: Админы
   professions: Профессии
-  personal_account: Личный кабинет
   are you sure?: Вы согласны?
+  lessons: Уроки
+  
+
   edit: Редактировать
   add: Добавить
 
@@ -22,11 +24,11 @@ ru:
     courses: Курсы
     articles: Статьи
     home works: Домашние работы
-    home: Домашняя страница
+    home: Личный кабинет
     exit: Выйти
-    personal_account: Личный кабинет
+    personal_account: Мой профиль
+    lessons: Уроки
 
-  
   web:  
     admin:
       professions:
@@ -100,7 +102,9 @@ ru:
           restore: Восстановить
           del: Удалить 
           add: Добавить
-          edit: Редактировать  
+          edit: Редактировать 
+          
+          
     teacher:
       profiles:
         edit:
@@ -119,6 +123,23 @@ ru:
           cancel: Отмена
         show:
           back: Назад
+      
+      lessons:
+        index:
+          add: Добавить
+          control: Управление
+          view profile: Подробнее 
+        edit:
+          cancel: Отмена
+        new:
+          cancel: Отмена
+        show:
+          сourse: Курс
+          control: Управление
+          restore: Восстановить
+          del: Удалить
+          edit: Редактировать
+          back: Назад 
 
       courses:
         index:
