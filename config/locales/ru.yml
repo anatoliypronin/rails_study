@@ -31,6 +31,7 @@ ru:
     admin:
       professions:
         index:
+          add: Добавить
           control: Управление
           view profile: Подробнее
         new:
@@ -51,59 +52,85 @@ ru:
           restore: Восстановить
           add: Добавить
           control: Управление
-          edit: Редактировать   
+          edit: Редактировать 
+          view profile: Подробнее  
         new:
           cancel: Отмена
         edit:
           cancel: Отмена
         show:
+          edit: Редактировать
           back: Назад
+          restore: Восстановить
+          del: Удалить 
+          control: Управление
 
       admins:
         index:
-          del: Удалить
-          restore: Восстановить
+          view profile: Подробнее 
           add: Добавить
-          control: Управление
-          edit: Редактировать         
+          control: Управление        
         new:
           cancel: Отмена
         edit:
           cancel: Отмена
         show:
           back: Назад
+          del: Удалить
+          restore: Восстановить
+          control: Управление
+          edit: Редактировать 
+          
       profiles:
         edit:
           cancel: Отмена
     
       students:
         index:
-          del: Удалить 
-          restore: Восстановить
+          view profile: Подробнее 
           add: Добавить
-          control: Управление
-          edit: Редактировать          
+          control: Управление        
         new:
           cancel: Отмена
         edit:
           cancel: Отмена
         show:
           back: Назад
+          del: Удалить 
+          restore: Восстановить
+          control: Управление
+          edit: Редактировать 
 
       courses:
         index:
           control: Управление
-          view profile: Подробнее     
+          view profile: Подробнее 
+          add: Добавить    
         new:
           cancel: Отмена
         edit:
           cancel: Отмена
         show:
+          control: Управление
           back: Назад
           restore: Восстановить
           del: Удалить 
           add: Добавить
-          edit: Редактировать  
+          edit: Редактировать 
+      articles:
+        index:
+          view profile: Подробнее
+          control: Управление
+          add: Добавить
+        show:
+          edit: Редактировать
+          control: Управление
+          back: Назад
+        edit:
+          cancel: Назад
+        new:
+          cancel: Назад
+
     teacher:
       profiles:
         edit:
