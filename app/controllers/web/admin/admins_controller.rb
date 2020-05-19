@@ -1,6 +1,6 @@
 class Web::Admin::AdminsController < Web::Admin::ApplicationController
   def index
-    @admins = Admin.all.decorate
+    @pagy, @admins = pagy(Admin.all.decorate)
   end
 
   def new

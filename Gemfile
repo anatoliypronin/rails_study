@@ -43,6 +43,7 @@ gem 'russian', '~> 0.6.0'
 gem 'select2-rails'
 gem 'simple_form'
 gem 'state_machines-activerecord'
+gem 'pagy', '~> 3.5'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
