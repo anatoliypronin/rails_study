@@ -36,7 +36,7 @@ class Web::Teacher::CoursesControllerTest < ActionDispatch::IntegrationTest
     course = Course.find_by(title: course_attrs[:title])
     assert_nil course
   end
-  
+
   test 'should not get show current teacher course page' do
     teacher2 = create :teacher
     course = create :course, teacher_id: teacher2.id
@@ -49,14 +49,13 @@ class Web::Teacher::CoursesControllerTest < ActionDispatch::IntegrationTest
     get teacher_course_path(course.id)
     assert_response :success
   end
-   
+
   test 'should not get edit current teacher course page' do
     teacher2 = create :teacher
     course = create :course, teacher_id: teacher2.id
     get edit_teacher_course_path(course.id)
     assert_response :redirect
   end
-    
 
   test 'should get edit current teacher course page' do
     course = create :course, teacher_id: @teacher.id
