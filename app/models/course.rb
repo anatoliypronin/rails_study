@@ -1,6 +1,6 @@
 class Course < ApplicationRecord
   validates :title, :description, :state, presence: true
-  validates :title, length: { maximum: 50 }
+  validates :title, length: { maximum: 50 }, uniqueness: true
 
   has_many :student_courses, dependent: :destroy
   has_many :students, through: :student_courses
