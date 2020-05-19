@@ -1,6 +1,6 @@
 class Web::Admin::AdminsController < Web::Admin::ApplicationController
   def index
-    @pagy, @admins = pagy(Admin.all.decorate)
+    @pagy, @admins = pagy(Admin.all)
   end
 
   def new
@@ -18,7 +18,7 @@ class Web::Admin::AdminsController < Web::Admin::ApplicationController
   end
 
   def show
-    @admin = Admin.find(params[:id])
+    @admin = Admin.find(params[:id]).decorate
   end
 
   def edit

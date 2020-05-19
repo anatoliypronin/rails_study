@@ -1,6 +1,6 @@
 class Web::Admin::ProfessionsController < Web::Admin::ApplicationController
   def index
-    @professions = Profession.all.decorate
+    @pagy, @professions = pagy(Profession.all)
   end
 
   def new
@@ -18,7 +18,7 @@ class Web::Admin::ProfessionsController < Web::Admin::ApplicationController
   end
 
   def show
-    @profession = Profession.find(params[:id])
+    @profession = Profession.find(params[:id]).decorate
   end
 
   def edit

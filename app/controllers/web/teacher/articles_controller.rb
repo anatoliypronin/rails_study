@@ -1,6 +1,6 @@
 class Web::Teacher::ArticlesController < Web::Teacher::ApplicationController
   def index
-    @articles = Article.decorate
+    @pagy, @articles = pagy(Article.decorate)
   end
 
   def new

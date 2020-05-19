@@ -7,6 +7,7 @@
       %th= Profession.human_attribute_name(:title)
       %th= Profession.human_attribute_name(:description)
       %th= Profession.human_attribute_name(:course)
+      %th= Profession.human_attribute_name(:created_at)
       %th= Profession.human_attribute_name(:state)
       %th{:colspan => "2"}= t('.control')
   %tbody
@@ -15,6 +16,7 @@
       %td= @profession.title
       %td= @profession.description
       %td= @profession.courses.map(&:title).join(', ')
+      %td= @profession.created_at
       %td= @profession.human_state_name
       %td= link_to t('.edit'), edit_admin_profession_path(@profession.id), class: 'btn btn-success btn-sm'
       -if @profession.can_del?

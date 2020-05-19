@@ -1,6 +1,6 @@
 class Web::Admin::StudentsController < Web::Admin::ApplicationController
   def index
-    @students = Student.all
+    @pagy, @students = pagy(Student.all)
   end
 
   def new
@@ -18,7 +18,7 @@ class Web::Admin::StudentsController < Web::Admin::ApplicationController
   end
 
   def show
-    @student = Student.find(params[:id])
+    @student = Student.find(params[:id]).decorate
   end
 
   def edit

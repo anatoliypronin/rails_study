@@ -1,6 +1,6 @@
 class Web::Admin::ArticlesController < Web::Admin::ApplicationController
   def index
-    @articles = Article.decorate
+    @pagy, @articles = pagy(Article.all)
   end
 
   def new
@@ -19,7 +19,7 @@ class Web::Admin::ArticlesController < Web::Admin::ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id]).decorate
   end
 
   def edit

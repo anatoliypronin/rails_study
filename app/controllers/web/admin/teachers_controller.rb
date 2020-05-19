@@ -1,6 +1,6 @@
 class Web::Admin::TeachersController < Web::Admin::ApplicationController
   def index
-    @teachers = Teacher.all
+    @pagy, @teachers = pagy(Teacher.all)
   end
 
   def new
