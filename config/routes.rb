@@ -24,7 +24,12 @@ Rails.application.routes.draw do
       root to: 'welcome#index'
       resource :profile, only: %i[edit update]
       resource :session, only: %i[new create destroy]
-      resources :courses, only: %i[index new create show edit update]
+      resources :courses, only: %i[index new create show edit update] do
+        scope module: :courses do
+          resources :lessons, only: %i[new create]
+        end
+      end
+
       resources :articles do
         put "publish"
         put "unpublish"
