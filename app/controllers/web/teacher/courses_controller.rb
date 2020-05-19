@@ -9,7 +9,8 @@ class Web::Teacher::CoursesController < Web::Teacher::ApplicationController
 
   def create
     @course = Course.new(course_attrs)
-
+    @course.teacher_id = current_teacher.id
+    
     if @course.save
       redirect_to action: :index
     else

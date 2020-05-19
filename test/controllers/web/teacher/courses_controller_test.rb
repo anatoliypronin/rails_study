@@ -53,7 +53,7 @@ class Web::Teacher::CoursesControllerTest < ActionDispatch::IntegrationTest
   test 'should not get edit current teacher course page' do
     teacher2 = create :teacher
     course = create :course, teacher_id: teacher2.id
-    get edit_teacher_course_path(@course.id)
+    get edit_teacher_course_path(course.id)
     assert_response :redirect
   end
     

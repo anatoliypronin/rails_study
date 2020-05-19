@@ -149,8 +149,10 @@ ru:
         new:
           cancel: Отмена
           edit: Редактировать
+          create_course: Создать курс
         edit:
           cancel: Отмена
+          create_course: Создать курс
         show:
           edit: Редактировать
           back: Назад
