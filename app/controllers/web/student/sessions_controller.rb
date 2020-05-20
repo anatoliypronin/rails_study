@@ -4,7 +4,7 @@ class Web::Student::SessionsController < Web::Student::ApplicationController
   
     def create
       student = Student.find_by(email: params[:student][:email])
-      if student&.authenticate(params[:student][:password])
+      if student&.authenticate(params[:student][:phone_number])
         student_sign_in(student)
         redirect_to student_root_path
       else
