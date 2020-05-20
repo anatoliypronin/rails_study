@@ -17,5 +17,7 @@
       %td= link_to course.title, teacher_course_path(course.id)
       %td= course.description
       %td= course.created_at
-      %td= link_to t('.edit'), edit_teacher_course_path(course), class: 'btn btn-success btn'
+      %td
+        = link_to t('.edit'), edit_teacher_course_path(course), class: 'btn btn-success btn'
+        = link_to t('.add_lesson'), new_teacher_course_lesson_path(course), class: 'btn btn-success btn'
 %td= link_to t('.add'), new_teacher_course_path, class: 'btn btn-outline-secondary'

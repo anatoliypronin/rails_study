@@ -7,7 +7,7 @@ class Web::Teacher::Courses::LessonsController < Web::Teacher::Courses::Applicat
     @lesson = resource_course.lessons.new(lesson_attrs)
 
     if @lesson.save
-      redirect_to teacher_lessons_path
+      redirect_to teacher_course_path(resource_course.id)
     else
       render action: :new
     end
