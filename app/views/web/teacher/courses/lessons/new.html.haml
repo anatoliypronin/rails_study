@@ -2,5 +2,5 @@
   = lesson.input :title
   = lesson.input :description
   = lesson.input :homework
-  = lesson.button :submit, class: 'btn btn-outline-secondary'
+  = lesson.button :submit, t('.create_lesson'), class: 'btn btn-outline-secondary'
   = link_to t('.cancel'), teacher_courses_path, class: 'btn btn-outline-secondary'

@@ -133,6 +133,7 @@ ru:
           cancel: Отмена
         new:
           cancel: Отмена
+          create_course: Создать курс
         show:
           сourse: Курс
           control: Управление
@@ -146,6 +147,7 @@ ru:
           edit: Редактировать
           add: Добавить
           control: Управление
+          add_lesson: Добавить урок
         new:
           cancel: Отмена
           edit: Редактировать
@@ -156,3 +158,8 @@ ru:
         show:
           edit: Редактировать
           back: Назад
+        lessons:
+          new:
+            cancel: Отмена
+            create_lesson: Создать урок
+
