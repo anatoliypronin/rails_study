@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   end
 
   scope module: :web do
-    root to: 'welcome#index'
+    root to: "welcome#index"
+    resources :articles, :professions, only: %i[index show]
+    resources :reviews, only: %i[index]
+    
     namespace :admin do
       root to: 'admins#index'
       resource :session, only: %i[new create destroy]
@@ -21,7 +24,7 @@ Rails.application.routes.draw do
     end
 
     namespace :teacher do
-      root to: 'welcome#index'
+      root to: "welcome#index"
       resource :profile, only: %i[edit update]
       resource :session, only: %i[new create destroy]
 
