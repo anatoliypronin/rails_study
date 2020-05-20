@@ -1,7 +1,6 @@
 = simple_form_for @course, url: teacher_courses_path do |course|
   = course.input :title
   = course.input :description
-  = link_to t('.add_new_lesson'), new_teacher_lesson_path, class: 'btn btn-outline-secondary'
   = course.association :lessons, collection: current_teacher.lessons, as: :check_boxes
   = course.association :professions, as: :check_boxes
   = course.button :submit, t('.create_course'), class: 'btn btn-outline-secondary'
