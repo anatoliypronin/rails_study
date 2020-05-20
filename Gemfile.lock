@@ -366,8 +366,8 @@ DEPENDENCIES
   pundit
   rails (~> 6.0.2, >= 6.0.2.2)
   rails-observers
-  react-rails
   ransack!
+  react-rails
   rubocop (~> 0.81.0)
   rubocop-rails
   russian (~> 0.6.0)
