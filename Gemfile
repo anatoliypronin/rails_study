@@ -37,6 +37,7 @@ gem 'jquery-rails'
 gem 'pundit'
 gem 'rails-observers'
 gem 'react-rails'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'rubocop', '~> 0.81.0', require: false
 gem 'rubocop-rails', require: false
 gem 'russian', '~> 0.6.0'
