@@ -1,3 +1,5 @@
+%a.pull-right
+  %h1= t('personal_account')
 = simple_form_for @teacher, url: teacher_profile_path(@teacher.id) do |f|
   = f.input :first_name
   = f.input :last_name
