@@ -9,7 +9,8 @@
       %th= Profession.human_attribute_name(:course)
       %th= Profession.human_attribute_name(:created_at)
       %th= Profession.human_attribute_name(:state)
-      %th{:colspan => "2"}= t('.control')
+      - if policy(@profession).edit?
+        %th{:colspan => "2"}= t('.control')
   %tbody
     %tr
       %td= @profession.id
@@ -18,9 +19,10 @@
       %td= @profession.courses.map(&:title).join(', ')
       %td= @profession.created_at
       %td= @profession.human_state_name
-      %td= link_to t('.edit'), edit_admin_profession_path(@profession.id), class: 'btn btn-success btn-sm'
-      -if @profession.can_del?
-        %td= link_to t('.del'), admin_profession_del_path(@profession.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
-      -if @profession.can_restore?
-        %td= link_to t('.restore'), admin_profession_restore_path(@profession.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
+      - if policy(@profession).edit?
+        %td= link_to t('.edit'), edit_admin_profession_path(@profession.id), class: 'btn btn-success btn-sm'
+        -if @profession.can_del?
+          %td= link_to t('.del'), admin_profession_del_path(@profession.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+        -if @profession.can_restore?
+          %td= link_to t('.restore'), admin_profession_restore_path(@profession.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
 = link_to t('.back'), admin_professions_path, class: 'btn btn-outline-secondary' 

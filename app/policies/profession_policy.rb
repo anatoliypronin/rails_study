@@ -1,4 +1,4 @@
-class AdminPolicy < ApplicationPolicy
+class ProfessionPolicy < ApplicationPolicy
   def update?
     user.role.admin?
   end

@@ -9,7 +9,8 @@
       %th= Teacher.human_attribute_name(:description)
       %th= Teacher.human_attribute_name(:created_at)
       %th= Teacher.human_attribute_name(:state)
-      %th{:colspan => "2"}= t('.control')
+      - if policy(@teacher).edit?
+        %th{:colspan => "2"}= t('.control')
   %tbody
     %tr
       %td= @teacher.id
@@ -18,10 +19,11 @@
       %td= @teacher.description
       %td= @teacher.created_at
       %td= @teacher.human_state_name
-      %td= link_to t('.edit'), edit_admin_teacher_path(@teacher.id), class: 'btn btn-success btn-sm'
-      -if @teacher.can_del?
-        %td= link_to t('.del'), admin_teacher_del_path(@teacher.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
-      -if @teacher.can_restore?
-        %td= link_to t('.restore'), admin_teacher_restore_path(@teacher.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
+      - if policy(@teacher).edit?
+        %td= link_to t('.edit'), edit_admin_teacher_path(@teacher.id), class: 'btn btn-success btn-sm'
+        -if @teacher.can_del?
+          %td= link_to t('.del'), admin_teacher_del_path(@teacher.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+        -if @teacher.can_restore?
+          %td= link_to t('.restore'), admin_teacher_restore_path(@teacher.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
 = link_to t('.back'), admin_teachers_path, class: 'btn btn-outline-secondary' 
 

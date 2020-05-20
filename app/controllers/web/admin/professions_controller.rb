@@ -23,6 +23,7 @@ class Web::Admin::ProfessionsController < Web::Admin::ApplicationController
 
   def edit
     @profession = Profession.find(params[:id])
+    authorize @profession
   end
 
   def update

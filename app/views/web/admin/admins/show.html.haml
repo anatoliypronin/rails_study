@@ -9,7 +9,8 @@
       %th= Admin.human_attribute_name(:role)
       %th= Admin.human_attribute_name(:created_at)
       %th= Admin.human_attribute_name(:state)
-      %th{:colspan => "2"}= t('.control')
+      - if policy(@admin).edit?
+        %th{:colspan => "2"}= t('.control')
   %tbody
     %tr
       %td= @admin.id
@@ -18,9 +19,10 @@
       %td= @admin.role
       %td= @admin.created_at
       %td= @admin.human_state_name
-      %td= link_to t('.edit'), edit_admin_admin_path(@admin.id), class: 'btn btn-success btn-sm'
-      -if @admin.can_del?
-        %td= link_to t('.del'), admin_admin_del_path(@admin.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
-      -if @admin.can_restore?
-        %td= link_to t('.restore'), admin_admin_restore_path(admin.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
+      - if policy(@admin).edit?
+        %td= link_to t('.edit'), edit_admin_admin_path(@admin.id), class: 'btn btn-success btn-sm'
+        -if @admin.can_del?
+          %td= link_to t('.del'), admin_admin_del_path(@admin.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+        -if @admin.can_restore?
+          %td= link_to t('.restore'), admin_admin_restore_path(admin.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
 = link_to t('.back'), admin_admins_path, class: 'btn btn-outline-secondary'

@@ -23,6 +23,7 @@ class Web::Admin::TeachersController < Web::Admin::ApplicationController
 
   def edit
     @teacher = Teacher.find(params[:id])
+    authorize @teacher
   end
 
   def update

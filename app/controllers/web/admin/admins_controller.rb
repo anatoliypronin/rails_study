@@ -23,6 +23,7 @@ class Web::Admin::AdminsController < Web::Admin::ApplicationController
 
   def edit
     @admin = Admin.find(params[:id])
+    authorize @admin
   end
 
   def update
