@@ -1,0 +1,11 @@
+.container
+  %a.pull-right
+    %h1= t('professions')
+  - @professions.each do |profession|
+    .col-md-15
+      .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+        .col.p-4.d-flex.flex-column.position-static
+          %h3.mb-0= profession.title
+          .mb-1.text-muted= profession.created_at
+          %p.card-text.mb-auto= profession.description
+          %a.stretched-link{:href => profession_path(profession.id)}= t('more')
