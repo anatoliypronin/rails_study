@@ -37,6 +37,7 @@ gem 'jquery-rails'
 gem 'pagy', '~> 3.5'
 gem 'pundit'
 gem 'rails-observers'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'react-rails'
 gem 'rubocop', '~> 0.81.0', require: false
 gem 'rubocop-rails', require: false

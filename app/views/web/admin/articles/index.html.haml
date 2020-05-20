@@ -11,7 +11,7 @@
     %tr
       %td= article.id
       %td= article.title
-      %td= article.author.name
+      %td= article.author.decorate.name
       %td= article.human_state_name
       %td= link_to t('.view profile'), admin_article_path(article.id), class: 'btn btn-success btn'
 %td= link_to t('.add'), new_admin_article_path, class: 'btn btn-outline-secondary'

@@ -1,0 +1,12 @@
+.container
+  %a.pull-right
+    %h1= t('reviews')
+  - @reviews.each do |review|
+    .row.mb-2
+      .col-md-10
+        .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+          .col.p-4.d-flex.flex-column.position-static
+            %strong.d-inline-block.mb-2.text-primary= review.course.title
+            %h3.mb-0= review.student.decorate.name 
+            .mb-1.text-muted= review.created_at
+            %p.card-text.mb-auto= review.body

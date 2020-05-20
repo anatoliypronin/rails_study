@@ -4,12 +4,17 @@ ru:
   courses: Курсы
   homework: Домашние работы
   articles: Статьи
+  reviews: Отзывы
   admins: Админы
   personal_account: Мой профиль
   professions: Профессии
   are you sure?: Вы согласны?
+  lessons: Уроки
+  
   edit: Редактировать
   add: Добавить
+  more: Больше
+  back: Назад
 
   attributes:
     id: Идентификатор
@@ -21,11 +26,15 @@ ru:
     professions: Профессии
     courses: Курсы
     articles: Статьи
+    reviews: Отзывы
+    lessons: Уроки
     home works: Домашние работы
     home: Личный кабинет
     exit: Выйти
     personal_account: Мой профиль
-
+    login teacher: Войти как учитель
+    login student: Войти как студент
+    login admin: Войти как админ
   
   web:  
     admin:
@@ -45,7 +54,7 @@ ru:
           restore: Восстановить
           control: Управление
           course: Курсы
-        
+
       teachers:
         index:
           del: Удалить
@@ -114,7 +123,7 @@ ru:
           control: Управление
           back: Назад
           restore: Восстановить
-          del: Удалить 
+          del: Удалить
           add: Добавить
           edit: Редактировать 
       articles:
@@ -130,7 +139,7 @@ ru:
           cancel: Назад
         new:
           cancel: Назад
-
+          
     teacher:
       profiles:
         edit:
@@ -149,6 +158,23 @@ ru:
           cancel: Отмена
         show:
           back: Назад
+      
+      lessons:
+        index:
+          add: Добавить
+          control: Управление
+          view profile: Подробнее 
+        edit:
+          cancel: Отмена
+        new:
+          cancel: Отмена
+        show:
+          сourse: Курс
+          control: Управление
+          restore: Восстановить
+          del: Удалить
+          edit: Редактировать
+          back: Назад 
 
       courses:
         index:

@@ -38,6 +38,6 @@ class Web::Teacher::CoursesController < Web::Teacher::ApplicationController
   private
 
   def course_attrs
-    params.require(:course).permit(:title, :description, :teacher_id, profession_ids: [])
+    params.require(:course).permit(:title, :description, profession_ids: [], lesson_ids: [])
   end
 end
