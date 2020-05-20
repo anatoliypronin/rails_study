@@ -1,0 +1,13 @@
+%h1= @article.title
+%b
+%b= @article.body
+%br
+%br
+%b= @article.author.decorate.name
+%br
+%br
+%b= @article.human_state_name
+%br
+%b= @article.updated_at
+%br
+%td= link_to t('.back'), :back, class: 'btn btn-outline-secondary'

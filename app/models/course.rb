@@ -1,6 +1,6 @@
 class Course < ApplicationRecord
   validates :title, :description, :state, presence: true
-  validates :title, length: { maximum: 50 }
+  validates :title, length: { maximum: 50 }, uniqueness: true
 
   has_many :student_courses, dependent: :destroy
   has_many :students, through: :student_courses
@@ -9,6 +9,7 @@ class Course < ApplicationRecord
 
   belongs_to :teacher, optional: true
 
+  has_many :lessons, dependent: :destroy
   has_many :course_professions, dependent: :nullify
   has_many :professions, through: :course_professions
 
@@ -17,11 +18,11 @@ class Course < ApplicationRecord
     state :deleted
 
     event :del do
-      transition active: :deleted
+      transition from: :active, to: :deleted, if: :active?
     end
 
     event :restore do
-      transition deleted: :active
+      transition from: :deleted, to: :active, if: :deleted?
     end
   end
 end

@@ -1,10 +1,12 @@
 class Teacher < ApplicationRecord
   has_many :courses, dependent: :nullify
+  has_many :lessons, through: :courses
+  has_many :articles, dependent: :nullify
 
   validates :first_name, :last_name, :email,
             presence: true
   validates :first_name, :last_name, length: { maximum: 50 }
-  validates :email, email: true, uniqueness: true
+  validates :email, uniqueness: true, email: true
 
   has_secure_password
 
@@ -13,11 +15,11 @@ class Teacher < ApplicationRecord
     state :deleted
 
     event :del do
-      transition active: :deleted
+      transition from: :active, to: :deleted, if: :active?
     end
 
     event :restore do
-      transition deleted: :active
+      transition from: :deleted, to: :active, if: :deleted?
     end
   end
 end

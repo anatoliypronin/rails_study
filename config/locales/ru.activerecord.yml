@@ -6,6 +6,8 @@ ru:
     description: Описание
     created_at: Дата создания
     updated_at: Дата обновления
+    name_and_email: Имя и E-mail
+    full_name: Полное имя
  
   activerecord:
     state_machines:
@@ -49,7 +51,20 @@ ru:
           events:
             del: Удалить
             restore: Восстановить
-                          
+      article:
+        state:
+          states:
+            published: Опубликовано
+            unpublished: Снято с публикации
+          events:
+            publish: Опубликовать
+            unpublish: Снять с публикации
+      lesson:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+                      
     models:
       teacher:
         one: Учитель
@@ -66,10 +81,22 @@ ru:
       courses:
         one: Курс
         other: Курсы
+
+      articles:
+        one: Статья
+        other: Статьи
+      
+      lessons:
+        one: Урок
+        others: Уроки
     
     attributes:
       course:
+        teacher: Учитель курса
+        profession: Профессии курса    
         title: Название курса
+        professions: 'Профессии в которые включен курс:'
+        lessons: 'Уроки которые включены в курс:'
       teacher:
         first_name: Имя
         last_name: Фамилия
@@ -81,12 +108,18 @@ ru:
         password: Пароль
         profession:
       profession:
+        course: Курсы профессии
         title: Название профессии
+        courses: 'Курсы, которые включают в себя профессию:'
       admin:
         name: Имя
         password: Пароль
         role: Роль
-        name_and_email: Имя и E-mail
-        
-
- 
+      article:
+        title: Заголовок
+        body: Текст статьи
+        author: Автор
+      lesson:
+        course: Курс
+        title: Название
+        homework: Домашняя работа

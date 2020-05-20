@@ -6,6 +6,12 @@ ru:
   articles: Статьи
   admins: Админы
   professions: Профессии
+  are you sure?: Вы согласны?
+  lessons: Уроки
+  
+
+  edit: Редактировать
+  add: Добавить
 
   attributes:
     id: Идентификатор
@@ -16,71 +22,135 @@ ru:
     students: Студенты
     professions: Профессии
     courses: Курсы
-    home: Домашняя страница
+    articles: Статьи
+    home works: Домашние работы
+    home: Личный кабинет
     exit: Выйти
-        
-  admin:
-    professions:
-      index:
-        control: Управление
-        edit: Редактировать
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-        
-    teachers:
-      index:
-        del: Удалить
-        restore: Восстановить
-        add: Добавить
-        control: Управление
-        edit: Редактировать   
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-      show:
-        back: Назад
+    personal_account: Мой профиль
+    lessons: Уроки
 
-    admins:
-      index:
-        del: Удалить
-        restore: Восстановить
-        add: Добавить
-        control: Управление
-        edit: Редактировать         
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-      show:
-        back: Назад
+  web:  
+    admin:
+      professions:
+        index:
+          control: Управление
+          view profile: Подробнее
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+          edit: Редактировать
+          del: Удалить
+          restore: Восстановить
+          control: Управление
+          course: Курсы
+        
+      teachers:
+        index:
+          del: Удалить
+          restore: Восстановить
+          add: Добавить
+          control: Управление
+          edit: Редактировать   
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+
+      admins:
+        index:
+          del: Удалить
+          restore: Восстановить
+          add: Добавить
+          control: Управление
+          edit: Редактировать         
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
     
-    students:
-      index:
-        del: Удалить 
-        restore: Восстановить
-        add: Добавить
-        control: Управление
-        edit: Редактировать          
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-      show:
-        back: Назад
+      students:
+        index:
+          del: Удалить 
+          restore: Восстановить
+          add: Добавить
+          control: Управление
+          edit: Редактировать          
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
 
-    courses:
-      index:
-        restore: Восстановить
-        del: Удалить 
-        add: Добавить
-        control: Управление
-        edit: Редактировать          
-      new:
-        cancel: Отмена
-      edit:
-        cancel: Отмена
-      show:
-        back: Назад
+      courses:
+        index:
+          control: Управление
+          view profile: Подробнее     
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+          restore: Восстановить
+          del: Удалить 
+          add: Добавить
+          edit: Редактировать 
+          
+          
+    teacher:
+      profiles:
+        edit:
+          cancel: Отмена
+
+      articles:
+        index:
+          publish: Опубликовать
+          unpublish: Снять с публикации
+          edit: Редактировать
+          add: Добавить
+          control: Управление
+        new:
+          cancel: Отмена
+        edit:
+          cancel: Отмена
+        show:
+          back: Назад
+      
+      lessons:
+        index:
+          add: Добавить
+          control: Управление
+          view profile: Подробнее 
+        edit:
+          cancel: Отмена
+        new:
+          cancel: Отмена
+        show:
+          сourse: Курс
+          control: Управление
+          restore: Восстановить
+          del: Удалить
+          edit: Редактировать
+          back: Назад 
+
+      courses:
+        index:
+          edit: Редактировать
+          add: Добавить
+          control: Управление
+        new:
+          cancel: Отмена
+          edit: Редактировать
+        edit:
+          cancel: Отмена
+        show:
+          edit: Редактировать
+          back: Назад

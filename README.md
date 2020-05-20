@@ -1,4 +1,7 @@
 ### rails_study
+[![Build Status](https://travis-ci.org/anatoliypronin/rails_study.svg?branch=develop)](https://travis-ci.org/anatoliypronin/rails_study)
+[![Coverage Status](https://coveralls.io/repos/github/anatoliypronin/rails_study/badge.svg?branch=develop)](https://coveralls.io/github/anatoliypronin/rails_study?branch=develop)
+
 _Портал обучения ИТ-технологиям "Study"_
 
 **Команда: Саликов Роман, Рябчиков Алексей, Шагиев Рамиль, Кулакова Екатерина**

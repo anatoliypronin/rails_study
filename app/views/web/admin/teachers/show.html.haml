@@ -1,0 +1,8 @@
+%h1= @teacher.name
+%b
+%b= @teacher.email
+%b
+%b= @teacher.description
+%b
+%b= @teacher.state
+= link_to t('.back'), admin_teachers_path, class: 'btn btn-outline-secondary' 
