@@ -156,8 +156,11 @@ ru:
           cancel: Отмена
           create_course: Создать курс
         show:
+          Course: Курс
+          Lessons: Уроки
           edit: Редактировать
           back: Назад
+          add_lesson: Добавить урок
         lessons:
           new:
             cancel: Отмена
