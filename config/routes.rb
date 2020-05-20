@@ -36,6 +36,12 @@ Rails.application.routes.draw do
         put "publish"
         put "unpublish"
       end
+
+      resources :student_homeworks do
+        put 'testing'
+        put 'modify'
+        put 'done'
+      end
     end
   end
 end
