@@ -11,8 +11,9 @@ class Web::Teacher::Courses::LessonsController < Web::Teacher::Courses::Applicat
     else
       render action: :new
     end
-	end
-	def lesson_attrs
+  end
+
+  def lesson_attrs
     params.require(:lesson).permit(:title, :description, :homework, :course_id)
   end
 end

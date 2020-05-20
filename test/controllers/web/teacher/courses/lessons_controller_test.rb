@@ -26,12 +26,10 @@ class Web::Teacher::Courses::LessonsControllerTest < ActionDispatch::Integration
   test 'should not post create course_lesson' do
     lesson_attrs = attributes_for :lesson, title: nil
 
-    p lesson_attrs
-
     post teacher_course_lessons_path(@course.id), params: { lesson: lesson_attrs }
     assert_response :success
 
     lesson = Lesson.find_by(title: lesson_attrs[:title])
     assert_nil lesson
-  end 
+  end
 end
