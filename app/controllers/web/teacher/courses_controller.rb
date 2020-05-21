@@ -1,6 +1,6 @@
 class Web::Teacher::CoursesController < Web::Teacher::ApplicationController
   def index
-    @courses = Course.where(teacher_id: current_teacher.id).decorate
+    @courses = current_teacher.courses.decorate
   end
 
   def new
@@ -9,6 +9,7 @@ class Web::Teacher::CoursesController < Web::Teacher::ApplicationController
 
   def create
     @course = Course.new(course_attrs)
+    @course.teacher_id = current_teacher.id
 
     if @course.save
       redirect_to action: :index
@@ -18,11 +19,21 @@ class Web::Teacher::CoursesController < Web::Teacher::ApplicationController
   end
 
   def show
-    @course = Course.find(params[:id])
+    course = Course.find(params[:id])
+    if current_teacher.id == course.teacher_id
+      @course = course
+    else
+      redirect_to action: :index
+    end
   end
 
   def edit
-    @course = Course.find(params[:id])
+    course = Course.find(params[:id])
+    if current_teacher.id == course.teacher_id
+      @course = course
+    else
+      redirect_to action: :index
+    end
   end
 
   def update
@@ -38,6 +49,6 @@ class Web::Teacher::CoursesController < Web::Teacher::ApplicationController
   private
 
   def course_attrs
-    params.require(:course).permit(:title, :description, :teacher_id, profession_ids: [])
+    params.require(:course).permit(:title, :description, profession_ids: [], lesson_ids: [])
   end
 end

@@ -47,6 +47,14 @@ class Web::Admin::ProfessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should not get edit profession page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get edit_admin_profession_path(@profession.id)
+    assert_redirected_to admin_root_path
+  end
+
   test 'should put update profession' do
     attrs = {}
     attrs[:title] = generate :title

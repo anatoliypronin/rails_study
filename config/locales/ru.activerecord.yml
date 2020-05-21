@@ -59,7 +59,12 @@ ru:
           events:
             publish: Опубликовать
             unpublish: Снять с публикации
-                          
+      lesson:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+                      
     models:
       teacher:
         one: Учитель
@@ -80,6 +85,10 @@ ru:
       articles:
         one: Статья
         other: Статьи
+      
+      lessons:
+        one: Урок
+        others: Уроки
     
     attributes:
       course:
@@ -87,6 +96,7 @@ ru:
         profession: Профессии курса    
         title: Название курса
         professions: 'Профессии в которые включен курс:'
+        lessons: 'Уроки которые включены в курс:'
       teacher:
         first_name: Имя
         last_name: Фамилия
@@ -109,3 +119,7 @@ ru:
         title: Заголовок
         body: Текст статьи
         author: Автор
+      lesson:
+        course: Курс
+        title: Название
+        homework: Домашняя работа
