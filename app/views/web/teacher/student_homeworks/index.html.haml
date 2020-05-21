@@ -1,5 +1,5 @@
 %a.pull-right
-  %h1= t('student homeworks')
+  %h1= t('homework')
 %table.table.table-striped.table-hover
   %tr
     %th= StudentHomework.human_attribute_name(:id)
@@ -14,4 +14,4 @@
       %td= homework.date_begin
       %td= homework.student.decorate.name
       %td= homework.lesson.title
-%td= link_to t('.add'), new_teacher_student_homework_path, class: 'btn btn-outline-secondary' 
+%td= link_to t('add'), new_teacher_student_homework_path, class: 'btn btn-outline-secondary' 

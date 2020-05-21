@@ -2,4 +2,4 @@
     = student_homework.association :student, label_method: :last_name, include_blank: false
     = student_homework.association :lesson, collection: current_teacher.lessons, label_method: :title, include_blank: false
     = student_homework.button :submit, class: 'btn btn-outline-secondary'
-    = link_to t('.cancel'), teacher_student_homeworks_path, class: 'btn btn-outline-secondary'
+    = link_to t('cancel'), teacher_student_homeworks_path, class: 'btn btn-outline-secondary'

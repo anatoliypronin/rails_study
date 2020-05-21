@@ -8,13 +8,13 @@ ru:
   admins: Админы
   professions: Профессии
   are you sure?: Вы согласны?
-  lessons: Уроки
-  
+  lessons: Уроки  
 
   edit: Редактировать
   add: Добавить
   more: Больше
   back: Назад
+  cancel: Отмена
 
   attributes:
     id: Идентификатор
@@ -160,3 +160,9 @@ ru:
         show:
           edit: Редактировать
           back: Назад
+
+      student_homeworks:
+        show:
+          tasting: Проверка
+          modify: На доработку
+          done: Зачтено

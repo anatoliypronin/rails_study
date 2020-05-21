@@ -1,6 +1,6 @@
 class Web::Teacher::StudentHomeworksController < Web::Teacher::ApplicationController
   def index
-    @student_homeworks = StudentHomework.where(lesson_id: current_teacher.lessons.ids)
+    @student_homeworks = StudentHomework.where(lesson_id: current_teacher.lessons.ids).decorate
   end
 
   def new
@@ -20,7 +20,7 @@ class Web::Teacher::StudentHomeworksController < Web::Teacher::ApplicationContro
 
   def show
     student_homeworks = StudentHomework.where(lesson_id: current_teacher.lessons.ids)
-    @student_homework = student_homeworks.find(params[:id])
+    @student_homework = student_homeworks.find(params[:id]).decorate
   end
 
   def edit
@@ -33,7 +33,7 @@ class Web::Teacher::StudentHomeworksController < Web::Teacher::ApplicationContro
     @student_homework = student_homeworks.find(params[:id])
 
     if @student_homework.update(student_homework_attrs)
-      redirect_to action: :index
+      redirect_to action: :show
     else
       render action: :edit
     end
