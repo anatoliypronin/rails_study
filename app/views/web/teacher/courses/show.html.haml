@@ -1,3 +1,4 @@
+%h1= t('.Course')
 %table.table.table-hover
   %thead
     %tr
@@ -16,4 +17,9 @@
       %td= @course.professions.map(&:title).join(', ')
       %td= @course.human_state_name
 = link_to t('.edit'), edit_teacher_course_path(@course.id), class: 'btn btn-info btn-sm'
+= link_to t('.add_lesson'), new_teacher_course_lesson_path(@course.id), class: 'btn btn-success btn'
 = link_to t('.back'), teacher_courses_path, class: 'btn btn-outline-secondary'
+%h1= t('.Lessons')
+%ul
+- @course.lessons.each do |lesson|
+  %li= link_to lesson.title, teacher_lesson_path(lesson.id)
