@@ -47,6 +47,14 @@ class Web::Admin::CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should not get edit course page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get edit_admin_course_path(@course.id)
+    assert_redirected_to admin_root_path
+  end
+
   test 'should put update course' do
     attrs = {}
     attrs[:title] = generate :title

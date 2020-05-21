@@ -1,6 +1,6 @@
 class Web::Admin::CoursesController < Web::Admin::ApplicationController
   def index
-    @courses = Course.all.decorate
+    @pagy, @courses = pagy(Course.all)
   end
 
   def new
@@ -18,11 +18,12 @@ class Web::Admin::CoursesController < Web::Admin::ApplicationController
   end
 
   def show
-    @course = Course.find(params[:id])
+    @course = Course.find(params[:id]).decorate
   end
 
   def edit
     @course = Course.find(params[:id])
+    authorize @course
   end
 
   def update

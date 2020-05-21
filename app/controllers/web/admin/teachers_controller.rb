@@ -1,6 +1,6 @@
 class Web::Admin::TeachersController < Web::Admin::ApplicationController
   def index
-    @teachers = Teacher.all
+    @pagy, @teachers = pagy(Teacher.all)
   end
 
   def new
@@ -23,6 +23,7 @@ class Web::Admin::TeachersController < Web::Admin::ApplicationController
 
   def edit
     @teacher = Teacher.find(params[:id])
+    authorize @teacher
   end
 
   def update

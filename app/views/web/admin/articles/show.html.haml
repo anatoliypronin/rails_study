@@ -1,13 +1,24 @@
-%h1= @article.title
-%b
-%b= @article.body
-%br
-%br
-%b= @article.author.decorate.name
-%br
-%br
-%b= @article.human_state_name
-%br
-%b= @article.updated_at
-%br
-%td= link_to t('.back'), admin_articles_path, class: 'btn btn-outline-secondary'
+%a.pull-right
+  %h1= t('articles')
+%table.table.table-hover
+  %thead
+    %tr
+      %th= Article.human_attribute_name(:id)
+      %th= Article.human_attribute_name(:title)
+      %th= Article.human_attribute_name(:body)
+      %th= Article.human_attribute_name(:author)
+      %th= Article.human_attribute_name(:updated_at)
+      %th= Article.human_attribute_name(:state)
+      %th{:colspan => "2"}= t('.control')
+  %tbody
+    %tr
+      %td= @article.id
+      %td= @article.title
+      %td= @article.body
+      %td= @article.author.name
+      %td= @article.updated_at
+      %td= @article.human_state_name
+      %td= link_to t('.edit'), edit_admin_article_path(@article.id), class: 'btn btn-success btn-sm'
+      - @article.state_events.each do |event|
+        %td= link_to human_state_event_name(:article, 'state', event), {:action => event.to_sym, :article_id => @article.id}, method: :put, data: { confirm: t('are you sure?')}, class: 'btn btn-danger btn-sm'
+= link_to t('.back'), admin_articles_path, class: 'btn btn-outline-secondary'
