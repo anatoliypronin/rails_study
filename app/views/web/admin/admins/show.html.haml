@@ -1,8 +1,28 @@
-%h1= @admin.name
-%b
-%b= @admin.email
-%b
-%b= @admin.role
-%b
-%b= @admin.state
-%td= link_to t('.back'), admin_admins_path, class: 'btn btn-outline-secondary'
+%a.pull-right
+  %h1= t('admins')
+%table.table.table-hover
+  %thead
+    %tr
+      %th= Admin.human_attribute_name(:id)
+      %th= Admin.human_attribute_name(:name)
+      %th= Admin.human_attribute_name(:email)
+      %th= Admin.human_attribute_name(:role)
+      %th= Admin.human_attribute_name(:created_at)
+      %th= Admin.human_attribute_name(:state)
+      - if policy(@admin).edit?
+        %th{:colspan => "2"}= t('.control')
+  %tbody
+    %tr
+      %td= @admin.id
+      %td= @admin.name
+      %td= @admin.email
+      %td= @admin.role
+      %td= @admin.created_at
+      %td= @admin.human_state_name
+      - if policy(@admin).edit?
+        %td= link_to t('.edit'), edit_admin_admin_path(@admin.id), class: 'btn btn-success btn-sm'
+        -if @admin.can_del?
+          %td= link_to t('.del'), admin_admin_del_path(@admin.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+        -if @admin.can_restore?
+          %td= link_to t('.restore'), admin_admin_restore_path(admin.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
+= link_to t('.back'), admin_admins_path, class: 'btn btn-outline-secondary'

@@ -1,8 +1,30 @@
-%h1= @student.first_name + " " + @student.last_name
-%b
-%b= @student.email
-%b
-%b= @student.phone_number
-%b
-%b= @student.state
+%a.pull-right
+  %h1= t('students')
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th= Student.human_attribute_name(:id)
+      %th= Student.human_attribute_name(:first_name)
+      %th= Student.human_attribute_name(:last_name)
+      %th= Student.human_attribute_name(:email)
+      %th= Student.human_attribute_name(:phone_number)
+      %th= Student.human_attribute_name(:created_at)
+      %th= Student.human_attribute_name(:state)
+      - if policy(@student).edit?
+        %th{:colspan => "2"}= t('.control')
+  %tbody
+    %tr
+      %td= @student.id
+      %td= @student.first_name
+      %td= @student.last_name
+      %td= @student.email
+      %td= @student.phone_number
+      %td= @student.created_at
+      %td= @student.human_state_name
+      - if policy(@student).edit?
+        %td= link_to t('.edit'), edit_admin_student_path(@student.id), class: 'btn btn-success btn-sm'
+        -if @student.can_del?
+          %td= link_to t('.del'), admin_student_del_path(@student.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+        -if @student.can_restore?
+          %td= link_to t('.restore'), admin_student_restore_path(student.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
 = link_to t('.back'), admin_students_path, class: 'btn btn-outline-secondary' 

@@ -44,6 +44,14 @@ class Web::Admin::StudentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should not get edit student page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get edit_admin_student_path(@student.id)
+    assert_redirected_to admin_root_path
+  end
+
   test 'should put update student' do
     attrs = {}
     attrs[:first_name] = generate :first_name

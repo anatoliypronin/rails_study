@@ -6,10 +6,11 @@ ru:
   articles: Статьи
   reviews: Отзывы
   admins: Админы
+  personal_account: Мой профиль
   professions: Профессии
   are you sure?: Вы согласны?
-  lessons: Уроки  
-
+  lessons: Уроки
+  
   edit: Редактировать
   add: Добавить
   more: Больше
@@ -40,6 +41,7 @@ ru:
     admin:
       professions:
         index:
+          add: Добавить
           control: Управление
           view profile: Подробнее
         new:
@@ -60,56 +62,84 @@ ru:
           restore: Восстановить
           add: Добавить
           control: Управление
-          edit: Редактировать
+          edit: Редактировать 
+          view profile: Подробнее  
         new:
           cancel: Отмена
         edit:
           cancel: Отмена
         show:
+          edit: Редактировать
           back: Назад
+          restore: Восстановить
+          del: Удалить 
+          control: Управление
 
       admins:
         index:
-          del: Удалить
-          restore: Восстановить
+          view profile: Подробнее 
           add: Добавить
-          control: Управление
-          edit: Редактировать
+          control: Управление        
         new:
           cancel: Отмена
         edit:
           cancel: Отмена
         show:
           back: Назад
-
+          del: Удалить
+          restore: Восстановить
+          control: Управление
+          edit: Редактировать 
+          
+      profiles:
+        edit:
+          cancel: Отмена
+    
       students:
         index:
-          del: Удалить
-          restore: Восстановить
+          view profile: Подробнее 
           add: Добавить
-          control: Управление
-          edit: Редактировать
+          control: Управление        
         new:
           cancel: Отмена
         edit:
           cancel: Отмена
         show:
           back: Назад
+          del: Удалить 
+          restore: Восстановить
+          control: Управление
+          edit: Редактировать 
 
       courses:
         index:
           control: Управление
-          view profile: Подробнее
+          view profile: Подробнее 
+          add: Добавить    
         new:
           cancel: Отмена
         edit:
           cancel: Отмена
         show:
+          control: Управление
           back: Назад
           restore: Восстановить
           del: Удалить
           add: Добавить
-          edit: Редактировать          
+          edit: Редактировать 
+      articles:
+        index:
+          view profile: Подробнее
+          control: Управление
+          add: Добавить
+        show:
+          edit: Редактировать
+          control: Управление
+          back: Назад
+        edit:
+          cancel: Назад
+        new:
+          cancel: Назад
           
     teacher:
       profiles:
@@ -139,6 +169,7 @@ ru:
           cancel: Отмена
         new:
           cancel: Отмена
+          create_course: Создать курс
         show:
           сourse: Курс
           control: Управление
@@ -152,17 +183,28 @@ ru:
           edit: Редактировать
           add: Добавить
           control: Управление
+          add_lesson: Добавить урок
         new:
           cancel: Отмена
           edit: Редактировать
+          create_course: Создать курс
         edit:
           cancel: Отмена
+          create_course: Создать курс
         show:
+          Course: Курс
+          Lessons: Уроки
           edit: Редактировать
           back: Назад
-
+          add_lesson: Добавить урок
+        lessons:
+          new:
+            cancel: Отмена
+            create_lesson: Создать урок
+      
       student_homeworks:
         show:
           tasting: Проверка
           modify: На доработку
           done: Зачтено
+

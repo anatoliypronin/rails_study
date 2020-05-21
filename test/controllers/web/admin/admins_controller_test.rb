@@ -46,6 +46,14 @@ class Web::Admin::AdminsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should not get edit admins page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get edit_admin_admin_path(editor.id)
+    assert_redirected_to admin_root_path
+  end
+
   test 'should put update admin' do
     attrs = {}
     attrs[:name] = generate :name
