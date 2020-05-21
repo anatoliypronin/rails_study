@@ -38,6 +38,9 @@ ru:
   
   web:  
     admin:
+      sessions:
+        new:
+          create_admin: Войти
       professions:
         index:
           add: Добавить
