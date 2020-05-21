@@ -5,6 +5,7 @@ class Web::Admin::ProfessionsController < Web::Admin::ApplicationController
 
   def new
     @profession = Profession.new
+    authorize @profession
   end
 
   def create

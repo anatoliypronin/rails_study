@@ -5,6 +5,7 @@ class Web::Admin::StudentsController < Web::Admin::ApplicationController
 
   def new
     @student = Student.new
+    authorize @student
   end
 
   def create

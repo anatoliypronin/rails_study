@@ -17,6 +17,14 @@ class Web::Admin::CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should not get new course page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get new_admin_course_path
+    assert_redirected_to admin_root_path
+  end
+
   test 'should post create course' do
     course_attrs = attributes_for :course
 
