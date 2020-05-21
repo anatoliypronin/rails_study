@@ -6,7 +6,7 @@ class AdminPolicy < ApplicationPolicy
   def new?
     create?
   end
-  
+
   def update?
     user.role.admin?
   end
