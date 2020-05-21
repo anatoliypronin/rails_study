@@ -23,7 +23,7 @@ FactoryBot.define do
     "https://github.com/test#{n}"
   end
 
-  sequence :datetime, aliases: %i[date_begin date_end] do |_n|
+  sequence :datetime, aliases: %i[date_begin date_end] do |n|
     DateTime.new
   end
 end
