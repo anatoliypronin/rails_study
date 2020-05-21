@@ -6,9 +6,9 @@ class StudentHomeworkTest < ActiveSupport::TestCase
     assert student_homework.persisted?
   end
 
-  test 'Should not create student_homework without link_homework' do
+  test 'Should create student_homework without link_homework' do
     student_homework = build :student_homework, link_homework: nil
-    assert_not student_homework.save
+    assert student_homework.save
   end
 
   test 'Should not create student_homework with invalid link_homework format' do
@@ -45,9 +45,9 @@ class StudentHomeworkTest < ActiveSupport::TestCase
     assert_equal 'accepted', student_homework.state
   end
 
-  test 'Should not create student_homework without raiting' do
+  test 'Should create student_homework without raiting' do
     student_homework = build :student_homework, raiting: nil
-    assert_not student_homework.save
+    assert student_homework.save
   end
 
   test 'Should not create student_homework with invalid raiting format' do

@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_045303) do
     t.text "student_comment"
     t.text "teacher_comment"
     t.datetime "date_begin", null: false
-    t.datetime "date_end", null: false
+    t.datetime "date_end"
     t.string "link_homework"
     t.bigint "student_id", null: false
     t.bigint "lesson_id", null: false

@@ -24,12 +24,10 @@ class Web::Teacher::StudentHomeworksControllerTest < ActionDispatch::Integration
     @lesson = create :lesson
     student_homework_attrs[:lesson_id] = @lesson.id
 
-    p student_homework_attrs
     post teacher_student_homeworks_path, params: { student_homework: student_homework_attrs }
     assert_response :redirect
 
     student_homework = StudentHomework.last
-    p student_homework
     assert_equal student_homework_attrs[:student_id], student_homework.student.id
     assert_equal student_homework_attrs[:lesson_id], student_homework.lesson.id
   end

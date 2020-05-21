@@ -9,6 +9,7 @@ class Web::Teacher::StudentHomeworksController < Web::Teacher::ApplicationContro
 
   def create
     @student_homework = StudentHomework.new(student_homework_attrs)
+    @student_homework.date_begin = DateTime.now
 
     if @student_homework.save
       redirect_to action: :index
@@ -52,6 +53,7 @@ class Web::Teacher::StudentHomeworksController < Web::Teacher::ApplicationContro
 
   def done
     student_homework = StudentHomework.where(lesson_id: current_teacher.lessons.ids).find(params[:student_homework_id])
+    student_homework.date_end = DateTime.now
     student_homework.done!
     redirect_to action: :index
   end

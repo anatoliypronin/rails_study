@@ -1,7 +1,4 @@
 = simple_form_for @student_homework, url:  teacher_student_homeworks_path do |student_homework|
-    = student_homework.input :teacher_comment
-    = student_homework.input :date_begin, as: :datetime, html5: true
-    = student_homework.input :date_end, as: :datetime, html5: true
     = student_homework.association :student, label_method: :last_name, include_blank: false
     = student_homework.association :lesson, collection: current_teacher.lessons, label_method: :title, include_blank: false
     = student_homework.button :submit, class: 'btn btn-outline-secondary'
