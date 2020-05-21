@@ -48,7 +48,7 @@ module AuthHelper
   end
 
   def current_student
-    student.find_by(id: session[:student_id])
+    Student.find_by(id: session[:student_id])
   end
 
   def student_signed_in?

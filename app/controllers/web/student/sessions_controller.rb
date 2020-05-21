@@ -3,8 +3,7 @@ class Web::Student::SessionsController < Web::Student::ApplicationController
     def new; end
   
     def create
-      student = Student.find_by(email: params[:student][:email])
-      if student&.authenticate(params[:student][:phone_number])
+      if (student = Student.find_by(phone_number: params[:student][:phone_number]))
         student_sign_in(student)
         redirect_to student_root_path
       else
@@ -14,6 +13,6 @@ class Web::Student::SessionsController < Web::Student::ApplicationController
   
     def destroy
       student_sign_out
-      redirect_to new_student_session_path
+      redirect_to root_path
     end
   end

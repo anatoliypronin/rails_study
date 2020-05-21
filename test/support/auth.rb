@@ -9,7 +9,11 @@ module Support
     end
 
     def sign_in_as_student(student)
-      post student_session_path, params: { student: { email: student.email, phone_number: student.phone_number } }
+    post student_session_path, params: {
+      student: {
+        phone_number: student.phone_number
+      }
+    }
     end
   end
 end

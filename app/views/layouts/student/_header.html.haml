@@ -3,10 +3,10 @@
     .navbar-nav
       = link_to t('header.home'), student_root_path, class: 'navbar-brand'
       = link_to t('header.courses'), "#", class: 'nav-item nav-link'
-      = link_to t('header.home works'), "#", class: 'nav-item nav-link'
+      = link_to t('header.homeworks'), "#", class: 'nav-item nav-link'
       = link_to t('header.articles'), "#", class: 'nav-item nav-link'
       = link_to t('header.personal_account'), edit_student_profile_path, class: 'nav-item nav-link'
       %ul.navbar-num
   %div
-    %div{style: 'color: white'}= current_student.email
+    %div{style: 'color: white'}= current_student.phone_number
     %div= link_to t('header.exit'), student_session_path, method: :delete, class: 'btn btn-outline-secondary btn-sm'
