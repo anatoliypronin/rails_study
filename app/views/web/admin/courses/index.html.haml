@@ -1,5 +1,9 @@
 %a.pull-right
   %h1= t('courses')
+= search_form_for @search, url: admin_courses_path do |f|
+  = f.label :title_cont
+  = f.search_field :title_cont
+  = f.button t('search_form.search_button'), class: 'btn btn-success btn'
 %table.table.table-striped.table-hover
   %tr
     %th= Course.human_attribute_name(:id)

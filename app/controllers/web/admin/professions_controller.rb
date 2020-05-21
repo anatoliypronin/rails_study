@@ -1,6 +1,7 @@
 class Web::Admin::ProfessionsController < Web::Admin::ApplicationController
   def index
-    @pagy, @professions = pagy(Profession.all)
+    @search = Profession.ransack(params[:q])
+    @pagy, @professions = pagy(@search.result)
   end
 
   def new

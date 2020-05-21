@@ -116,7 +116,7 @@ ru:
         password: Пароль
         role: Роль
       article:
-        title: Заголовок
+        title: Название
         body: Текст статьи
         author: Автор
       lesson:

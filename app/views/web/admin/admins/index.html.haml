@@ -1,5 +1,9 @@
 %a.pull-right
   %h1= t('admins')
+= search_form_for @search, url: admin_admins_path do |f|
+  = f.label :name_cont
+  = f.search_field :name_cont
+  = f.button t('search_form.search_button'), class: 'btn btn-success btn'
 %table.table.table-striped.table-hover
   %tr
     %th= Admin.human_attribute_name(:id)
