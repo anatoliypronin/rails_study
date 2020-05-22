@@ -15,6 +15,7 @@ ru:
   add: Добавить
   more: Больше
   back: Назад
+  cancel: Отмена
 
   attributes:
     id: Идентификатор
@@ -35,6 +36,7 @@ ru:
     login teacher: Войти как учитель
     login student: Войти как студент
     login admin: Войти как админ
+    homeworks: Домашняя работа
   
   web:  
     admin:
@@ -219,4 +221,15 @@ ru:
           new:
             cancel: Отмена
             create_lesson: Создать урок
+      
+      student_homeworks:
+        show:
+          tasting: Проверка
+          modify: На доработку
+          done: Зачтено
 
+    student:
+      profiles:
+        edit:
+          save_student: Сохранить изменения
+          cancel: Отмена

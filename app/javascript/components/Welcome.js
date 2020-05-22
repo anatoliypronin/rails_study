@@ -19,7 +19,7 @@ class Welcome extends React.Component {
                     <div class='row'>
                         <div class='col-md-4'>
                             <center>
-                                <img src = "../articles.jpg" width = '250' height = '250'/>
+                                <img src = "../articles.png" width = '250' height = '250'/>
                                     <h2>Статьи</h2>
                                     <p>Здесь ты можешь найти для себя много новой и интересной информации.</p>
                                     <p>
@@ -29,7 +29,7 @@ class Welcome extends React.Component {
                         </div>
                         <div class='col-md-4'>
                             <center>
-                                <img src = "../professions.jpg" width = '250' height = '250'/>
+                                <img src = "../professions.png" width = '250' height = '250'/>
                                     <h2>Профессии</h2>
                                     <p>Выбери профессию по душе и начни обучаться уже сейчас!</p>
                                     <p>
@@ -39,7 +39,7 @@ class Welcome extends React.Component {
                         </div>
                         <div class='col-md-4'>
                             <center>
-                                <img src = "../reviews.jpg" width = '250' height = '250'/>
+                                <img src = "../reviews.png" width = '250' height = '250'/>
                                     <h2>Отзывы</h2>
                                     <p>Отзывы студентов, прошедших обучение на нашем портале.</p>
                                     <p>

@@ -64,6 +64,12 @@ ru:
           states:
             active: Активный
             deleted: Удаленный
+      student_homework:
+        state:
+          states:
+            doing: В работе
+            checking: На проверке
+            accepted: Зачтено
                       
     models:
       teacher:
@@ -89,6 +95,10 @@ ru:
       lessons:
         one: Урок
         others: Уроки
+      
+      student_homeworks:
+        one: Домашняя работа
+        others: Домашние работы
     
     attributes:
       course:
@@ -123,3 +133,12 @@ ru:
         course: Курс
         title: Название
         homework: Домашняя работа
+      student_homework:
+        raiting: Оценка
+        student_comment: Комментарий студента
+        teacher_comment: Комментарий учителя
+        date_begin: Дата начала
+        date_end: Дата завершения
+        link_homework: Ссылка на д/з
+        student: Студент
+        lesson: Урок

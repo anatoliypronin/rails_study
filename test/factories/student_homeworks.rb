@@ -9,7 +9,7 @@ FactoryBot.define do
     date_end
     link_homework
 
-    trait :testing do
+    trait :check do
       state { 'checking' }
     end
 
@@ -17,7 +17,7 @@ FactoryBot.define do
       state { 'doing' }
     end
 
-    trait :done do
+    trait :adopted do
       state { 'accepted' }
     end
   end
