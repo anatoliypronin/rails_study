@@ -15,6 +15,7 @@ ru:
   add: Добавить
   more: Больше
   back: Назад
+  cancel: Отмена
 
   attributes:
     id: Идентификатор
@@ -201,6 +202,12 @@ ru:
           new:
             cancel: Отмена
             create_lesson: Создать урок
+      
+      student_homeworks:
+        show:
+          tasting: Проверка
+          modify: На доработку
+          done: Зачтено
 
     student:
       profiles:

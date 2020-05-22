@@ -43,6 +43,12 @@ Rails.application.routes.draw do
         put "publish"
         put "unpublish"
       end
+
+      resources :student_homeworks do
+        put 'check'
+        put 'modify'
+        put 'adopted'
+      end
     end
 
     namespace :student do
