@@ -35,6 +35,7 @@ ru:
     login teacher: Войти как учитель
     login student: Войти как студент
     login admin: Войти как админ
+    homeworks: Домашняя работа
   
   web:  
     admin:
@@ -201,3 +202,8 @@ ru:
             cancel: Отмена
             create_lesson: Создать урок
 
+    student:
+      profiles:
+        edit:
+          save_student: Сохранить изменения
+          cancel: Отмена
