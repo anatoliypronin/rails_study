@@ -12,7 +12,7 @@ class StudentHomework < ApplicationRecord
     state :checking
     state :accepted
 
-    event :testing do
+    event :check do
       transition doing: :checking
     end
 
@@ -20,7 +20,7 @@ class StudentHomework < ApplicationRecord
       transition checking: :doing
     end
 
-    event :done do
+    event :adopted do
       transition checking: :accepted
     end
   end

@@ -28,7 +28,7 @@ class StudentHomeworkTest < ActiveSupport::TestCase
 
   test 'Should change student_homework state to checking' do
     student_homework = create :student_homework
-    student_homework.testing
+    student_homework.check
     assert_equal 'checking', student_homework.state
   end
 
@@ -40,8 +40,8 @@ class StudentHomeworkTest < ActiveSupport::TestCase
 
   test 'Should change student_homework state to accepted' do
     student_homework = create :student_homework
-    student_homework.testing
-    student_homework.done
+    student_homework.check
+    student_homework.adopted
     assert_equal 'accepted', student_homework.state
   end
 

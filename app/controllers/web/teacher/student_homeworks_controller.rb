@@ -39,9 +39,9 @@ class Web::Teacher::StudentHomeworksController < Web::Teacher::ApplicationContro
     end
   end
 
-  def testing
+  def check
     student_homework = StudentHomework.where(lesson_id: current_teacher.lessons.ids).find(params[:student_homework_id])
-    student_homework.testing!
+    student_homework.check!
     redirect_to action: :index
   end
 
@@ -51,10 +51,10 @@ class Web::Teacher::StudentHomeworksController < Web::Teacher::ApplicationContro
     redirect_to action: :index
   end
 
-  def done
+  def adopted
     student_homework = StudentHomework.where(lesson_id: current_teacher.lessons.ids).find(params[:student_homework_id])
     student_homework.date_end = DateTime.now
-    student_homework.done!
+    student_homework.adopted!
     redirect_to action: :index
   end
 

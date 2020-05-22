@@ -64,7 +64,7 @@ class Web::Teacher::StudentHomeworksControllerTest < ActionDispatch::Integration
   end
 
   test 'should state doing student_homework' do
-    student_homework = create :student_homework, :testing
+    student_homework = create :student_homework, :check
     teacher = student_homework.lesson.course.teacher
     sign_in_as_teacher(teacher)
 
@@ -80,7 +80,7 @@ class Web::Teacher::StudentHomeworksControllerTest < ActionDispatch::Integration
     teacher = student_homework.lesson.course.teacher
     sign_in_as_teacher(teacher)
 
-    put teacher_student_homework_testing_path(student_homework)
+    put teacher_student_homework_check_path(student_homework)
     assert_response :redirect
 
     student_homework.reload
@@ -88,11 +88,11 @@ class Web::Teacher::StudentHomeworksControllerTest < ActionDispatch::Integration
   end
 
   test 'should state accepted student_homework' do
-    student_homework = create :student_homework, :testing
+    student_homework = create :student_homework, :check
     teacher = student_homework.lesson.course.teacher
     sign_in_as_teacher(teacher)
 
-    put teacher_student_homework_done_path(student_homework)
+    put teacher_student_homework_adopted_path(student_homework)
     assert_response :redirect
 
     student_homework.reload

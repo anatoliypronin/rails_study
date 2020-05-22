@@ -45,9 +45,9 @@ Rails.application.routes.draw do
       end
 
       resources :student_homeworks do
-        put 'testing'
+        put 'check'
         put 'modify'
-        put 'done'
+        put 'adopted'
       end
     end
   end
