@@ -1,0 +1,9 @@
+%a.pull-right
+  %h1= t('personal_account')
+= simple_form_for @student, url: student_profile_path(@student.id) do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :email
+  = f.input :phone_number
+  = f.button :submit, t('.save_student'), class: 'btn btn-outline-secondary'
+  = link_to t('.cancel'), student_root_path, class: 'btn btn-outline-secondary' 
