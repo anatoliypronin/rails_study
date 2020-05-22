@@ -1,6 +1,7 @@
 class Web::Admin::ArticlesController < Web::Admin::ApplicationController
   def index
-    @pagy, @articles = pagy(Article.all)
+    @search = Article.ransack(params[:q])
+    @pagy, @articles = pagy(@search.result)
   end
 
   def new

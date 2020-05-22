@@ -16,6 +16,14 @@ class Web::Admin::AdminsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should not get new admin page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get new_admin_admin_path
+    assert_redirected_to admin_root_path
+  end
+
   test 'should post create admin' do
     admin_attrs = attributes_for :admin
 

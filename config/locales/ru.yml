@@ -40,6 +40,9 @@ ru:
   
   web:  
     admin:
+      sessions:
+        new:
+          create_admin: Войти
       professions:
         index:
           add: Добавить
@@ -47,8 +50,10 @@ ru:
           view profile: Подробнее
         new:
           cancel: Отмена
+          create_profession: Создать профессию
         edit:
           cancel: Отмена
+          create_profession: Создать профессию
         show:
           back: Назад
           edit: Редактировать
@@ -67,8 +72,10 @@ ru:
           view profile: Подробнее  
         new:
           cancel: Отмена
+          create_teacher: Создать учителя
         edit:
           cancel: Отмена
+          create_teacher: Создать учителя
         show:
           edit: Редактировать
           back: Назад
@@ -83,8 +90,10 @@ ru:
           control: Управление        
         new:
           cancel: Отмена
+          create_admin: Создать админа
         edit:
           cancel: Отмена
+          create_admin: Создать админа
         show:
           back: Назад
           del: Удалить
@@ -95,6 +104,7 @@ ru:
       profiles:
         edit:
           cancel: Отмена
+          create_profile: Изменить
     
       students:
         index:
@@ -103,8 +113,10 @@ ru:
           control: Управление        
         new:
           cancel: Отмена
+          create_student: Создать студента
         edit:
           cancel: Отмена
+          create_student: Создать студента
         show:
           back: Назад
           del: Удалить 
@@ -119,8 +131,10 @@ ru:
           add: Добавить    
         new:
           cancel: Отмена
+          create_course: Создать курс
         edit:
           cancel: Отмена
+          create_course: Создать курс
         show:
           control: Управление
           back: Назад
@@ -139,8 +153,10 @@ ru:
           back: Назад
         edit:
           cancel: Назад
+          create_article: Создать статью
         new:
           cancel: Назад
+          create_article: Создать статью
           
     teacher:
       profiles:
@@ -156,8 +172,10 @@ ru:
           control: Управление
         new:
           cancel: Отмена
+          create_article: Создать статью
         edit:
           cancel: Отмена
+          create_article: Создать статью
         show:
           back: Назад
       
@@ -168,9 +186,10 @@ ru:
           view profile: Подробнее 
         edit:
           cancel: Отмена
+          create_lesson: Создать урок
         new:
           cancel: Отмена
-          create_course: Создать курс
+          create_lesson: Создать урок
         show:
           сourse: Курс
           control: Управление

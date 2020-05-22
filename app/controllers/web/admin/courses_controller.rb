@@ -1,10 +1,12 @@
 class Web::Admin::CoursesController < Web::Admin::ApplicationController
   def index
-    @pagy, @courses = pagy(Course.all)
+    @search = Course.ransack(params[:q])
+    @pagy, @courses = pagy(@search.result)
   end
 
   def new
     @course = Course.new
+    authorize @course
   end
 
   def create
