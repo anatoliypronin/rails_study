@@ -3,15 +3,17 @@ require "test_helper"
 class Web::Student::StudentCoursesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @student = create :student
+    @course = create :course
     sign_in_as_student(@student)
   end
 
   test "should post create student course" do
     student_course_attrs = attributes_for :student_course
-
+    student_course_attrs[:student_id] = @student.id
+    student_course_attrs[:course_id] = @course.id
+    
     post student_student_courses_path, params: { student_course: student_course_attrs }
-    assert_response :redirect
-
+    
     student_course = StudentCourse.last
     assert_equal student_course_attrs[:student_id], student_course.student_id
     assert_equal student_course_attrs[:course_id], student_course.course_id
