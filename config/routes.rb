@@ -55,7 +55,7 @@ Rails.application.routes.draw do
       root to: 'welcome#index'
       resource :profile, only: %i[edit update]
       resource :session, only: %i[new create destroy]
-      resources :student_courses, only: %i[create index show destroy]
+      resources :student_courses, only: %i[create destroy]
       resources :courses, only: %i[index show]
       resources :student_homeworks, only: %i[index show edit update]
       resources :reviews, only: %i[index new create show]
