@@ -1,6 +1,0 @@
-= simple_form_for @student_course, url: student_student_courses_path do |f|
-  = f.input :student_id
-  = f.input :course_id
-  %h2= params[:student_id]
-  = f.button :submit, t('subscribe'), class: 'btn btn-outline-secondary'
-  = link_to t('.cancel'), admin_articles_path, class: 'btn btn-outline-secondary'
