@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class Web::Student::CoursesControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -7,12 +7,12 @@ class Web::Student::CoursesControllerTest < ActionDispatch::IntegrationTest
     sign_in_as_student(@student)
   end
 
-  test "should get index courses page" do
+  test 'should get index courses page' do
     get student_courses_path
     assert_response :success
   end
 
-  test "should get show course page" do
+  test 'should get show course page' do
     get student_course_path(@course.id)
     assert_response :success
   end
