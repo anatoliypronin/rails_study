@@ -5,9 +5,12 @@
     %th= Course.human_attribute_name(:title)
     %th= Course.human_attribute_name(:description)
     %th= Course.human_attribute_name(:updated_at)
+    %th
   - @courses.each do |course|
     %tr
       %td= link_to course.title, student_course_path(course.id), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
       %td= course.description
       %td= course.updated_at
+      - if StudentCourse.find_by course_id: course.id, student_id: current_student.id
+        %td= t('you are subscribed')
   
