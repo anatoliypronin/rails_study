@@ -2,7 +2,7 @@
   .collapse.navbar-collapse
     .navbar-nav
       = link_to t('header.home'), student_root_path, class: 'navbar-brand'
-      = link_to t('header.courses'), "#", class: 'nav-item nav-link'
+      = link_to t('my courses'), student_courses_path, class: 'nav-item nav-link'
       = link_to t('header.homeworks'), "#", class: 'nav-item nav-link'
       = link_to t('header.articles'), "#", class: 'nav-item nav-link'
       = link_to t('header.personal_account'), edit_student_profile_path, class: 'nav-item nav-link'
