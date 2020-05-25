@@ -13,7 +13,8 @@ class Web::Student::StudentCoursesControllerTest < ActionDispatch::IntegrationTe
     student_course_attrs[:course_id] = @course.id
     
     post student_student_courses_path, params: { student_course: student_course_attrs }
-    
+    assert_redirected_to controller: "courses", action: "index"
+
     student_course = StudentCourse.last
     assert_equal student_course_attrs[:student_id], student_course.student_id
     assert_equal student_course_attrs[:course_id], student_course.course_id

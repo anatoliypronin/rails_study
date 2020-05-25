@@ -1,0 +1,25 @@
+%h1= @course.title
+%br
+%h4= Course.human_attribute_name(:description)
+%h4= @course.description
+%br
+%br
+%h5= Course.human_attribute_name(:teacher)
+%h5= @course.teacher.decorate.name
+%br
+%br
+%h5= Course.human_attribute_name(:profession)
+%h5= @course.professions.map(&:title).join(', ')
+%br
+%br
+%h3= t('Lessons')
+- @course.lessons.each do |lesson|
+  %li= link_to lesson.title, '#'
+%br
+%br
+- if StudentCourse.find_by course_id: @course.id, student_id: current_student.id
+  = button_to t('unsubscribe'), student_student_course_path(StudentCourse.where(course_id: @course.id, student_id: current_student.id).ids), method: :delete, class: "btn btn-danger"
+- else
+  = button_to t('subscribe'), { controller: 'student_courses', action: 'create', 'student_course' => { 'completed' => false, 'student_id' => current_student.id, 'course_id' => @course.id }, method: :post }, class: 'btn btn-success btn'
+%br
+= link_to t('.back'), student_courses_path, class: 'btn btn-outline-secondary'
