@@ -69,4 +69,9 @@ class StudentTest < ActiveSupport::TestCase
     student.del
     assert_equal 'deleted', student.state
   end
+
+  test 'photo_content_type should be valid' do
+    student = build :student, photo_content_type: 'doc'
+    assert_not student.save
+  end
 end

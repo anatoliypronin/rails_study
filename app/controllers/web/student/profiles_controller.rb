@@ -16,6 +16,6 @@ class Web::Student::ProfilesController < Web::Student::ApplicationController
   private
 
   def student_attrs
-    params.require(:student).permit(:first_name, :last_name, :phone_number, :email, :student_id)
+    params.require(:student).permit(:first_name, :last_name, :phone_number, :email, :student_id, :photo )
   end
 end

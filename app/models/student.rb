@@ -14,6 +14,11 @@ class Student < ApplicationRecord
 
   has_many :student_homeworks, dependent: :destroy
 
+  has_attached_file :photo, styles: { small: "200x200>" }
+  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
+
+
+
   state_machine initial: :active do
     state :active
     state :deleted
