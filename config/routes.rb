@@ -53,7 +53,7 @@ Rails.application.routes.draw do
 
     namespace :student do
       root to: 'welcome#index'
-      resource :profile, only: %i[edit update] do
+      resource :profile, only: %i[edit update show] do
         put "delete_photo"
       end
       resource :session, only: %i[new create destroy]

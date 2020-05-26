@@ -7,10 +7,14 @@ class Web::Student::ProfilesController < Web::Student::ApplicationController
     @student = current_student
 
     if @student.update(student_attrs)
-      redirect_to student_root_path
+      redirect_to student_profile_path
     else
       render action: :edit
     end
+  end
+  
+  def show
+    @student = current_student.decorate
   end
 
   def delete_photo

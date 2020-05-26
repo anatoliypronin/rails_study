@@ -5,7 +5,7 @@
       = link_to t('my courses'), student_courses_path, class: 'nav-item nav-link'
       = link_to t('header.homeworks'), "#", class: 'nav-item nav-link'
       = link_to t('header.articles'), "#", class: 'nav-item nav-link'
-      = link_to t('header.personal_account'), edit_student_profile_path, class: 'nav-item nav-link'
+      = link_to t('header.personal_account'), student_profile_path, class: 'nav-item nav-link'
       %ul.navbar-num
   %div
     %div{style: 'color: white'}= current_student.phone_number

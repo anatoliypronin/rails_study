@@ -1,0 +1,19 @@
+%a.pull-right
+  %h1= t('personal_account')
+.media.m-4
+  %br
+    %image= image_tag @student.photo.url(:small)
+    .media-body.p-4
+      %h5= @student.decorate.name
+      %br
+      %br
+      %h5= @student.email
+      %h5= @student.phone_number
+    = link_to t('.edit'), edit_student_profile_path, class: 'btn btn-outline-secondary btn-sm'
+
+
+
+
+
+
+
