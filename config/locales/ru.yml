@@ -237,3 +237,8 @@ ru:
         edit:
           save_student: Сохранить изменения
           cancel: Отмена
+      courses:
+        lessons:
+          show:
+            back: Назад
+
