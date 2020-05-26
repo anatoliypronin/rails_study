@@ -14,12 +14,12 @@
 %br
 %h3= t('lessons')
 - @course.lessons.each do |lesson|
-  %li= link_to lesson.title, '#'
+  - if lesson.state?(:active)
+    %li= link_to lesson.title, student_course_lesson_path(@course, lesson), class: 'btn btn-outline-secondary'
 %br
 %br
 - if StudentCourse.find_by course_id: @course.id, student_id: current_student.id
   = button_to t('unsubscribe'), student_student_course_path(StudentCourse.where(course_id: @course.id, student_id: current_student.id).ids), method: :delete, class: "btn btn-danger"
 - else
   = button_to t('subscribe'), { controller: 'student_courses', action: 'create', 'student_course' => { 'completed' => false, 'student_id' => current_student.id, 'course_id' => @course.id }, method: :post }, class: 'btn btn-success btn'
-%br
-= link_to t('back'), student_courses_path, class: 'btn btn-outline-secondary'
+%br= link_to t('back'), student_courses_path, class: 'btn btn-outline-secondary'
