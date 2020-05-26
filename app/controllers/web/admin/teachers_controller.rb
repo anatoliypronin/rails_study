@@ -1,10 +1,12 @@
 class Web::Admin::TeachersController < Web::Admin::ApplicationController
   def index
-    @teachers = Teacher.all
+    @search = Teacher.ransack(params[:q])
+    @pagy, @teachers = pagy(@search.result)
   end
 
   def new
     @teacher = Teacher.new
+    authorize @teacher
   end
 
   def create
@@ -23,6 +25,7 @@ class Web::Admin::TeachersController < Web::Admin::ApplicationController
 
   def edit
     @teacher = Teacher.find(params[:id])
+    authorize @teacher
   end
 
   def update

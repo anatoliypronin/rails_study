@@ -4,12 +4,22 @@ ru:
   courses: Курсы
   homework: Домашние работы
   articles: Статьи
+  reviews: Отзывы
   admins: Админы
+  personal_account: Мой профиль
   professions: Профессии
-  personal_account: Личный кабинет
   are you sure?: Вы согласны?
+  lessons: Уроки
+  you are subscribed: Вы подписаны
+  subscribe: Подписаться
+  unsubscribe: Отписаться
+  my courses: Мои курсы
+  
   edit: Редактировать
   add: Добавить
+  more: Больше
+  back: Назад
+  cancel: Отмена
 
   attributes:
     id: Идентификатор
@@ -21,22 +31,33 @@ ru:
     professions: Профессии
     courses: Курсы
     articles: Статьи
+    reviews: Отзывы
+    lessons: Уроки
     home works: Домашние работы
-    home: Домашняя страница
+    home: Личный кабинет
     exit: Выйти
-    personal_account: Личный кабинет
-
+    personal_account: Мой профиль
+    login teacher: Войти как учитель
+    login student: Войти как студент
+    login admin: Войти как админ
+    homeworks: Домашняя работа
   
   web:  
     admin:
+      sessions:
+        new:
+          create_admin: Войти
       professions:
         index:
+          add: Добавить
           control: Управление
           view profile: Подробнее
         new:
           cancel: Отмена
+          create_profession: Создать профессию
         edit:
           cancel: Отмена
+          create_profession: Создать профессию
         show:
           back: Назад
           edit: Редактировать
@@ -44,63 +65,103 @@ ru:
           restore: Восстановить
           control: Управление
           course: Курсы
-        
+
       teachers:
         index:
           del: Удалить
           restore: Восстановить
           add: Добавить
           control: Управление
-          edit: Редактировать   
+          edit: Редактировать 
+          view profile: Подробнее  
         new:
           cancel: Отмена
+          create_teacher: Создать учителя
         edit:
           cancel: Отмена
+          create_teacher: Создать учителя
         show:
+          edit: Редактировать
           back: Назад
+          restore: Восстановить
+          del: Удалить 
+          control: Управление
 
       admins:
         index:
-          del: Удалить
-          restore: Восстановить
+          view profile: Подробнее 
           add: Добавить
-          control: Управление
-          edit: Редактировать         
+          control: Управление        
         new:
           cancel: Отмена
+          create_admin: Создать админа
         edit:
           cancel: Отмена
+          create_admin: Создать админа
         show:
           back: Назад
+          del: Удалить
+          restore: Восстановить
+          control: Управление
+          edit: Редактировать 
+          
+      profiles:
+        edit:
+          cancel: Отмена
+          create_profile: Изменить
     
       students:
         index:
-          del: Удалить 
-          restore: Восстановить
+          view profile: Подробнее 
           add: Добавить
-          control: Управление
-          edit: Редактировать          
+          control: Управление        
         new:
           cancel: Отмена
+          create_student: Создать студента
         edit:
           cancel: Отмена
+          create_student: Создать студента
         show:
           back: Назад
+          del: Удалить 
+          restore: Восстановить
+          control: Управление
+          edit: Редактировать 
 
       courses:
         index:
           control: Управление
-          view profile: Подробнее     
+          view profile: Подробнее 
+          add: Добавить    
         new:
           cancel: Отмена
+          create_course: Создать курс
         edit:
           cancel: Отмена
+          create_course: Создать курс
         show:
+          control: Управление
           back: Назад
           restore: Восстановить
-          del: Удалить 
+          del: Удалить
           add: Добавить
-          edit: Редактировать  
+          edit: Редактировать 
+      articles:
+        index:
+          view profile: Подробнее
+          control: Управление
+          add: Добавить
+        show:
+          edit: Редактировать
+          control: Управление
+          back: Назад
+        edit:
+          cancel: Назад
+          create_article: Создать статью
+        new:
+          cancel: Назад
+          create_article: Создать статью
+          
     teacher:
       profiles:
         edit:
@@ -115,21 +176,64 @@ ru:
           control: Управление
         new:
           cancel: Отмена
+          create_article: Создать статью
         edit:
           cancel: Отмена
+          create_article: Создать статью
         show:
           back: Назад
+      
+      lessons:
+        index:
+          add: Добавить
+          control: Управление
+          view profile: Подробнее 
+        edit:
+          cancel: Отмена
+          create_lesson: Создать урок
+        new:
+          cancel: Отмена
+          create_lesson: Создать урок
+        show:
+          сourse: Курс
+          control: Управление
+          restore: Восстановить
+          del: Удалить
+          edit: Редактировать
+          back: Назад 
 
       courses:
         index:
           edit: Редактировать
           add: Добавить
           control: Управление
+          add_lesson: Добавить урок
         new:
           cancel: Отмена
           edit: Редактировать
+          create_course: Создать курс
         edit:
           cancel: Отмена
+          create_course: Создать курс
         show:
+          Course: Курс
+          Lessons: Уроки
           edit: Редактировать
           back: Назад
+          add_lesson: Добавить урок
+        lessons:
+          new:
+            cancel: Отмена
+            create_lesson: Создать урок
+      
+      student_homeworks:
+        show:
+          tasting: Проверка
+          modify: На доработку
+          done: Зачтено
+
+    student:
+      profiles:
+        edit:
+          save_student: Сохранить изменения
+          cancel: Отмена

@@ -1,10 +1,12 @@
 class Web::Admin::ProfessionsController < Web::Admin::ApplicationController
   def index
-    @professions = Profession.all.decorate
+    @search = Profession.ransack(params[:q])
+    @pagy, @professions = pagy(@search.result)
   end
 
   def new
     @profession = Profession.new
+    authorize @profession
   end
 
   def create
@@ -18,11 +20,12 @@ class Web::Admin::ProfessionsController < Web::Admin::ApplicationController
   end
 
   def show
-    @profession = Profession.find(params[:id])
+    @profession = Profession.find(params[:id]).decorate
   end
 
   def edit
     @profession = Profession.find(params[:id])
+    authorize @profession
   end
 
   def update

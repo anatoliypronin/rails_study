@@ -1,0 +1,16 @@
+.container
+  %h1= @article.title
+  %b
+  %b= Article.human_attribute_name(:body) + ':'
+  %h4= @article.body
+  %br
+  %br
+  %b= Article.human_attribute_name(:author) + ':'
+  %h4= @article.author.name
+  %br
+  %br
+  %b= Article.human_attribute_name(:updated_at) + ':'
+  %h4= @article.updated_at
+  %br
+  %br
+  %td= link_to t('back'), articles_path, class: 'btn btn-outline-secondary'

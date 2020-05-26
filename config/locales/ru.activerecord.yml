@@ -59,7 +59,18 @@ ru:
           events:
             publish: Опубликовать
             unpublish: Снять с публикации
-                          
+      lesson:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+      student_homework:
+        state:
+          states:
+            doing: В работе
+            checking: На проверке
+            accepted: Зачтено
+                      
     models:
       teacher:
         one: Учитель
@@ -80,6 +91,14 @@ ru:
       articles:
         one: Статья
         other: Статьи
+      
+      lessons:
+        one: Урок
+        others: Уроки
+      
+      student_homeworks:
+        one: Домашняя работа
+        others: Домашние работы
     
     attributes:
       course:
@@ -87,6 +106,7 @@ ru:
         profession: Профессии курса    
         title: Название курса
         professions: 'Профессии в которые включен курс:'
+        lessons: 'Уроки которые включены в курс:'
       teacher:
         first_name: Имя
         last_name: Фамилия
@@ -106,6 +126,19 @@ ru:
         password: Пароль
         role: Роль
       article:
-        title: Заголовок
+        title: Название
         body: Текст статьи
         author: Автор
+      lesson:
+        course: Курс
+        title: Название
+        homework: Домашняя работа
+      student_homework:
+        raiting: Оценка
+        student_comment: Комментарий студента
+        teacher_comment: Комментарий учителя
+        date_begin: Дата начала
+        date_end: Дата завершения
+        link_homework: Ссылка на д/з
+        student: Студент
+        lesson: Урок

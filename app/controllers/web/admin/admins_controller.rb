@@ -1,10 +1,12 @@
 class Web::Admin::AdminsController < Web::Admin::ApplicationController
   def index
-    @admins = Admin.all.decorate
+    @search = Admin.ransack(params[:q])
+    @pagy, @admins = pagy(@search.result)
   end
 
   def new
     @admin = Admin.new
+    authorize @admin
   end
 
   def create
@@ -15,14 +17,16 @@ class Web::Admin::AdminsController < Web::Admin::ApplicationController
     else
       render action: :new
     end
+    authorize @admin
   end
 
   def show
-    @admin = Admin.find(params[:id])
+    @admin = Admin.find(params[:id]).decorate
   end
 
   def edit
     @admin = Admin.find(params[:id])
+    authorize @admin
   end
 
   def update

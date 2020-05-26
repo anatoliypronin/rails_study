@@ -1,10 +1,12 @@
 class Web::Admin::CoursesController < Web::Admin::ApplicationController
   def index
-    @courses = Course.all.decorate
+    @search = Course.ransack(params[:q])
+    @pagy, @courses = pagy(@search.result)
   end
 
   def new
     @course = Course.new
+    authorize @course
   end
 
   def create
@@ -18,11 +20,12 @@ class Web::Admin::CoursesController < Web::Admin::ApplicationController
   end
 
   def show
-    @course = Course.find(params[:id])
+    @course = Course.find(params[:id]).decorate
   end
 
   def edit
     @course = Course.find(params[:id])
+    authorize @course
   end
 
   def update

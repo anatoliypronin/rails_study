@@ -1,10 +1,12 @@
 class Web::Admin::StudentsController < Web::Admin::ApplicationController
   def index
-    @students = Student.all
+    @search = Student.ransack(params[:q])
+    @pagy, @students = pagy(@search.result)
   end
 
   def new
     @student = Student.new
+    authorize @student
   end
 
   def create
@@ -18,11 +20,12 @@ class Web::Admin::StudentsController < Web::Admin::ApplicationController
   end
 
   def show
-    @student = Student.find(params[:id])
+    @student = Student.find(params[:id]).decorate
   end
 
   def edit
     @student = Student.find(params[:id])
+    authorize @student
   end
 
   def update

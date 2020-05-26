@@ -16,6 +16,14 @@ class Web::Admin::StudentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should not get new student page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get new_admin_student_path
+    assert_redirected_to admin_root_path
+  end
+
   test 'should post create student' do
     student_attrs = attributes_for :student
     post admin_students_path, params: { student: student_attrs }
@@ -42,6 +50,14 @@ class Web::Admin::StudentsControllerTest < ActionDispatch::IntegrationTest
   test 'should get edit student page' do
     get edit_admin_student_path(@student.id)
     assert_response :success
+  end
+
+  test 'should not get edit student page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get edit_admin_student_path(@student.id)
+    assert_redirected_to admin_root_path
   end
 
   test 'should put update student' do

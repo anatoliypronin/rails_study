@@ -1,11 +1,14 @@
 %a.pull-right
   %h1= t('professions')
+= search_form_for @search, url: admin_professions_path do |f|
+  = f.label :title_cont
+  = f.search_field :title_cont
+  = f.button t('search_form.search_button'), class: 'btn btn-success btn'
 %table.table.table-striped.table-hover
   %tr
     %th= Profession.human_attribute_name(:id)
     %th= Profession.human_attribute_name(:title)
     %th= Profession.human_attribute_name(:description)
-    %th= Profession.human_attribute_name(:created_at)
     %th= Profession.human_attribute_name(:state)
     %th{:colspan => "2"}= t('.control')
   - @professions.each do |profession|
@@ -13,7 +16,8 @@
       %td= profession.id
       %td= profession.title
       %td= profession.description
-      %td= profession.created_at
       %td= profession.human_state_name
       %td= link_to t('.view profile'), admin_profession_path(profession), class: 'btn btn-success btn'
-%td= link_to t('.add'), new_admin_profession_path, class: 'btn btn-outline-secondary' 
+- if policy(@professions).new?
+  %td= link_to t('.add'), new_admin_profession_path, class: 'btn btn-outline-secondary' 
+!= pagy_bootstrap_nav(@pagy)

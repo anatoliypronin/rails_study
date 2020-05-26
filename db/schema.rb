@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_214935) do
+ActiveRecord::Schema.define(version: 2020_05_21_045303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_05_12_214935) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "teacher_id"
     t.index ["teacher_id"], name: "index_courses_on_teacher_id"
+    t.index ["title"], name: "index_courses_on_title", unique: true
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -66,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_05_12_214935) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "course_id", null: false
     t.index ["course_id"], name: "index_lessons_on_course_id"
+    t.index ["title"], name: "index_lessons_on_title", unique: true
   end
 
   create_table "professions", force: :cascade do |t|
@@ -101,12 +103,12 @@ ActiveRecord::Schema.define(version: 2020_05_12_214935) do
 
   create_table "student_homeworks", force: :cascade do |t|
     t.string "state", null: false
-    t.integer "raiting", null: false
+    t.integer "raiting"
     t.text "student_comment"
     t.text "teacher_comment"
     t.datetime "date_begin", null: false
-    t.datetime "date_end", null: false
-    t.string "link_homework", null: false
+    t.datetime "date_end"
+    t.string "link_homework"
     t.bigint "student_id", null: false
     t.bigint "lesson_id", null: false
     t.datetime "created_at", precision: 6, null: false

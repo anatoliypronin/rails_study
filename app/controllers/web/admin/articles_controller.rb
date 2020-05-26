@@ -1,6 +1,7 @@
 class Web::Admin::ArticlesController < Web::Admin::ApplicationController
   def index
-    @articles = Article.decorate
+    @search = Article.ransack(params[:q])
+    @pagy, @articles = pagy(@search.result)
   end
 
   def new
@@ -19,7 +20,7 @@ class Web::Admin::ArticlesController < Web::Admin::ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id]).decorate
   end
 
   def edit

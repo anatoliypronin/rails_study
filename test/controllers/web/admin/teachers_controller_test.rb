@@ -16,6 +16,14 @@ class Web::Admin::TeachersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should not get new teacher page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get new_admin_teacher_path
+    assert_redirected_to admin_root_path
+  end
+
   test 'should post create teacher' do
     teacher_attrs = attributes_for :teacher
     post admin_teachers_path, params: { teacher: teacher_attrs }
@@ -42,6 +50,14 @@ class Web::Admin::TeachersControllerTest < ActionDispatch::IntegrationTest
   test 'should get edit teacher page' do
     get edit_admin_teacher_path(@teacher.id)
     assert_response :success
+  end
+
+  test 'should not get edit teacher page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get edit_admin_teacher_path(@teacher.id)
+    assert_redirected_to admin_root_path
   end
 
   test 'should put update teacher' do

@@ -17,6 +17,14 @@ class Web::Admin::ProfessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should not get new profession page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get new_admin_profession_path
+    assert_redirected_to admin_root_path
+  end
+
   test 'should post create profession' do
     profession_attrs = attributes_for :profession
 
@@ -45,6 +53,14 @@ class Web::Admin::ProfessionsControllerTest < ActionDispatch::IntegrationTest
   test 'should get edit profession page' do
     get edit_admin_profession_path(@profession.id)
     assert_response :success
+  end
+
+  test 'should not get edit profession page for editor' do
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+
+    get edit_admin_profession_path(@profession.id)
+    assert_redirected_to admin_root_path
   end
 
   test 'should put update profession' do
