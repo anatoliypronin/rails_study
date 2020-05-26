@@ -53,6 +53,6 @@ class Web::Admin::StudentsController < Web::Admin::ApplicationController
   private
 
   def student_attrs
-    params.require(:student).permit(:first_name, :last_name, :email, :phone_number)
+    params.require(:student).permit(:first_name, :last_name, :email, :phone_number, :photo)
   end
 end

@@ -13,6 +13,15 @@ class Web::Student::ProfilesController < Web::Student::ApplicationController
     end
   end
 
+  def delete_photo
+    @student = current_student
+    if @student.update(photo: nil)
+      render action: :edit
+    else 
+      render action: :edit
+    end
+  end
+
   private
 
   def student_attrs
