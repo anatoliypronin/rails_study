@@ -1,0 +1,17 @@
+%a.pull-right
+  %h1= t('homework')
+%table.table.table-striped.table-hover
+  %tr
+    %th= StudentHomework.human_attribute_name(:id)
+    %th= StudentHomework.human_attribute_name(:state)
+    %th= StudentHomework.human_attribute_name(:date_begin)
+    %th= StudentHomework.human_attribute_name(:student)
+    %th= StudentHomework.human_attribute_name(:lesson)
+  - @student_homeworks.each do |homework|
+    %tr
+      %td= link_to homework.id, teacher_student_homework_path(homework), target: :_blank, class: 'btn btn-outline-secondary btn-sm'
+      %td= homework.human_state_name
+      %td= homework.date_begin
+      %td= homework.student.decorate.name
+      %td= homework.lesson.title
+%td= link_to t('add'), new_teacher_student_homework_path, class: 'btn btn-outline-secondary' 

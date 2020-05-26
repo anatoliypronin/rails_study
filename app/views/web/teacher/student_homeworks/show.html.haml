@@ -1,0 +1,54 @@
+%h1= t('homework')
+%b
+%h4= @student_homework.human_state_name
+%br
+- if @student_homework.raiting != nil
+  %b= StudentHomework.human_attribute_name(:raiting) + ': '
+  %b= @student_homework.raiting
+  %br
+  %br
+%b= StudentHomework.human_attribute_name(:date_begin) + ': '
+%b= @student_homework.date_begin
+%br
+%br
+- if @student_homework.date_end != nil
+  %b= StudentHomework.human_attribute_name(:date_end) + ': '
+  %b= @student_homework.date_end
+  %br
+  %br
+- if @student_homework.link_homework != nil
+  %b= StudentHomework.human_attribute_name(:link_homework) + ': '
+  %b= @student_homework.link_homework
+  %br
+  %br
+%b= StudentHomework.human_attribute_name(:student) + ': '
+%b= @student_homework.student.decorate.name
+%br
+%br
+%b= StudentHomework.human_attribute_name(:lesson) + ': '
+%b= @student_homework.lesson.title
+%br
+%br
+- if @student_homework.student_comment != nil
+  %b= StudentHomework.human_attribute_name(:student_comment) + ': '
+  %b= @student_homework.student_comment
+  %br
+  %br
+- if @student_homework.teacher_comment != nil
+  %b= StudentHomework.human_attribute_name(:teacher_comment) + ': '
+  %b= @student_homework.teacher_comment
+  %br
+  %br
+- if @student_homework.state == 'doing'
+  = link_to t('.check'), teacher_student_homework_check_path(@student_homework.id), method: :put, class: 'btn btn-success btn'
+  %br
+  %br
+- if @student_homework.state == 'checking'
+  = link_to t('.modify'), teacher_student_homework_modify_path(@student_homework.id), method: :put, class: 'btn btn-success btn'
+  = link_to t('.adopted'), teacher_student_homework_adopted_path(@student_homework.id), method: :put, class: 'btn btn-success btn'
+  %br
+  %br
+= link_to t('edit'), edit_teacher_student_homework_path(@student_homework), class: 'btn btn-info btn-sm'
+%br
+%br
+= link_to t('back'), teacher_student_homeworks_path, class: 'btn btn-outline-secondary'
