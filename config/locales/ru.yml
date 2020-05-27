@@ -14,6 +14,7 @@ ru:
   subscribe: Подписаться
   unsubscribe: Отписаться
   my courses: Мои курсы
+  photo: Фото
   
   edit: Редактировать
   add: Добавить
@@ -237,3 +238,7 @@ ru:
         edit:
           save_student: Сохранить изменения
           cancel: Отмена
+          photo: Фото
+          delete_photo: Удалить фото
+        show:
+          edit: Редактировать профиль  

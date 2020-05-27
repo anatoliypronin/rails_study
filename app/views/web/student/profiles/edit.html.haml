@@ -1,9 +1,14 @@
 %a.pull-right
   %h1= t('personal_account')
-= simple_form_for @student, url: student_profile_path(@student.id) do |f|
+= simple_form_for @student, html: { multipart: true }, url: student_profile_path(@student.id) do |f|
+  = image_tag @student.photo.url(:small)
+  = f.input :photo, as: :file
+  = link_to t('.delete_photo'), delete_photo_student_profile_path(@student.id), class: 'btn btn-outline-secondary', method: :put
   = f.input :first_name
   = f.input :last_name
   = f.input :email
   = f.input :phone_number
   = f.button :submit, t('.save_student'), class: 'btn btn-outline-secondary'
-  = link_to t('.cancel'), student_root_path, class: 'btn btn-outline-secondary' 
+  = link_to t('.cancel'), student_root_path, class: 'btn btn-outline-secondary'
+
+    

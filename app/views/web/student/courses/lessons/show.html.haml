@@ -1,0 +1,15 @@
+%h1= @lesson.title
+%br
+%h4= Lesson.human_attribute_name(:description)
+%h4= @lesson.description
+%br
+%br
+%h5= Lesson.human_attribute_name(:homework)
+%h5= @lesson.homework
+%br
+%br
+%h5= Lesson.human_attribute_name(:course)
+%h5= @lesson.course.title
+%br
+%br
+= link_to t('back'), student_course_path(@lesson.course), class: 'btn btn-outline-secondary' 

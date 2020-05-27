@@ -22,4 +22,5 @@
 %h1= t('.Lessons')
 %ul
 - @course.lessons.each do |lesson|
-  %li= link_to lesson.title, teacher_lesson_path(lesson.id)
+  - if lesson.state?(:active)
+    %li= link_to lesson.title, teacher_lesson_path(lesson.id)
