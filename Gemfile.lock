@@ -104,6 +104,7 @@ GEM
     case_transform (0.2)
       activesupport
     childprocess (3.0.0)
+    climate_control (0.2.0)
     concurrent-ruby (1.1.6)
     configatron (4.5.1)
     connection_pool (2.2.2)
@@ -171,6 +172,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2020.0512)
     mimemagic (0.3.4)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -180,6 +184,12 @@ GEM
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     pagy (3.8.1)
+    paperclip (6.1.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      mime-types
+      mimemagic (~> 0.3.0)
+      terrapin (~> 0.6.0)
     parallel (1.19.1)
     parser (2.7.1.2)
       ast (~> 2.4.0)
@@ -305,6 +315,8 @@ GEM
     temple (0.8.2)
     term-ansicolor (1.7.1)
       tins (~> 1.0)
+    terrapin (0.6.0)
+      climate_control (>= 0.0.3, < 1.0)
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -362,6 +374,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   pagy (~> 3.5)
+  paperclip
   pg
   phonelib
   puma (~> 4.1)
