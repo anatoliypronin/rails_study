@@ -19,11 +19,8 @@ class Web::Student::ProfilesController < Web::Student::ApplicationController
 
   def delete_photo
     @student = current_student
-    if @student.update(photo: nil)
-      redirect_to student_profile_path
-    else
-      render action: :edit
-    end
+    @student.update(photo: nil)
+    render action: :edit
   end
 
   private
