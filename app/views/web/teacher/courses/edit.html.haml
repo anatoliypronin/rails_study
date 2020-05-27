@@ -4,9 +4,3 @@
   = course.association :professions, as: :check_boxes
   = course.button :submit, t('.create_course'), class: 'btn btn-outline-secondary'
   = link_to t('.cancel'), teacher_courses_path, class: 'btn btn-outline-secondary'
-%br
-%br
-%h3= t('lessons')
-- @course.lessons.each do |lesson|
-  - if lesson.state?(:active)
-    %li= link_to lesson.title, teacher_lesson_path(lesson)
