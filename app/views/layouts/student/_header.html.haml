@@ -3,7 +3,7 @@
     .navbar-nav
       = link_to t('header.home'), student_root_path, class: 'navbar-brand'
       = link_to t('my courses'), student_courses_path, class: 'nav-item nav-link'
-      = link_to t('header.homeworks'), "#", class: 'nav-item nav-link'
+      = link_to t('header.homeworks'), student_student_homeworks_path, class: 'nav-item nav-link'
       = link_to t('header.articles'), "#", class: 'nav-item nav-link'
       = link_to t('header.personal_account'), student_profile_path, class: 'nav-item nav-link'
       %ul.navbar-num

@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class Web::Student::StudentHomeworksControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -7,22 +7,22 @@ class Web::Student::StudentHomeworksControllerTest < ActionDispatch::Integration
     sign_in_as_student(@student)
   end
 
-  test "should get index student_homeworks page" do
+  test 'should get index student_homeworks page' do
     get student_student_homeworks_path
     assert_response :success
   end
 
-  test "should get show student_homework page" do
+  test 'should get show student_homework page' do
     get student_student_homework_path(@student_homework)
     assert_response :success
   end
 
-  test "should get edit student_homework page" do
+  test 'should get edit student_homework page' do
     get edit_student_student_homework_path(@student_homework)
     assert_response :success
   end
 
-  test "should put update student_homework" do
+  test 'should put update student_homework' do
     attrs = {}
     attrs[:link_homework] = generate :link_homework
 
