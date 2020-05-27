@@ -23,7 +23,7 @@ class Web::Student::ProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should delete student photo from profile' do
-    student = create :student, photo_file_name: "150155-svet-kapyushon-balahon-verhnyaya_odezhda-ma", photo_content_type: "image/jpeg", photo_file_size: 508313, photo_updated_at: "2020-05-26 12:08:14"  
+    student = create :student, photo_file_name: '150155-svet-kapyushon-balahon-verhnyaya_odezha-ma', photo_content_type: 'image/jpeg', photo_file_size: 508_313, photo_updated_at: '2020-05-26 12:08:14'
     sign_in_as_student(student)
     put delete_photo_student_profile_path(student.id)
     assert_response :success
@@ -31,7 +31,7 @@ class Web::Student::ProfilesControllerTest < ActionDispatch::IntegrationTest
     student.reload
     assert_nil student.photo_file_name
   end
-  
+
   test 'should get show student profile' do
     get student_profile_path(@student.id)
     assert_response :success

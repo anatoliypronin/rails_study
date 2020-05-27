@@ -12,7 +12,7 @@ class Web::Student::ProfilesController < Web::Student::ApplicationController
       render action: :edit
     end
   end
-  
+
   def show
     @student = current_student.decorate
   end
@@ -20,8 +20,8 @@ class Web::Student::ProfilesController < Web::Student::ApplicationController
   def delete_photo
     @student = current_student
     if @student.update(photo: nil)
-      render action: :edit
-    else 
+      redirect_to student_profile_path
+    else
       render action: :edit
     end
   end
@@ -29,6 +29,6 @@ class Web::Student::ProfilesController < Web::Student::ApplicationController
   private
 
   def student_attrs
-    params.require(:student).permit(:first_name, :last_name, :phone_number, :email, :student_id, :photo )
+    params.require(:student).permit(:first_name, :last_name, :phone_number, :email, :student_id, :photo)
   end
 end
