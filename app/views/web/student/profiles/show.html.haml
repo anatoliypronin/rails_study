@@ -11,6 +11,10 @@
       %h5= @student.phone_number
     = link_to t('.edit'), edit_student_profile_path, class: 'btn btn-outline-secondary btn-sm'
 
+  %br
+  %br
+= line_chart @hash_graph, xtitle: t('.lessons'), ytitle: t('.reiting')
+
 
 
 

@@ -164,6 +164,10 @@ ru:
           create_article: Создать статью
           
     teacher:
+      welcome:
+        index:
+          avg reiting: Средняя оценка за урок
+          lessons: Уроки
       profiles:
         edit:
           cancel: Отмена
@@ -175,6 +179,7 @@ ru:
           edit: Редактировать
           add: Добавить
           control: Управление
+          
         new:
           cancel: Отмена
           create_article: Создать статью
@@ -241,4 +246,6 @@ ru:
           photo: Фото
           delete_photo: Удалить фото
         show:
-          edit: Редактировать профиль  
+          edit: Редактировать профиль
+          lessons: Урок
+          reiting: Оценка  
