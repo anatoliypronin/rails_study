@@ -5,7 +5,7 @@
 %br
 - student_homeworks = StudentHomework.where(student_id: current_student.id, lesson_id: @lesson.id)
 - if student_homeworks != []
-  = link_to Lesson.human_attribute_name(:homework), student_student_homework_path(student_homeworks.ids), class: 'btn btn-info btn-sm'
+  %h4= link_to Lesson.human_attribute_name(:homework), student_student_homework_path(student_homeworks.ids)
 - else
   %h4= Lesson.human_attribute_name(:homework)
 %h5= @lesson.homework
