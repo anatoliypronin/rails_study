@@ -230,9 +230,9 @@ ru:
       
       student_homeworks:
         show:
-          tasting: Проверка
+          check: Проверка
           modify: На доработку
-          done: Зачтено
+          adopted: Зачтено
 
     student:
       profiles:
