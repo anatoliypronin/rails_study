@@ -1,0 +1,30 @@
+%a.pull-right
+  %h1= t('lessons')
+%table.table.table-hover
+  %thead
+    %tr
+      %th= Lesson.human_attribute_name(:id)
+      %th= Lesson.human_attribute_name(:title)
+      %th= Lesson.human_attribute_name(:description)
+      %th= Lesson.human_attribute_name(:homework)
+      %th= Lesson.human_attribute_name(:course)
+      %th= Lesson.human_attribute_name(:created_at)
+      %th= Lesson.human_attribute_name(:state)
+      - if policy(@lesson).edit?
+        %th{:colspan => "2"}= t('.control')
+  %tbody
+    %tr
+      %td= @lesson.id
+      %td= @lesson.title
+      %td= @lesson.description
+      %td= @lesson.homework
+      %td= @lesson.course.title
+      %td= @lesson.created_at
+      %td= @lesson.human_state_name
+      - if policy(@lesson).edit?
+        %td= link_to t('edit'), edit_admin_lesson_path(@lesson.id), class: 'btn btn-success btn-sm'
+        -if @lesson.can_del?
+          %td= link_to t('.del'), admin_lesson_del_path(@lesson.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+        -if @lesson.can_restore?
+          %td= link_to t('.restore'), admin_lesson_restore_path(@lesson.id), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm'
+= link_to t('back'), admin_lessons_path, class: 'btn btn-outline-secondary'

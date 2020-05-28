@@ -53,6 +53,6 @@ class Web::Admin::CoursesController < Web::Admin::ApplicationController
   private
 
   def course_attrs
-    params.require(:course).permit(:title, :description, :teacher_id, profession_ids: [])
+    params.require(:course).permit(:title, :description, :teacher_id, profession_ids: [], lesson_ids: [])
   end
 end

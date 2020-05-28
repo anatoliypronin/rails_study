@@ -15,15 +15,15 @@
 %table.table.table-hover
   %tr
     %th= StudentHomework.human_attribute_name(:state)
-    %th= StudentHomework.human_attribute_name(:date_begin)
     %th= StudentHomework.human_attribute_name(:student)
     %th= StudentHomework.human_attribute_name(:lesson)
+    %th= StudentHomework.human_attribute_name(:date_begin)
     - @student_homeworks.each do |homework|
       %tr
         %td= homework.human_state_name
-        %td= homework.date_begin
         %td= homework.student.decorate.name
         %td= homework.lesson.title
+        %td= homework.date_begin
 
 %h1=t('articles')
 %table.table.table-hover
