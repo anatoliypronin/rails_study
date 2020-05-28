@@ -39,11 +39,11 @@
   %b= @student_homework.teacher_comment
   %br
   %br
-- if @student_homework.state == 'doing'
+- if @student_homework.state?(:doing)
   = link_to t('.check'), teacher_student_homework_check_path(@student_homework.id), method: :put, class: 'btn btn-success btn'
   %br
   %br
-- if @student_homework.state == 'checking'
+- if @student_homework.state?(:checking)
   = link_to t('.modify'), teacher_student_homework_modify_path(@student_homework.id), method: :put, class: 'btn btn-success btn'
   = link_to t('.adopted'), teacher_student_homework_adopted_path(@student_homework.id), method: :put, class: 'btn btn-success btn'
   %br

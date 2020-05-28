@@ -15,17 +15,19 @@
 %table.table.table-hover
   %tr
     %th= StudentHomework.human_attribute_name(:state)
-    %th= StudentHomework.human_attribute_name(:date_begin)
     %th= StudentHomework.human_attribute_name(:student)
     %th= StudentHomework.human_attribute_name(:lesson)
+    %th= StudentHomework.human_attribute_name(:date_begin)
     - @student_homeworks.each do |homework|
       %tr
         %td= homework.human_state_name
-        %td= homework.date_begin
         %td= homework.student.decorate.name
         %td= homework.lesson.title
-= line_chart @hash_graph, xtitle: t('.lessons'), ytitle: t('.avg reiting'), max: 5, colors: ["#b00", "#666"]
 
+
+        %td= homework.date_begin
+
+= line_chart @hash_graph, xtitle: t('.lessons'), ytitle: t('.avg reiting'), max: 5, colors: ["#b00", "#666"]
 
 %h1=t('articles')
 %table.table.table-hover

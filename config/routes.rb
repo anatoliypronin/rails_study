@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       root to: "admins#index"
       resource :profile, only: %i[edit update]
       resource :session, only: %i[new create destroy]
-      resources :admins, :students, :courses, :teachers, :professions do
+      resources :admins, :students, :courses, :teachers, :professions, :lessons do
         put 'restore'
         put 'del'
       end

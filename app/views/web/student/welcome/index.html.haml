@@ -13,4 +13,11 @@
       %td= course.updated_at
       - if StudentCourse.find_by course_id: course.id, student_id: current_student.id
         %td= t('you are subscribed')
-  
+
+%h1= t('homework')
+%table.table.table-hover
+  %tr
+    %th= StudentHomework.human_attribute_name(:state)
+    %th= StudentHomework.human_attribute_name(:student)
+    %th= StudentHomework.human_attribute_name(:lesson)
+    %th= StudentHomework.human_attribute_name(:date_begin)
