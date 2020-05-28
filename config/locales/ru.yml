@@ -147,6 +147,15 @@ ru:
           del: Удалить
           add: Добавить
           edit: Редактировать 
+      lessons:
+        index:
+          view profile: Подробнее
+        show:
+          del: Удалить
+        new:
+          create_lesson: Создать урок
+        edit:
+          create_lesson: Создать урок
       articles:
         index:
           view profile: Подробнее
