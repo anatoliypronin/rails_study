@@ -63,7 +63,7 @@ Rails.application.routes.draw do
           resources :lessons, only: %i[show]
         end
       end
-      #resources :student_homeworks, only: %i[index show edit update]
+      resources :student_homeworks, only: %i[index show edit update]
       #resources :reviews, only: %i[index new create show]
     end
   end

@@ -58,6 +58,8 @@ class Web::Teacher::StudentHomeworksController < Web::Teacher::ApplicationContro
     redirect_to action: :index
   end
 
+  private
+
   def student_homework_attrs
     params.require(:student_homework).permit(:raiting, :student_comment, :teacher_comment, :date_begin, :date_end, :link_homework, :student_id, :lesson_id)
   end

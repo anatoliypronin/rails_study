@@ -3,13 +3,14 @@
 %h4= Lesson.human_attribute_name(:description)
 %h4= @lesson.description
 %br
-%br
-%h5= Lesson.human_attribute_name(:homework)
+- student_homeworks = StudentHomework.where(student_id: current_student.id, lesson_id: @lesson.id)
+- if student_homeworks != []
+  %h4= link_to Lesson.human_attribute_name(:homework), student_student_homework_path(student_homeworks.ids)
+- else
+  %h4= Lesson.human_attribute_name(:homework)
 %h5= @lesson.homework
-%br
 %br
 %h5= Lesson.human_attribute_name(:course)
 %h5= @lesson.course.title
-%br
 %br
 = link_to t('back'), student_course_path(@lesson.course), class: 'btn btn-outline-secondary' 

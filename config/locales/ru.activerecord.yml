@@ -70,6 +70,10 @@ ru:
             doing: В работе
             checking: На проверке
             accepted: Зачтено
+          events:
+            check: Проверить
+            modify: На доработку
+            adopted: Зачтено
                       
     models:
       teacher:

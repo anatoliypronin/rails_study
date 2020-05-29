@@ -1,0 +1,5 @@
+= simple_form_for @student_homework, url: student_student_homework_path(@student_homework.id) do |f|
+    = f.input :link_homework
+    = f.input :student_comment
+    = f.button :submit, t('save'), class: 'btn btn-outline-secondary'
+    = link_to t('cancel'), student_student_homework_path(@student_homework), class: 'btn btn-outline-secondary'
