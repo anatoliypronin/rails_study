@@ -28,6 +28,8 @@
 %b= StudentHomework.human_attribute_name(:lesson) + ': '
 %b= @student_homework.lesson.title
 %br
+%b= @student_homework.lesson.homework
+%br
 %br
 - if @student_homework.student_comment != nil
   %b= StudentHomework.human_attribute_name(:student_comment) + ': '
@@ -39,16 +41,8 @@
   %b= @student_homework.teacher_comment
   %br
   %br
-- if @student_homework.state?(:doing)
-  = link_to t('.check'), teacher_student_homework_check_path(@student_homework.id), method: :put, class: 'btn btn-success btn'
+- if @student_homework.state != 'accepted'
+  = link_to t('edit'), edit_student_student_homework_path(@student_homework), class: 'btn btn-info btn-sm'
   %br
   %br
-- if @student_homework.state?(:checking)
-  = link_to t('.modify'), teacher_student_homework_modify_path(@student_homework.id), method: :put, class: 'btn btn-success btn'
-  = link_to t('.adopted'), teacher_student_homework_adopted_path(@student_homework.id), method: :put, class: 'btn btn-success btn'
-  %br
-  %br
-= link_to t('edit'), edit_teacher_student_homework_path(@student_homework), class: 'btn btn-info btn-sm'
-%br
-%br
-= link_to t('back'), teacher_student_homeworks_path, class: 'btn btn-outline-secondary'
+= link_to t('back'), :back, class: 'btn btn-outline-secondary'
