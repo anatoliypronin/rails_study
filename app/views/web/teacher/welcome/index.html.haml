@@ -23,7 +23,11 @@
         %td= homework.human_state_name
         %td= homework.student.decorate.name
         %td= homework.lesson.title
+
+
         %td= homework.date_begin
+
+= line_chart @hash_graph, xtitle: t('.lessons'), ytitle: t('.avg reiting'), max: 5, colors: ["#b00", "#666"]
 
 %h1=t('articles')
 %table.table.table-hover
@@ -38,3 +42,4 @@
       %td= article.author.decorate.name
       %td= article.human_state_name
       %td= article.updated_at
+
